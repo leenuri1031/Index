@@ -1,0 +1,46 @@
+@use './var'as var;
+@use './mixin' as mixin;
+@use './basic';
+
+/* 
+*namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin에서 vqr시트를 @use했더니 ok
+*/
+// -----------------------------------------
+
+#root{
+  @include mixin.root-style;
+  @include mixin.flex-setting(space-evenly, center);
+  flex-direction: column;
+  color: var.$col-4;
+}
+
+#title-box {
+  @include mixin.size(80%, 45%);
+  @include mixin.flex-setting(center, center);
+  flex-direction: column;
+  background-color: var.$col-1;
+
+  &>h3{
+    margin-top: 1vh;
+  }
+}
+
+#writer-box{
+  @include mixin.size(50%, 25%);
+  background-color: var.$col-1;
+  @include mixin.posi-style(relative, 17%, 0%, 0);
+  @include mixin.flex-setting(flex-end, flex-end);
+  flex-direction: column;
+
+  &>p{
+    margin: 2vw;
+  }
+}
+
+
+
+
+
+
+
+
