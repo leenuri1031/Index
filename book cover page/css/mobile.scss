@@ -9,16 +9,22 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
 
 #root{
   @include mixin.root-style;
-  @include mixin.flex-setting(center, center);
+  @include mixin.flex-setting(center, center, column);
   color: var.$col-4;
+
+  &>div:nth-child(2){
+    @include mixin.flex-setting(space-evenly, center);
+    @include mixin.size(30%,5%);
+    display: none;
+  }
 }
 
 #container{
-  @include mixin.size(var.$per-100, var.$per-100);
+  @include mixin.size(var.$per-100, 90%);
   @include mixin.flex-setting(space-evenly, center, column);
 
-  &> div:first-child{
-    @include mixin.box-style(80%, 45%, var.$col-1);
+  &> div:nth-child(1){
+    @include mixin.box-style(80%, 55%, var.$col-1);
     @include mixin.flex-setting(center, center, column);
   
     &>h3{
@@ -26,7 +32,7 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
     }
   }
   
-  &> div:last-child{
+  &> div:nth-child(2){
     @include mixin.box-style(50%, 25%, var.$col-1, 50px);
     @include mixin.posi-style(relative, 17%, 0%, 0);
     @include mixin.flex-setting(flex-end, flex-start, column);

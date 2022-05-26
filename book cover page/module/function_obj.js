@@ -23,7 +23,11 @@ export const functionObj = {
     const objName = document.createElement(tag);
     parent.appendChild(objName);
   },
-  
+
+  createBefore : function createBefore (newTag, parent, tag){
+    const tagName = document.createElement(newTag)
+    parent.insertBefore(tagName, tag);
+  }
 }
 
 
