@@ -5,10 +5,11 @@
   z-index: $zindx;
 }
 
-@mixin flex-setting($jus, $ali) {
+@mixin flex-setting($jus, $ali, $flexdirection : row) {
   display: flex;
   justify-content: $jus;
   align-items: $ali;
+  flex-direction: $flexdirection;
 }
 
 @mixin root-style {
@@ -22,10 +23,11 @@
   height: $h;
 }
 
-@mixin box-style($w, $h, $col) {
+@mixin box-style($w, $h, $col, $radius : 0) {
   width: $w;
   height: $h;
   background-color: $col;
+  border-radius: $radius;
 }
 
 
@@ -41,3 +43,5 @@
   top: $top;
   z-index: $zin;
 }
+
+

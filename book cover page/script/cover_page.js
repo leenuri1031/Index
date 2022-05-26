@@ -1,0 +1,1 @@
+import '../module/create_illust_page.js';
