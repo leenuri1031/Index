@@ -1,6 +1,7 @@
 @use './var'as var;
 @use './mixin' as mixin;
 @use './basic';
+@use './tablet';
 
 /* 
 namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin에서 vqr시트를 @use했더니 ok
