@@ -1,7 +1,9 @@
 import { functionObj } from "./function_obj.js";
 import { colorArr } from "./array.js";
-import { root, mobileWidth, tabletWidth, desktopWidth } from "./const.js";
+import { root, mobileWidth, tabletWidth, desktopWidth,boolean } from "./const.js";
 import { tabletVerIllust } from "./illust_page_tablet.js";
+import { bookcoverMaker } from "./bookcover_page_mobile.js";
+
 
 export function illustPageMaker(){
   if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){
@@ -44,6 +46,11 @@ export function illustPageMaker(){
 
   leftBtn.style.cursor = 'pointer';
   rightBtn.style.cursor = 'pointer';
+  
+  leftBtn.addEventListener('click', ()=> {
+    root.removeChild(root.children[0]);
+    bookcoverMaker();
+  });
   
   } 
   tabletVerIllust();

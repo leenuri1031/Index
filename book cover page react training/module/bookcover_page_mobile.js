@@ -1,6 +1,6 @@
 import { functionObj } from "./function_obj.js";
 import { colorArr } from "./array.js";
-import { root, mobileWidth, tabletWidth, desktopWidth } from "./const.js";
+import { root, mobileWidth, tabletWidth, desktopWidth, boolean } from "./const.js";
 import { tabletVerBookcover } from "./bookcover_page_tablet.js";
 import {illustPageMaker} from "./illust_page_mobile.js";
 
@@ -43,6 +43,15 @@ export function bookcoverMaker(){
     writerContainer.children[1].textContent = 'Illust by El mundo';
 
 
+    if(boolean === true){
+      root.children[0].addEventListener('click', ()=>{
+    // console.log(event);
+    let container = root.children[0];
+    // console.log(container);
+    container.parentNode.removeChild(container);
+    illustPageMaker();
+      });
+    }
   } 
   tabletVerBookcover();
 }
