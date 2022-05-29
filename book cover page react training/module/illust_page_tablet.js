@@ -1,6 +1,7 @@
 import { functionObj } from "./function_obj.js";
 import { colorArr } from "./array.js";
 import { root, mobileWidth, tabletWidth, desktopWidth } from "./const.js";
+import { tabletVerBookcover } from "./bookcover_page_tablet.js";
 
 export function tabletVerIllust(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === false){
@@ -46,6 +47,11 @@ export function tabletVerIllust(){
 
   leftBtn.style.cursor = 'pointer';
   rightBtn.style.cursor = 'pointer';
+
+  leftBtn.addEventListener('click', ()=> {
+    root.removeChild(root.children[0]);
+    tabletVerBookcover();
+  });
 } 
 }
 
