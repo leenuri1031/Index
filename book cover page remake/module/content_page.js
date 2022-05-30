@@ -1,3 +1,4 @@
-import { functionObj } from "./function_obj.js";
-import { colorArr } from "./array.js";
-import { root, mobileWidth, tabletWidth, desktopWidth,boolean } from "./const.js";
+import { root} from "./const.js";
+import { contentPageMaker } from "./content_page_mobile.js";
+
+contentPageMaker();

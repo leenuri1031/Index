@@ -34,6 +34,11 @@ export const functionObj = {
     target.style.flexDirection = 'column';
   },
 
+  font : function fontstyle(target, rem, bold){
+    target.style.fontSize = rem;
+    target.style.fontWeight = bold;
+  },
+
 
   createElement : function createElement (tag, parent){
     const objName = document.createElement(tag);
@@ -43,7 +48,8 @@ export const functionObj = {
   createBefore : function createBefore (newTag, parent, tag){
     const tagName = document.createElement(newTag)
     parent.insertBefore(tagName, tag);
-  }
+  },
+
 }
 
 

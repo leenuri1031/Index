@@ -1,8 +1,9 @@
 import { functionObj } from "./function_obj.js";
 import { colorArr } from "./array.js";
-import { root, mobileWidth, tabletWidth, desktopWidth,boolean } from "./const.js";
+import { root, mobileWidth, tabletWidth, desktopWidth} from "./const.js";
 import { tabletVerIllust } from "./illust_page_tablet.js";
 import { bookcoverMaker } from "./bookcover_page_mobile.js";
+import { contentPageMaker } from "./content_page_mobile.js";
 
 
 export function illustPageMaker(){
@@ -22,7 +23,7 @@ export function illustPageMaker(){
   functionObj.boxStyle(illustBox, '80%', '90%', colorArr[0]);
   illustBox.style.paddingLeft = '5vw';
   illustBox.style.paddingBottom = '10vw';
-  functionObj.flex(illustBox, 'flex-start', 'flex-end');
+  functionObj.flex(illustBox, 'center', 'center');
 
   functionObj.createElement('p', illustBox);
   let textBox = illustBox.children[0]
@@ -50,6 +51,11 @@ export function illustPageMaker(){
   leftBtn.addEventListener('click', ()=> {
     root.removeChild(root.children[0]);
     bookcoverMaker();
+  });
+
+  rightBtn.addEventListener('click', ()=> {
+    root.removeChild(root.children[0]);
+    contentPageMaker();
   });
   
   } 

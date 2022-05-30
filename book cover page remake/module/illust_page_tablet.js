@@ -2,6 +2,7 @@ import { functionObj } from "./function_obj.js";
 import { colorArr } from "./array.js";
 import { root, mobileWidth, tabletWidth, desktopWidth } from "./const.js";
 import { tabletVerBookcover } from "./bookcover_page_tablet.js";
+import { tabletVerContent } from "./content_page_tablet.js";
 
 export function tabletVerIllust(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === false){
@@ -23,7 +24,7 @@ export function tabletVerIllust(){
   functionObj.boxStyle(illustBox, '80%', '90%', colorArr[0]);
   illustBox.style.paddingLeft = '5vw';
   illustBox.style.paddingBottom = '10vw';
-  functionObj.flex(illustBox, 'flex-start', 'flex-end');
+  functionObj.flex(illustBox,'center', 'center');
 
   functionObj.createElement('p', illustBox);
   let textBox = illustBox.children[0]
@@ -52,6 +53,12 @@ export function tabletVerIllust(){
     root.removeChild(root.children[0]);
     tabletVerBookcover();
   });
+
+  rightBtn.addEventListener('click', ()=> {
+    root.removeChild(root.children[0]);
+    tabletVerContent();
+  });
+
 } 
 }
 

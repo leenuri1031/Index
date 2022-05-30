@@ -6,6 +6,9 @@ export const desktopWidth = window.matchMedia(`(min-width: 1080px)`);
 
 export const boolean = true;
 
+export const container = root.childNodes[0];
+
+
 export const textContents = {
   
 }
