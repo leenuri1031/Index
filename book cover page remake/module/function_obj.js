@@ -7,10 +7,11 @@ export const functionObj = {
     target.style.flexDirection = flexDirection;
   },
 
-  position : function positionSetting(target, posi, left = 0 , top = 0) {
+  position : function positionSetting(target, posi, left = 0 , top = 0, zIndex = 0) {
     target.style.position = posi;
     target.style.left = left;
     target.style.top = top;
+    target.style.zIndex = zIndex;
   },
 
   size : function size(target, w, h){
@@ -50,6 +51,13 @@ export const functionObj = {
     parent.insertBefore(tagName, tag);
   },
 
+  iAmPageTextBox : function textBoxStyle (target, h = '35%'){
+    target.style.width = '90%';
+    target.style.height = h;
+    target.style.display = 'flex';
+    target.style.justifyContent = 'flex-start';
+    target.style.alignItems = 'center';
+  }
 }
 
 

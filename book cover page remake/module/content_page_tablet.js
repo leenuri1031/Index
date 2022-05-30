@@ -1,6 +1,7 @@
 import { functionObj } from "./function_obj.js";
-import { root, mobileWidth, tabletWidth, desktopWidth,boolean } from "./const.js";
+import { root, mobileWidth, tabletWidth, desktopWidth} from "./const.js";
 import { tabletVerIllust } from "./illust_page_tablet.js";
+import { tabletVerIAm } from "./I_am_page_tablet.js";
 
 export function tabletVerContent(){
   
@@ -133,6 +134,11 @@ export function tabletVerContent(){
     leftBtn.addEventListener('click', ()=> {
       root.removeChild(root.children[0]);
       tabletVerIllust();
+    });
+
+    rightBtn.addEventListener('click', ()=> {
+      root.removeChild(root.children[0]);
+      tabletVerIAm();
     });
   }
 }

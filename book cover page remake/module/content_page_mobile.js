@@ -1,7 +1,8 @@
 import { functionObj } from "./function_obj.js";
-import { root, mobileWidth, tabletWidth, desktopWidth,boolean } from "./const.js";
+import { root, mobileWidth, tabletWidth, desktopWidth } from "./const.js";
 import { tabletVerContent } from "./content_page_tablet.js";
 import {illustPageMaker} from "./illust_page_mobile.js";
+import { iAmPageMaker } from "./I_am_page_mobile.js";
 
 
 export function contentPageMaker(){
@@ -134,6 +135,11 @@ export function contentPageMaker(){
     leftBtn.addEventListener('click', ()=> {
       root.removeChild(root.children[0]);
       illustPageMaker();
+    });
+
+    rightBtn.addEventListener('click', ()=> {
+      root.removeChild(root.children[0]);
+      iAmPageMaker();
     });
   }
   tabletVerContent();
