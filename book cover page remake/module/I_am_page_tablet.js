@@ -1,7 +1,10 @@
 import { functionObj } from "./function_obj.js";
 import { colorArr } from "./array.js";
 import { root, mobileWidth, tabletWidth, desktopWidth, textIAm, textIDid, textILike } from "./const.js";
+import { tabletVerNowPage } from "./now_I_am_page_tablet.js";
 import { tabletVerContent } from "./content_page_tablet.js";
+import { tabletVerBookcover } from "./bookcover_page_tablet.js";
+
 
 
 export function tabletVerIAm(){
@@ -40,13 +43,13 @@ export function tabletVerIAm(){
       }
     }
 
-    functionObj.boxStyle(textBox[0].children[1], '20vw', '20vw', colorArr[0], '100%');
+    functionObj.boxStyle(textBox[0].children[1], '22vw', '22vw', colorArr[0], '100%');
     functionObj.position(textBox[0].children[1], 'absolute', '65%', '12%');
 
     functionObj.boxStyle(textBox[1].children[1], '30vw', '30vw', colorArr[0], '100%');
     functionObj.position(textBox[1].children[1], 'absolute', '52%', '36%');
 
-    functionObj.boxStyle(textBox[2].children[1], '25vw', '25vw', colorArr[0], '100%');
+    functionObj.boxStyle(textBox[2].children[1], '20vw', '20vw', colorArr[0], '100%');
     functionObj.position(textBox[2].children[1], 'absolute', '60%', '75%');
 
     let textBoxContent = [textBox[0].children[0], textBox[1].children[0], textBox[2].children[0]];
@@ -77,6 +80,8 @@ export function tabletVerIAm(){
     const pageBox = container.children[4];
     functionObj.size(pageBox, '25%', '5%');
     functionObj.flex(pageBox,'space-evenly', 'center');
+    functionObj.position(pageBox, 'absolute', '38%' , '92.5%');
+
   
     for(let i = 0; i< 3; i++){
       functionObj.createElement('div', pageBox);
@@ -91,7 +96,13 @@ export function tabletVerIAm(){
     rightBtn.textContent = '>';
   
     leftBtn.style.cursor = 'pointer';
+    pageTxt.style.cursor = 'pointer';
     rightBtn.style.cursor = 'pointer';
+
+    pageTxt.addEventListener('click', ()=> {
+      root.removeChild(root.children[0]);
+      tabletVerBookcover();
+    });
 
     leftBtn.addEventListener('click', ()=> {
       root.removeChild(root.children[0]);
@@ -100,8 +111,8 @@ export function tabletVerIAm(){
     });
   
     rightBtn.addEventListener('click', ()=> {
-      // root.removeChild(root.children[0]);
-      console.log('next page');
+      root.removeChild(root.children[0]);
+      tabletVerNowPage();
     });
   }
 }

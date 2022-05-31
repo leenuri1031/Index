@@ -4,6 +4,7 @@ import { root, mobileWidth, tabletWidth, desktopWidth } from "./const.js";
 import { tabletVerBookcover } from "./bookcover_page_tablet.js";
 import { tabletVerContent } from "./content_page_tablet.js";
 
+
 export function tabletVerIllust(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === false){
   // console.log('tablet');
@@ -32,7 +33,9 @@ export function tabletVerIllust(){
   textBox.textContent = 'If you’re curious about my story, please read it to the end even if you feel bored.';
 
   functionObj.size(pageBox, '25%', '5%');
-  functionObj.flex(pageBox,'space-evenly', 'center')
+  functionObj.flex(pageBox,'space-evenly', 'center');
+  functionObj.position(pageBox, 'absolute', '38%' , '92.5%');
+
 
   for(let i = 0; i< 3; i++){
     functionObj.createElement('div', pageBox);
@@ -47,7 +50,13 @@ export function tabletVerIllust(){
   rightBtn.textContent = '>';
 
   leftBtn.style.cursor = 'pointer';
+  pageTxt.style.cursor = 'pointer';
   rightBtn.style.cursor = 'pointer';
+
+  pageTxt.addEventListener('click', ()=> {
+    root.removeChild(root.children[0]);
+    tabletVerBookcover();
+  });
 
   leftBtn.addEventListener('click', ()=> {
     root.removeChild(root.children[0]);

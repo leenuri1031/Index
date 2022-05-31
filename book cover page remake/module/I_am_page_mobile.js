@@ -2,7 +2,9 @@ import { functionObj } from "./function_obj.js";
 import { colorArr } from "./array.js";
 import { root, mobileWidth, tabletWidth, desktopWidth, textIAm, textIDid, textILike } from "./const.js";
 import { tabletVerIAm } from "./I_am_page_tablet.js";
+import { bookcoverMaker } from "./bookcover_page_mobile.js";
 import { contentPageMaker } from "./content_page_mobile.js";
+import { nowIPageMaker } from "./now_I_am_page_mobile.js";
 
 
 
@@ -25,10 +27,9 @@ export function iAmPageMaker(){
     
     let textBox = [container.children[1], container.children[2], container.children[3]];
 
-    functionObj.iAmPageTextBox(textBox[0], '20%');
-    functionObj.iAmPageTextBox(textBox[1], '30%');
+    functionObj.iAmPageTextBox(textBox[0], '15%');
+    functionObj.iAmPageTextBox(textBox[1], '25%');
     functionObj.iAmPageTextBox(textBox[2], '30%');
-
 
     for(let i = 0; i<2; i++){
       for(let i = 0; i < textBox.length; i++){
@@ -79,6 +80,8 @@ export function iAmPageMaker(){
     const pageBox = container.children[4];
     functionObj.size(pageBox, '25%', '5%');
     functionObj.flex(pageBox,'space-evenly', 'center');
+    functionObj.position(pageBox, 'absolute', '35%' , '95%');
+
   
     for(let i = 0; i< 3; i++){
       functionObj.createElement('div', pageBox);
@@ -93,11 +96,23 @@ export function iAmPageMaker(){
     rightBtn.textContent = '>';
   
     leftBtn.style.cursor = 'pointer';
+    pageTxt.style.cursor = 'pointer';
     rightBtn.style.cursor = 'pointer';
+
+    pageTxt.addEventListener('click', ()=> {
+      root.removeChild(root.children[0]);
+      bookcoverMaker();
+    });
+    
 
     leftBtn.addEventListener('click', ()=> {
       root.removeChild(root.children[0]);
       contentPageMaker();
+    });
+
+    rightBtn.addEventListener('click', ()=> {
+      root.removeChild(root.children[0]);
+      nowIPageMaker();
     });
   }
   tabletVerIAm();

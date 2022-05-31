@@ -1,8 +1,11 @@
 import { functionObj } from "./function_obj.js";
 import { root, mobileWidth, tabletWidth, desktopWidth } from "./const.js";
 import { tabletVerContent } from "./content_page_tablet.js";
+import { bookcoverMaker } from "./bookcover_page_mobile.js";
 import {illustPageMaker} from "./illust_page_mobile.js";
 import { iAmPageMaker } from "./I_am_page_mobile.js";
+import { nowIPageMaker } from "./now_I_am_page_mobile.js";
+import { project1PageMaker } from "./project1_page_mobile.js";
 
 
 export function contentPageMaker(){
@@ -49,10 +52,16 @@ export function contentPageMaker(){
     }
   
       boxContents1[0].textContent = 'I am...';
+      boxContents1[0].style.cursor = 'pointer';
       functionObj.font(boxContents1[0], '1.1rem', 500);
       boxContents1[1].textContent = '나는 입니다.';
       boxContents1[2].textContent = '나는 좋아합니다.';
       boxContents1[3].textContent = '나는 했습니다.';
+
+      boxContents1[0].addEventListener('click' , () => {
+        root.removeChild(root.children[0]);
+        iAmPageMaker();
+      } );
   
     for(let i = 0; i< 2; i++){
       functionObj.createElement('p', textContentBox[2]);
@@ -64,8 +73,15 @@ export function contentPageMaker(){
       boxContents2[i].style.marginLeft = '2vh';
     }
       boxContents2[0].textContent = 'Now I am...';
+      boxContents2[0].style.cursor = 'pointer';
       functionObj.font(boxContents2[0], '1.1rem', 500);
       boxContents2[1].textContent = '나는 지금 합니다.';
+
+      boxContents2[0].addEventListener('click' , () => {
+        root.removeChild(root.children[0]);
+        nowIPageMaker();
+      });
+
     
     for(let i = 0; i< 4; i++){
       functionObj.createElement('p', textContentBox[3]);
@@ -78,10 +94,16 @@ export function contentPageMaker(){
     }
   
       boxContents3[0].textContent = 'This is my...';
+      boxContents3[0].style.cursor = 'pointer';
       functionObj.font(boxContents3[0], '1.1rem', 500);
       boxContents3[1].textContent = '이것은 나의 프로젝트입니다.';
       boxContents3[2].textContent = '나는 이렇게 만들었습니다.';
       boxContents3[3].textContent = '프로젝트';
+
+      boxContents3[0].addEventListener('click' , () => {
+        root.removeChild(root.children[0]);
+        project1PageMaker();
+      });
   
     for(let i = 0; i< 3; i++){
       functionObj.createElement('p', textContentBox[4]);
@@ -94,6 +116,7 @@ export function contentPageMaker(){
     }
   
       boxContents4[0].textContent = 'Some day I...';
+      boxContents4[0].style.cursor = 'pointer';
       functionObj.font(boxContents4[0], '1.1rem', 500);
       boxContents4[1].textContent = '언젠가 나는 하고싶습니다.';
       boxContents4[2].textContent = '나의 최종 꿈은 ...입니다.';
@@ -109,6 +132,7 @@ export function contentPageMaker(){
     }
     
       boxContents5[0].textContent = 'Contact me';
+      boxContents5[0].style.cursor = 'pointer';
       functionObj.font(boxContents5[0], '1.1rem', 500);
       boxContents5[1].textContent = '그러니까 나는';
       boxContents5[2].textContent = '연락하고 싶다면';
@@ -116,6 +140,8 @@ export function contentPageMaker(){
   
     functionObj.size(pageBox, '25%', '5%');
     functionObj.flex(pageBox,'space-evenly', 'center');
+    functionObj.position(pageBox, 'absolute', '35%' , '95%');
+
   
     for(let i = 0; i< 3; i++){
       functionObj.createElement('div', pageBox);
@@ -130,7 +156,13 @@ export function contentPageMaker(){
     rightBtn.textContent = '>';
   
     leftBtn.style.cursor = 'pointer';
+    pageTxt.style.cursor = 'pointer';
     rightBtn.style.cursor = 'pointer';
+
+    pageTxt.addEventListener('click', ()=> {
+      root.removeChild(root.children[0]);
+      bookcoverMaker();
+    });
     
     leftBtn.addEventListener('click', ()=> {
       root.removeChild(root.children[0]);

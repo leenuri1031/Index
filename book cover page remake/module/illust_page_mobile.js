@@ -31,7 +31,8 @@ export function illustPageMaker(){
   textBox.textContent = 'If you’re curious about my story, please read it to the end even if you feel bored.';
 
   functionObj.size(pageBox, '25%', '5%');
-  functionObj.flex(pageBox,'space-evenly', 'center')
+  functionObj.flex(pageBox,'space-evenly', 'center');
+  functionObj.position(pageBox, 'absolute', '35%' , '95%');
 
   for(let i = 0; i< 3; i++){
     functionObj.createElement('div', pageBox);
@@ -46,7 +47,14 @@ export function illustPageMaker(){
   rightBtn.textContent = '>';
 
   leftBtn.style.cursor = 'pointer';
+  pageTxt.style.cursor = 'pointer';
   rightBtn.style.cursor = 'pointer';
+
+  pageTxt.addEventListener('click', ()=> {
+    root.removeChild(root.children[0]);
+    bookcoverMaker();
+  });
+  
   
   leftBtn.addEventListener('click', ()=> {
     root.removeChild(root.children[0]);

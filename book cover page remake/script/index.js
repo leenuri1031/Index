@@ -1,3 +1,5 @@
-import '../module/bookcover_page.js';
-// import '../module/content_page.js';
-// import '../module/I_am_page.js'
+// import './bookcover_page.js';
+// import './content_page.js';
+// import './I_am_page.js'
+// import './now_I_am_page.js'
+import './project1_page.js'
