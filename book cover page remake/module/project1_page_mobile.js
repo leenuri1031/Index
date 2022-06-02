@@ -4,6 +4,7 @@ import { root, mobileWidth, tabletWidth, desktopWidth, project1Text} from "./con
 import { bookcoverMaker } from "./bookcover_page_mobile.js";
 import { nowIPageMaker } from "./now_I_am_page_mobile.js";
 import { tabletVerProject1Page } from "./project1_page_tablet.js";
+import { project2PageMaker } from "./project2_page_mobile.js";
 
 
 
@@ -29,21 +30,22 @@ export function project1PageMaker(){
     }
 
     for(let i = 0; i<2; i++){
-      functionObj.size(contentContainers[i].children[0], '90%', '45%');
-      functionObj.size(contentContainers[i].children[1], '90%', '45%');
+      functionObj.size(contentContainers[i].children[0], '95%', '45%');
+      functionObj.size(contentContainers[i].children[1], '95%', '45%');
     }
 
     let projectViewBox = contentContainers[1].children;
-    functionObj.iAmPageTextBox(projectViewBox[0], '100%');
+    functionObj.nowIPageTextBox(projectViewBox[0], '100%');
     functionObj.font(projectViewBox[0], '1rem', '500');
     projectViewBox[0].textContent = '프로젝트 확인';
+    projectViewBox[0].style.paddingLeft = '2vh';
 
 
     functionObj.container(projectViewBox[1], '100%', '100%', 'row');
     for(let i = 0; i<3; i++){
       functionObj.createElement('div', projectViewBox[1]);
       functionObj.borderRound(projectViewBox[1].children[i], '25%', '60%', '30px');
-      functionObj.font(projectViewBox[1].children[i], '0.8rem', '500');
+      functionObj.font(projectViewBox[1].children[i], '0.7rem', '500');
       projectViewBox[1].children[i].style.cursor = 'pointer';
     }
 
@@ -56,10 +58,10 @@ export function project1PageMaker(){
     titleText[0].textContent = '3. This is my...';
     functionObj.font(titleText[1], '1rem', '500');
     titleText[1].style.paddingLeft = '1vh';
-    titleText[1].textContent = '나의 첫번째 프로젝트 입니다.'
+    titleText[1].textContent = '나의 첫번째 프로젝트 입니다.';
 
     functionObj.size(container.children[1], '90%', '20%');
-    functionObj.flex(container.children[1], 'space-between', 'center');
+    functionObj.flex(container.children[1], 'space-around', 'center');
 
     for(let i = 0; i< 2; i++){
       functionObj.createElement('div', container.children[1]);
@@ -70,12 +72,16 @@ export function project1PageMaker(){
 
     for(let i = 0; i< 2; i++){
       functionObj.boxStyle(imgBox[i], '35vw', '35vw', colorArr[0]);
+      imgBox[i].addEventListener('mouseover', (event)=> {
+        functionObj.boxStyle(event.target, '50vw', '50vw', colorArr[0]);
+      });
+      imgBox[i].addEventListener('mouseout', (event)=> {
+        functionObj.boxStyle(event.target, '35vw', '35vw', colorArr[0]);
+      });
     }
 
-    // imgBox[0], imgBox[1] 마우스 오버시 이미지 확대 하기
-    // 클릭하면 확대이미지 볼 수 있게 하기
 
-    functionObj.size(container.children[2], '90%','40%');
+    functionObj.size(container.children[2], '90%','45%');
     functionObj.flex(container.children[2], 'sapce-evenly', 'flex-sart', 'column');
     container.children[2].style.paddingLeft = '1vh';
 
@@ -88,7 +94,7 @@ export function project1PageMaker(){
     functionObj.iAmPageTextBox(textBox[1], '80%');
     functionObj.font(textBox[1], '0.8rem', '500');
     textBox[1].style.paddingLeft = '1vh';
-    textBox[1].style.lineHeight = '200%';
+    textBox[1].style.lineHeight = '180%';
     textBox[1].style.textAlign = 'justify';
     textBox[1].textContent = project1Text;
 
@@ -119,11 +125,16 @@ export function project1PageMaker(){
       bookcoverMaker();
     });
 
-
     leftBtn.addEventListener('click', ()=> {
       root.removeChild(root.children[0]);
       nowIPageMaker();
     });
+
+    rightBtn.addEventListener('click', ()=> {
+      root.removeChild(root.children[0]);
+      project2PageMaker();
+    });
+    
   }
   tabletVerProject1Page();
 }

@@ -19,7 +19,7 @@ export function nowIPageMaker(){
     }
 
     let textBox = container.children[0];
-    functionObj.container(textBox, '95%','45%');
+    functionObj.container(textBox, '95%','50%');
 
     for(let i = 0; i< 4; i++){
       functionObj.createElement('div', textBox);
@@ -29,10 +29,10 @@ export function nowIPageMaker(){
     let commonTextPart = [textBox.children[2],textBox.children[3]];
 
     for(let i = 0; i<2; i++){
-      functionObj.iAmPageTextBox(titleTextPart[i], '6%');
-      functionObj.iAmPageTextBox(commonTextPart[i], '35%');
+      functionObj.iAmPageTextBox(titleTextPart[i], '7%');
+      functionObj.iAmPageTextBox(commonTextPart[i], '38%');
       functionObj.font(commonTextPart[i], '0.8rem', '500');
-      commonTextPart[i].style.paddingLeft = '2vh';
+      commonTextPart[i].style.paddingLeft = '1vh';
       commonTextPart[i].style.lineHeight = '200%';
       commonTextPart[i].style.textAlign = 'justify';
     }
@@ -40,7 +40,7 @@ export function nowIPageMaker(){
     functionObj.font(titleTextPart[0], '1.5rem', '550');
     titleTextPart[0].textContent = '2. Now I...'
     functionObj.font(titleTextPart[1], '1rem', '500');
-    titleTextPart[1].style.paddingLeft = '1vh';
+    titleTextPart[1].style.paddingLeft = '0.5vh';
     titleTextPart[1].textContent = '나는 지금 합니다.'
     commonTextPart[0].innerHTML = nowI1;
     commonTextPart[1].innerHTML = nowI2;

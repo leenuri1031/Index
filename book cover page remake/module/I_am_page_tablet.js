@@ -22,7 +22,7 @@ export function tabletVerIAm(){
     
     let textTitle = container.children[0];
     
-    functionObj.iAmPageTextBox(textTitle, '5%');
+    functionObj.iAmPageTextBox(textTitle, '8%');
     textTitle.textContent = '1. I am...';
     functionObj.font(textTitle, '1.5rem', '550');
     

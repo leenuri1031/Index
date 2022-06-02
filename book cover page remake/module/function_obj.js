@@ -52,12 +52,21 @@ export const functionObj = {
   },
 
   iAmPageTextBox : function textBoxStyle (target, h = '35%'){
-    target.style.width = '90%';
+    target.style.width = '95%';
     target.style.height = h;
     target.style.display = 'flex';
     target.style.justifyContent = 'flex-start';
     target.style.alignItems = 'center';
   },
+
+  nowIPageTextBox : function textBoxStyle (target, h = '35%'){
+    target.style.width = '100%';
+    target.style.height = h;
+    target.style.display = 'flex';
+    target.style.justifyContent = 'flex-start';
+    target.style.alignItems = 'center';
+  },
+
 
   borderRound : function raoundBorderStyle (target, w, h, radius ){
     target.style.width = w;

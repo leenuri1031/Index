@@ -3,6 +3,7 @@ import { colorArr } from "./array.js";
 import { root, mobileWidth, tabletWidth, desktopWidth, project1Text} from "./const.js";
 import { tabletVerBookcover } from "./bookcover_page_tablet.js";
 import { tabletVerNowPage } from "./now_I_am_page_tablet.js";
+import { tabletVerProject2Page } from "./project2_page_tablet.js";
 
 
 
@@ -37,12 +38,14 @@ export function tabletVerProject1Page(){
     functionObj.size(projectViewBox[0],'100%' ,'100%');
     functionObj.font(projectViewBox[0], '1rem', '500');
     projectViewBox[0].textContent = '프로젝트 확인';
+    projectViewBox[0].style.paddingLeft = '2vh';
+
 
 
     functionObj.container(projectViewBox[1], '100%', '100%', 'row');
     for(let i = 0; i<3; i++){
       functionObj.createElement('div', projectViewBox[1]);
-      functionObj.borderRound(projectViewBox[1].children[i], '25%', '60%', '30px');
+      functionObj.borderRound(projectViewBox[1].children[i], '20%', '66%', '30px');
       functionObj.font(projectViewBox[1].children[i], '0.8rem', '500');
       projectViewBox[1].children[i].style.cursor = 'pointer';
     }
@@ -56,6 +59,7 @@ export function tabletVerProject1Page(){
     titleText[0].textContent = '3. This is my...';
     functionObj.font(titleText[1], '1rem', '500');
     titleText[1].style.paddingLeft = '1vh';
+    titleText[1].style.paddingTop = '1vh';
     titleText[1].textContent = '나의 첫번째 프로젝트 입니다.'
 
     functionObj.size(container.children[1], '90%', '20%');
@@ -70,14 +74,17 @@ export function tabletVerProject1Page(){
 
     for(let i = 0; i< 2; i++){
       functionObj.boxStyle(imgBox[i], '20vw', '20vw', colorArr[0]);
+      imgBox[i].addEventListener('mouseover', (event)=> {
+        functionObj.boxStyle(event.target, '40vw', '40vw', colorArr[0]);
+      });
+      imgBox[i].addEventListener('mouseout', (event)=> {
+        functionObj.boxStyle(event.target, '20vw', '20vw', colorArr[0]);
+      });
     }
-
-    // imgBox[0], imgBox[1] 마우스 오버시 이미지 확대 하기
-    // 클릭하면 확대이미지 볼 수 있게 하기
 
     functionObj.size(container.children[2], '90%','30%');
     functionObj.flex(container.children[2], 'sapce-evenly', 'flex-sart', 'column');
-    container.children[2].style.paddingLeft = '1vh';
+    // container.children[2].style.paddingLeft = '1vh';
 
     let textBox = container.children[2].children;
 
@@ -92,12 +99,10 @@ export function tabletVerProject1Page(){
     textBox[1].style.textAlign = 'justify';
     textBox[1].textContent = project1Text;
 
-
     const pageBox = container.children[4];
     functionObj.size(pageBox, '25%', '5%');
     functionObj.flex(pageBox,'space-evenly', 'center');
     functionObj.position(pageBox, 'absolute', '38%' , '92.5%');
-
   
     for(let i = 0; i< 3; i++){
       functionObj.createElement('div', pageBox);
@@ -123,6 +128,11 @@ export function tabletVerProject1Page(){
     leftBtn.addEventListener('click', ()=> {
       root.removeChild(root.children[0]);
       tabletVerNowPage();
+    });
+
+    rightBtn.addEventListener('click', ()=> {
+      root.removeChild(root.children[0]);
+      tabletVerProject2Page();
     });
   }
   

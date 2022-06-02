@@ -5,6 +5,7 @@ import { tabletVerIAm } from "./I_am_page_tablet.js";
 import { tabletVerBookcover } from "./bookcover_page_tablet.js";
 import { tabletVerNowPage } from "./now_I_am_page_tablet.js";
 import { tabletVerProject1Page } from "./project1_page_tablet.js";
+import { tabletVerSomedayPage } from "./someday_page_tablet.js";
 
 
 export function tabletVerContent(){
@@ -125,6 +126,11 @@ export function tabletVerContent(){
     functionObj.font(boxContents4[0], '1.1rem', 500);
     boxContents4[1].textContent = '언젠가 나는 하고싶습니다.';
     boxContents4[2].textContent = '나의 최종 꿈은 ...입니다.';
+
+    boxContents4[0].addEventListener('click' , () => {
+      root.removeChild(root.children[0]);
+      tabletVerSomedayPage();
+    });
   
     for(let i = 0; i< 4; i++){
       functionObj.createElement('p', textContentBox[5]);

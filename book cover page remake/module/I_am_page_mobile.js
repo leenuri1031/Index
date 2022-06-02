@@ -34,9 +34,9 @@ export function iAmPageMaker(){
     for(let i = 0; i<2; i++){
       for(let i = 0; i < textBox.length; i++){
         functionObj.createElement('div', textBox[i]);
-        functionObj.size(textBox[i].children[0], '95%', '95%');
+        functionObj.size(textBox[i].children[0], '100%', '100%');
         functionObj.flex(textBox[i].children[0], 'space-evenly', 'flex-start', 'column');
-        textBox[i].children[0].style.paddingLeft = '2vh';
+        textBox[i].children[0].style.paddingLeft = '1vh';
         textBox[i].children[0].style.zIndex = 1;
       }
     }

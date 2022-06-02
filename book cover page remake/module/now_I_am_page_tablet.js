@@ -30,8 +30,8 @@ export function tabletVerNowPage(){
     let commonTextPart = [textBox.children[2],textBox.children[3]];
 
     for(let i = 0; i<2; i++){
-      functionObj.iAmPageTextBox(titleTextPart[i], '6%');
-      functionObj.iAmPageTextBox(commonTextPart[i], '35%');
+      functionObj.nowIPageTextBox(titleTextPart[i], '6%');
+      functionObj.nowIPageTextBox(commonTextPart[i], '35%');
       functionObj.font(commonTextPart[i], '0.8rem', '500');
       commonTextPart[i].style.paddingLeft = '2vh';
       commonTextPart[i].style.lineHeight = '200%';
@@ -55,7 +55,7 @@ export function tabletVerNowPage(){
     }
 
     functionObj.position(imgBox.children[0], 'relative', '10%');
-    functionObj.position(imgBox.children[1], 'relative', '60%', '-20%');
+    functionObj.position(imgBox.children[1], 'relative', '60%', '-25%');
 
 
     const pageBox = container.children[2];
