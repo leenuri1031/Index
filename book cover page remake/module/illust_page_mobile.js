@@ -26,7 +26,7 @@ export function illustPageMaker(){
   functionObj.flex(illustBox, 'center', 'center');
 
   functionObj.createElement('p', illustBox);
-  let textBox = illustBox.children[0]
+  let textBox = illustBox.children[0];
   functionObj.size(textBox, '60%', '10%');
   textBox.textContent = 'If you’re curious about my story, please read it to the end even if you feel bored.';
 

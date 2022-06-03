@@ -6,9 +6,8 @@ import {illustPageMaker} from "./illust_page_mobile.js";
 import { iAmPageMaker } from "./I_am_page_mobile.js";
 import { nowIPageMaker } from "./now_I_am_page_mobile.js";
 import { project1PageMaker } from "./project1_page_mobile.js";
-
 import { somedayPageMaker } from "./someday_page_mobile.js";
-
+import { contactPageMaker } from "./contact_page_mobile.js";
 
 export function contentPageMaker(){
   
@@ -83,7 +82,6 @@ export function contentPageMaker(){
         root.removeChild(root.children[0]);
         nowIPageMaker();
       });
-
     
     for(let i = 0; i< 4; i++){
       functionObj.createElement('p', textContentBox[3]);
@@ -122,6 +120,7 @@ export function contentPageMaker(){
       functionObj.font(boxContents4[0], '1.1rem', 500);
       boxContents4[1].textContent = '언젠가 나는 하고싶습니다.';
       boxContents4[2].textContent = '나의 최종 꿈은 ...입니다.';
+
       boxContents4[0].addEventListener('click' , () => {
         root.removeChild(root.children[0]);
         somedayPageMaker();
@@ -143,6 +142,11 @@ export function contentPageMaker(){
       boxContents5[1].textContent = '그러니까 나는';
       boxContents5[2].textContent = '연락하고 싶다면';
       boxContents5[3].textContent = 'Resume';
+
+      boxContents5[0].addEventListener('click' , () => {
+        root.removeChild(root.children[0]);
+        contactPageMaker();
+      });
   
     functionObj.size(pageBox, '25%', '5%');
     functionObj.flex(pageBox,'space-evenly', 'center');

@@ -1,76 +1,84 @@
 import { functionObj } from "./function_obj.js";
 import { colorArr } from "./array.js";
-import { root, mobileWidth, tabletWidth, desktopWidth, somedayText1, somedayText2} from "./const.js";
+import { root, mobileWidth, tabletWidth, desktopWidth, contactText} from "./const.js";
 import { bookcoverMaker } from "./bookcover_page_mobile.js";
-import { project2PageMaker } from "./project2_page_mobile.js";
-import { tabletVerSomedayPage } from "./someday_page_tablet.js";
-import { contactPageMaker } from "./contact_page_mobile.js";
+import { somedayPageMaker } from "./someday_page_mobile.js";
+import { tabletVerContactPage } from "./contact_page_tablet.js";
+import { endPageMaker } from "./end_page_mobile.js";
 
-export function somedayPageMaker(){
+export function contactPageMaker(){
   if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){
 
     functionObj.createElement('div', root);
     const container = root.children[0];
     functionObj.container(container, '95%' , '95%');
 
-    for(let i = 0; i< 3; i++){
+    for(let i = 0; i< 4; i++){
       functionObj.createElement('div', container);
       container.children[i].style.width = '100%';
       functionObj.flex(container.children[i], 'space-evenly', 'center', 'column');
     }
-
+    
     let contentBox = container.children;
-    contentBox[0].style.height = '50%';
-    contentBox[1].style.height = '40%';
+    contentBox[0].style.height = '40%';
+    contentBox[1].style.height = '30%';
+    contentBox[2].style.height = '15%';
 
-    for(let i = 0; i<4; i++){
+    for(let i = 0 ; i<3; i++){
       functionObj.createElement('div', contentBox[0]);
     }
 
     let topBox = contentBox[0].children;
-
     functionObj.iAmPageTextBox(topBox[0], '10%');
-    topBox[0].style.paddingLeft = '1vh';
     functionObj.font(topBox[0], '1.5rem', '550');
-    topBox[0].textContent = '4. Some day I...';
+    topBox[1].style.paddingLeft = '1vh';
+    topBox[0].textContent = '5. Contact me';
 
     functionObj.iAmPageTextBox(topBox[1], '8%');
     functionObj.font(topBox[1], '1rem', '500');
     topBox[1].style.paddingLeft = '1vh';
-    topBox[1].textContent = '언젠가 나는 하고 싶습니다.';
+    topBox[1].textContent = '그러니까 나는';
 
     functionObj.iAmPageTextBox(topBox[2], '35%');
     functionObj.font(topBox[2], '0.8rem', '500');
     topBox[2].style.paddingLeft = '1.5vh';
     topBox[2].style.lineHeight = '180%';
     topBox[2].style.textAlign = 'justify';
-    topBox[2].innerHTML = somedayText1;
+    topBox[2].innerHTML = contactText;
 
-    functionObj.boxStyle(topBox[3], '45%', '35%', colorArr[0]);
-    functionObj.position(topBox[3], 'relative', '-10%', '2%');
-
-    for(let i = 0; i<3; i++){
+    for(let i = 0 ; i<5; i++){
       functionObj.createElement('div', contentBox[1]);
+      let middleBox = contentBox[1].children;
+      for(let i = 0; i < middleBox.length-1; i++){
+        functionObj.iAmPageTextBox(middleBox[i], '10%');
+        functionObj.font(middleBox[i], '1rem', '500');
+        middleBox[i].style.paddingLeft = '1vh';
+      }
     }
-    let bottomBox = contentBox[1].children;
 
-    functionObj.iAmPageTextBox(bottomBox[0], '8%');
-    functionObj.font(bottomBox[0], '1rem', '500');
-    bottomBox[0].style.paddingLeft = '1vh';
-    bottomBox[0].textContent = '나의 최종 꿈은 ...';
+    contentBox[1].children[0].textContent = 'If you contact to me';
+    contentBox[1].children[1].textContent = 'E-mail : hello@contact.com';
+    contentBox[1].children[2].textContent = 'mobile : 010-1234-5678';
+    contentBox[1].children[3].textContent = 'Instargram';
+    
+    functionObj.boxStyle(contentBox[1].children[4], '25vw', '25vw', colorArr[0]);
+    functionObj.position(contentBox[1].children[4], 'relative', '-30%', '2%');
 
-    functionObj.iAmPageTextBox(bottomBox[1], '35%');
-    functionObj.font(bottomBox[1], '0.8rem', '500');
-    bottomBox[1].style.paddingLeft = '1.5vh';
-    bottomBox[1].style.lineHeight = '180%';
-    bottomBox[1].style.textAlign = 'justify';
-    bottomBox[1].innerHTML = somedayText2;
+    for(let i = 0 ; i<2; i++){
+      functionObj.createElement('div', contentBox[2]);
+    }
+    
+    functionObj.iAmPageTextBox(contentBox[2].children[0], '40%');
+    contentBox[2].children[0].textContent = 'Resume';
+    contentBox[2].children[0].style.paddingLeft = '1vh';
 
-    functionObj.boxStyle(bottomBox[2], '45%', '45%', colorArr[0]);
-    functionObj.position(bottomBox[2], 'relative', '10%', '2%');
+    functionObj.borderRound(contentBox[2].children[1], '25%', '20%', '20px');
+    contentBox[2].children[1].textContent = '이력서 보기';
+    functionObj.font(contentBox[2].children[1], '0.8rem', '500');
+    functionObj.position(contentBox[2].children[1], 'relative', '-32%', '-5%');
+    contentBox[2].children[1].style.cursor = 'pointer';
 
-
-    const pageBox = contentBox[2];
+    const pageBox = contentBox[3];
     functionObj.size(pageBox, '25%', '5%');
     functionObj.flex(pageBox,'space-evenly', 'center');
     functionObj.position(pageBox, 'absolute', '35%' , '95%');
@@ -98,13 +106,13 @@ export function somedayPageMaker(){
 
     leftBtn.addEventListener('click', ()=> {
       root.removeChild(root.children[0]);
-      project2PageMaker();
+      somedayPageMaker();
     });
 
     rightBtn.addEventListener('click', ()=> {
       root.removeChild(root.children[0]);
-      contactPageMaker();
+      endPageMaker();
     });
   }
-  tabletVerSomedayPage();
+  tabletVerContactPage();
 }

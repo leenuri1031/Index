@@ -6,6 +6,7 @@ import { tabletVerBookcover } from "./bookcover_page_tablet.js";
 import { tabletVerNowPage } from "./now_I_am_page_tablet.js";
 import { tabletVerProject1Page } from "./project1_page_tablet.js";
 import { tabletVerSomedayPage } from "./someday_page_tablet.js";
+import { tabletVerContactPage } from "./contact_page_tablet.js";
 
 
 export function tabletVerContent(){
@@ -148,6 +149,11 @@ export function tabletVerContent(){
     boxContents5[1].textContent = '그러니까 나는';
     boxContents5[2].textContent = '연락하고 싶다면';
     boxContents5[3].textContent = 'Resume';
+
+    boxContents5[0].addEventListener('click' , () => {
+      root.removeChild(root.children[0]);
+      tabletVerContactPage();
+    });
 
     for(let i = 0; i< 3; i++){
       functionObj.createElement('div', pageBox);

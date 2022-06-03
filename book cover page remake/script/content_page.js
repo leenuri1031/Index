@@ -1,3 +1,3 @@
-import { contentPageMaker } from "../module/content_page_mobile.js";
+import { contactPageMaker } from "../module/contacct_page_mobile.js";
 
-contentPageMaker();
+contactPageMaker();

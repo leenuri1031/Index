@@ -3,6 +3,7 @@ import { colorArr } from "./array.js";
 import { root, mobileWidth, tabletWidth, desktopWidth, somedayText1, somedayText2} from "./const.js";
 import { tabletVerBookcover } from "./bookcover_page_tablet.js";
 import { tabletVerProject2Page } from "./project2_page_tablet.js";
+import { tabletVerContactPage } from "./contact_page_tablet.js";
 
 export function tabletVerSomedayPage(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === false){
@@ -100,5 +101,9 @@ export function tabletVerSomedayPage(){
       tabletVerProject2Page();
     });
 
+    rightBtn.addEventListener('click', ()=> {
+      root.removeChild(root.children[0]);
+      tabletVerContactPage();
+    });
   }
 }
