@@ -8,12 +8,11 @@ import { tabletVerIllust } from "./illust_page_tablet.js";
 export const tabletVerBookcover = function tabletPage(){
   
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === false){
-    console.log('tablet');
+    // console.log('tablet');
   
     functionObj.createElement('div',root);
     const container = root.children[0];
   
-    
     functionObj.container(container, '95%' , '95%');
     container.style.border = '1px dotted gray';
     for(let i = 0; i< 2; i++){
