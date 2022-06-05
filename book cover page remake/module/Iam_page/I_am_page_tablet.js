@@ -1,9 +1,9 @@
-import { functionObj } from "./function_obj.js";
-import { colorArr } from "./array.js";
-import { root, mobileWidth, tabletWidth, desktopWidth, textIAm, textIDid, textILike } from "./const.js";
-import { tabletVerNowPage } from "./now_I_am_page_tablet.js";
-import { tabletVerContent } from "./content_page_tablet.js";
-import { tabletVerBookcover } from "./bookcover_page_tablet.js";
+import { functionObj } from "../basic/function_obj.js";
+import { colorArr } from "../basic/array.js";
+import { root, mobileWidth, tabletWidth, desktopWidth, textIAm, textIDid, textILike } from "../basic/const.js";
+import { tabletVerNowPage } from "../now_I_page/now_I_am_page_tablet.js";
+import { tabletVerContent } from "../content_page/content_page_tablet.js";
+import { tabletVerBookcover } from "../bookcover_page/bookcover_page_tablet.js";
 
 
 

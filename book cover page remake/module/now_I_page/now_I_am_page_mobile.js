@@ -1,10 +1,11 @@
-import { functionObj } from "./function_obj.js";
-import { colorArr } from "./array.js";
-import { root, mobileWidth, tabletWidth, desktopWidth, nowI1, nowI2} from "./const.js";
+import { functionObj } from "../basic/function_obj.js";
+import { colorArr } from "../basic/array.js";
+import { root, mobileWidth, tabletWidth, desktopWidth, nowI1, nowI2} from "../basic/const.js";
 import { tabletVerNowPage } from "./now_I_am_page_tablet.js";
-import { bookcoverMaker } from "./bookcover_page_mobile.js";
-import { iAmPageMaker } from "./I_am_page_mobile.js";
-import { project1PageMaker } from "./project1_page_mobile.js";
+import { bookcoverMaker } from "../bookcover_page/bookcover_page_mobile.js";
+import { iAmPageMaker } from "../Iam_page/I_am_page_mobile.js";
+import { project1PageMaker } from "../project_page/project1_page_mobile.js";
+
 
 export function nowIPageMaker(){
   if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){

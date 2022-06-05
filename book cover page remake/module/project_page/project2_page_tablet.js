@@ -1,9 +1,9 @@
-import { functionObj } from "./function_obj.js";
-import { colorArr } from "./array.js";
-import { root, mobileWidth, tabletWidth, desktopWidth, project2Text} from "./const.js";
-import { tabletVerBookcover } from "./bookcover_page_tablet.js";
+import { functionObj } from "../basic/function_obj.js";
+import { colorArr } from "../basic/array.js";
+import { root, mobileWidth, tabletWidth, desktopWidth, project2Text} from "../basic/const.js";
+import { tabletVerBookcover } from "../bookcover_page/bookcover_page_tablet.js";
 import { tabletVerProject1Page } from "./project1_page_tablet.js";
-import { tabletVerSomedayPage } from "./someday_page_tablet.js";
+import { tabletVerSomedayPage } from "../someday_page/someday_page_tablet.js";
 
 
 export function tabletVerProject2Page(){

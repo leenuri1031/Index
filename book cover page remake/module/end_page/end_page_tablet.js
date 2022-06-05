@@ -1,8 +1,8 @@
-import { functionObj } from "./function_obj.js";
-import { colorArr } from "./array.js";
-import { root, mobileWidth, tabletWidth, desktopWidth} from "./const.js";
-import { tabletVerBookcover } from "./bookcover_page_tablet.js";
-import { tabletVerContactPage } from "./contact_page_tablet.js";
+import { colorArr } from "../basic/array.js";
+import { functionObj } from "../basic/function_obj.js";
+import { root, mobileWidth, tabletWidth, desktopWidth } from "../basic/const.js";
+import { tabletVerBookcover } from "../bookcover_page/bookcover_page_tablet.js";
+import { tabletVerContactPage } from "../contact_page/contact_page_tablet.js";
 
 export function tabletVerEndPage(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === false){

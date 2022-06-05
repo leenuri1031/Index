@@ -1,10 +1,10 @@
-import { functionObj } from "./function_obj.js";
-import { colorArr } from "./array.js";
-import { root, mobileWidth, tabletWidth, desktopWidth, contactText} from "./const.js";
-import { bookcoverMaker } from "./bookcover_page_mobile.js";
-import { somedayPageMaker } from "./someday_page_mobile.js";
+import { functionObj } from "../basic/function_obj.js";
+import { colorArr } from "../basic/array.js";
+import { root, mobileWidth, tabletWidth, desktopWidth, contactText} from "../basic/const.js";
+import { bookcoverMaker } from "../bookcover_page/bookcover_page_mobile.js";
+import { somedayPageMaker } from "../someday_page/someday_page_mobile.js";
 import { tabletVerContactPage } from "./contact_page_tablet.js";
-import { endPageMaker } from "./end_page_mobile.js";
+import { endPageMaker } from "../end_page/end_page_mobile.js";
 
 export function contactPageMaker(){
   if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){

@@ -1,5 +1,5 @@
-import { root, boolean } from "./const.js";
-import { functionObj } from "./function_obj.js";
+import { root, boolean } from "../basic/const.js";
+import { functionObj } from "../basic/function_obj.js";
 
 export function sectionPageLoop (){
   if(boolean === true){

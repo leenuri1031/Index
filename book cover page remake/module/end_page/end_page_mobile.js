@@ -1,8 +1,8 @@
-import { functionObj } from "./function_obj.js";
-import { colorArr } from "./array.js";
-import { root, mobileWidth, tabletWidth, desktopWidth} from "./const.js";
-import { bookcoverMaker } from "./bookcover_page_mobile.js";
-import { contactPageMaker } from "./contact_page_mobile.js";
+import { colorArr } from "../basic/array.js";
+import { functionObj } from "../basic/function_obj.js";
+import { root, mobileWidth, tabletWidth, desktopWidth } from "../basic/const.js";
+import { bookcoverMaker } from "../bookcover_page/bookcover_page_mobile.js";
+import { contactPageMaker } from "../contact_page/contact_page_mobile.js";
 import { tabletVerEndPage } from "./end_page_tablet.js";
 
 export function endPageMaker(){

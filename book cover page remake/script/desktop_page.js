@@ -1,3 +1,3 @@
-import { desktopPageMaker } from "../module/desktop_main_page.js";
+import { desktopPageMaker } from "../module/desktop/desktop_main_page.js";
 
 desktopPageMaker();

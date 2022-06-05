@@ -75,12 +75,6 @@ export const functionObj = {
     target.style.alignItems = 'center';
     target.style.border = 'solid 1px gray';
     target.style.borderRadius = radius;
-  },
-
-  loopCreateEle : function loopCreateElement(value, length){
-    for(let i = value; i < length; i++){
-      
-    }
   }
 }
 

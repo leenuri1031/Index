@@ -1,26 +1,28 @@
-import { functionObj } from "./function_obj.js";
-import { colorArr } from "./array.js";
-import { root, mobileWidth, tabletWidth, desktopWidth, boolean } from "./const.js";
-import { tabletVerBookcover } from "./bookcover_page_tablet.js";
-import {illustPageMaker} from "./illust_page_mobile.js";
+import { functionObj } from "../basic/function_obj.js";
+import { colorArr } from "../basic/array.js";
+import {root, mobileWidth, tabletWidth, desktopWidth, boolean} from "../basic/const.js";
+import { tabletVerIllust } from "../illust_page/illust_page_tablet.js";
 
-// console.log(root);
 
-export function bookcoverMaker(){
-  if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){
-    // console.log('mobile');
+
+export const tabletVerBookcover = function tabletPage(){
+  
+  if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === false){
+    // console.log('tablet');
+  
     functionObj.createElement('div',root);
     const container = root.children[0];
-    functionObj.container(container, '100%' , '100%');
   
+    functionObj.container(container, '95%' , '95%');
+    container.style.border = '1px dotted gray';
     for(let i = 0; i< 2; i++){
       functionObj.createElement('div', container);
     }
-    
     const titleContainer = container.children[0];
     const writerContainer = container.children[1];
-  
-    functionObj.boxStyle(titleContainer, '80%', '55%', colorArr[0]);
+    // console.log(titleContainer);
+    // console.log(writerContainer);
+    functionObj.boxStyle(titleContainer, '60%', '45%', colorArr[0]);
     functionObj.flex(titleContainer, 'center', 'center','column');
   
     functionObj.createElement('h1', titleContainer);
@@ -30,7 +32,7 @@ export function bookcoverMaker(){
     titleContainer.children[0].style.marginBottom = '2vh';
     titleContainer.children[1].textContent = 'El mundo’s story';
   
-    functionObj.boxStyle(writerContainer, '50%', '25%', colorArr[0], '30%');
+    functionObj.boxStyle(writerContainer, '30%', '30%', colorArr[0], '30%');
     functionObj.position(writerContainer, 'relative','15%');
     functionObj.flex(writerContainer, 'center', 'center','column');
   
@@ -41,20 +43,14 @@ export function bookcoverMaker(){
     writerContainer.children[0].textContent = 'Written by El mundo';
     writerContainer.children[0].style.marginBottom = '2vh';
     writerContainer.children[1].textContent = 'Illust by El mundo';
-
-
     if(boolean === true){
       root.children[0].addEventListener('click', ()=>{
     // console.log(event);
     let container = root.children[0];
     // console.log(container);
     container.parentNode.removeChild(container);
-    illustPageMaker();
+    tabletVerIllust();
       });
     }
   } 
-  tabletVerBookcover();
 }
-
-
-
