@@ -1,4 +1,4 @@
-import {illustPageMaker} from "./illust_page_mobile.js";
+import {illustPageMaker} from "../module/illust_page/illust_page_mobile.js";
 
 
 illustPageMaker();
