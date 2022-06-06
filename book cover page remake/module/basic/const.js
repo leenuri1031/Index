@@ -8,6 +8,8 @@ export const boolean = true;
 
 export const container = root.childNodes[0];
 
+export const textIllust = 'If you’re curious about my story, </br>please read it to the end </br> even if you feel bored.';
+
 
 export const textIAm ='나는 이누리 입니다.</br>나는 El mundo이기도 합니다.</br>나는 1991년 10월 31일 生 입니다.</br>나는 대전 토박이입니다.';
 
@@ -28,3 +30,18 @@ export const somedayText1 ='언젠가 나는 다른 언어를 배워서 앞으�
 export const somedayText2 ='나는 새롭게 배우는 기술을 통해 전 세계와 소통할 수 있는 전 세계를 여행하며 일하는 웹디자이너, 웹퍼블리셔가 되는 것이 나의 최종 꿈 입니다.';
 
 export const contactText = '이 이야기는 여기서 끝이 아닙니다. </br> 그러니까 나는 이 이야기를 계속 써내려갈 것입니다. </br> 그래서 나는 배우는 것을 멈추지 않을 것입니다. </br> 100세시대에서 살아가는 사람으로서 배울 수 있는게 많이 있다는 것은 행운이라고 생각합니다. </br> 앞으로 어떤 내용의 이야기를 써내려갈지 지켜봐 주시면 감사하겠습니다. ';
+
+export const contentText1 = '나는 입니다.</br>나는 좋아합니다.</br>나는 했습니다.';
+
+export const contentText2 = '나는 지금 합니다.';
+
+export const contentText3 = '이것은 나의 프로젝트 입니다.</br>나는 이렇게 만들었습니다.</br>프로젝트';
+
+export const contentText4 = '언젠가 나는 하고싶습니다.</br>나의 최종 꿈은 ... 입니다.';
+export const contentText5 = '그러니까 나는</br>연락하고 싶다면</br>Resume';
+
+export const pcProjectText1 = '여행을 좋아하기때문에 여행과 관련한 콘텐츠를 만들고 싶었습니다. </br>나는 계획하는 것을 좋아하는데 모든 사람들이 그렇지않다는것을 알았습니다.</br> 그래서 이 프로젝트는 그런사람들에게 도움이 되고자 시작하게 되었습니다. </br> 실제 서비스를 하겠다는 마음가짐으로 시작하여 가상의 페르소나도 만들고, SWOT분석과 소비자 여정지도까지 고려해 가며 제작하였습니다.'; 
+
+export const pcProjectText2 = '컨텐츠의 주제가 일본여행 이기 때문에 일본하면 생각나는 ‘벚꽃’을 테마로 하였습니다.</br> 또한 정보를 제공해주는 콘텐츠로 정보전달의 목적에 충실할 수 있도록 익숙한 레이아웃 디자인을 선택하였습니다.';
+
+export const pcProject2Text ='두번째 프로젝트는 조금더 개인적인 작업물로 좋아하는가수에 대한 콘텐츠를 만들고 싶었습니다.</br> 좀더 많은 사람들이 그룹의 음악을 들어줬으면 하는 마음에서 시작하게된 작업이지만 개인적인 작업이어도 소비자 타겟을생각하고 반응 예측을 하며 진행하였습니다. </br> 그룹의 팬덤의 색을 테마로 하였고 생소할 수 있는 음악장르이기 때문에 소비자들의 호기심을 최대한 유발할 수있도록 많은 이미지와 영상을 배치 하였습니다.'

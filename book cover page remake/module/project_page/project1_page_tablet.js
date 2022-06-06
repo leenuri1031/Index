@@ -50,8 +50,8 @@ export function tabletVerProject1Page(){
       projectViewBox[1].children[i].style.cursor = 'pointer';
     }
 
-    projectViewBox[1].children[0].textContent = '작업과정 상세';
-    projectViewBox[1].children[1].textContent = '페이지 샘플';
+    projectViewBox[1].children[0].textContent = 'project process';
+    projectViewBox[1].children[1].textContent = 'page sample';
     projectViewBox[1].children[2].textContent = 'github';
 
     let titleText = contentContainers[0].children;

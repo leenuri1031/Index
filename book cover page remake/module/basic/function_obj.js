@@ -51,8 +51,8 @@ export const functionObj = {
     parent.insertBefore(tagName, tag);
   },
 
-  iAmPageTextBox : function textBoxStyle (target, h = '35%'){
-    target.style.width = '95%';
+  iAmPageTextBox : function textBoxStyle (target, h = '35%', w = '95%'){
+    target.style.width = w;
     target.style.height = h;
     target.style.display = 'flex';
     target.style.justifyContent = 'flex-start';
