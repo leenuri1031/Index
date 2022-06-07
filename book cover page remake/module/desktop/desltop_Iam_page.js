@@ -1,6 +1,7 @@
 import { functionObj } from "../basic/function_obj.js";
 import { colorArr } from "../basic/array.js";
 import { root, mobileWidth, tabletWidth, desktopWidth, textIAm, textIDid, textILike } from "../basic/const.js";
+import { pageMove } from "./desktop_page_function.js";
 
 export function pcVerIamPage(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === true){
@@ -59,8 +60,28 @@ export function pcVerIamPage(){
     functionObj.boxStyle(textBox[0].children[1], '150px', '150px', colorArr[0], '100%');
     functionObj.position(textBox[0].children[1], 'relative', '0%', '12%');
 
+    setInterval(function(){
+      textBox[0].children[1].animate([
+        {left : '0%'},
+        {left : '1%'},
+        {left : '0%'},
+        {left : '1%'},
+        {left : '0%'}
+    ], 2000);
+    },2000);
+
     functionObj.boxStyle(textBox[1].children[1], '200px', '200px', colorArr[0], '100%');
     functionObj.position(textBox[1].children[1], 'relative', '-15%', '12%');
+
+    setInterval(function(){
+      textBox[1].children[1].animate([
+        {left : '-15%'},
+        {left : '-16%'},
+        {left : '-15%'},
+        {left : '-16%'},
+        {left : '-15%'}
+    ], 2000);
+    },2000);
 
     for(let i = 0; i< 2; i++){
       functionObj.createElement('div', rightContainer);
@@ -83,6 +104,16 @@ export function pcVerIamPage(){
     rightTop[0].style.zIndex = 1;
 
     functionObj.boxStyle(rightTop[1], '180px', '180px', colorArr[0], '100%');
+    rightTop[1].style.position='relative';
+    setInterval(function(){
+      rightTop[1].animate([
+        {left : '0%'},
+        {left : '-1%'},
+        {left : '0%'},
+        {left : '-1%'},
+        {left : '0%'}
+    ], 2000);
+    },2000);
 
     for(let i = 0; i<2; i++){
         functionObj.createElement('div', rightTop[0]);
@@ -101,9 +132,31 @@ export function pcVerIamPage(){
     // console.log(rightBottom);
     functionObj.boxStyle(rightBottom[0], '200px', '200px', colorArr[0], '100%');
     functionObj.position(rightBottom[0], 'relative', '-5%', '-10%');
+    setInterval(function(){
+      rightBottom[0].animate([
+        {left : '-5%'},
+        {left : '-4%'},
+        {left : '-5%'},
+        {left : '-4%'},
+        {left : '-5%'}
+    ], 2000);
+    },2000);
+    
     functionObj.boxStyle(rightBottom[1], '150px', '150px', colorArr[0], '100%');
     functionObj.position(rightBottom[1], 'relative', '5%', '10%');
 
+    setInterval(function(){
+      rightBottom[1].animate([
+        {left : '5%'},
+        {left : '4%'},
+        {left : '5%'},
+        {left : '4%'},
+        {left : '5%'}
+    ], 2000);
+    },2000);
+
+    const sectionsPagesbottom = sections[2].children[1];
+    pageMove(sectionsPagesbottom, sections[3], sections[1]);
   }
 }
 

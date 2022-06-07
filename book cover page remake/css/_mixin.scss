@@ -44,4 +44,16 @@
   z-index: $zin;
 }
 
+.animation{
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
 
+@keyframes animation{
+  0%{top: 0px;} 
+  25%{top: 5px;} 
+  50%{top: 10px;}
+  75%{top: 5px;} 
+  100%{top: 0px;}
+}

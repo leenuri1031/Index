@@ -44,13 +44,43 @@ export function tabletVerIAm(){
     }
 
     functionObj.boxStyle(textBox[0].children[1], '22vw', '22vw', colorArr[0], '100%');
-    functionObj.position(textBox[0].children[1], 'absolute', '65%', '12%');
+    functionObj.position(textBox[0].children[1], 'absolute', '45%', '12%');
+    
+    setInterval(function(){
+      textBox[0].children[1].animate([
+        {left : '45%'},
+        {left : '46%'},
+        {left : '45%'},
+        {left : '46%'},
+        {left : '45%'}
+    ], 2000);
+    },2000);
 
-    functionObj.boxStyle(textBox[1].children[1], '30vw', '30vw', colorArr[0], '100%');
+    functionObj.boxStyle(textBox[1].children[1], '35vw', '35vw', colorArr[0], '100%');
     functionObj.position(textBox[1].children[1], 'absolute', '52%', '36%');
+
+    setInterval(function(){
+      textBox[1].children[1].animate([
+        {left : '52%'},
+        {left : '51%'},
+        {left : '52%'},
+        {left : '51%'},
+        {left : '52%'}
+    ], 2000);
+    },2000);
 
     functionObj.boxStyle(textBox[2].children[1], '20vw', '20vw', colorArr[0], '100%');
     functionObj.position(textBox[2].children[1], 'absolute', '60%', '75%');
+
+    setInterval(function(){
+      textBox[2].children[1].animate([
+        {left : '60%'},
+        {left : '61%'},
+        {left : '60%'},
+        {left : '61%'},
+        {left : '60%'}
+    ], 2000);
+    },2000);
 
     let textBoxContent = [textBox[0].children[0], textBox[1].children[0], textBox[2].children[0]];
 

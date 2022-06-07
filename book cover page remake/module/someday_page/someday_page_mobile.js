@@ -46,8 +46,18 @@ export function somedayPageMaker(){
     topBox[2].style.textAlign = 'justify';
     topBox[2].innerHTML = somedayText1;
 
-    functionObj.boxStyle(topBox[3], '45%', '35%', colorArr[0]);
+    functionObj.boxStyle(topBox[3], '45%', '35%', colorArr[0], '100%');
     functionObj.position(topBox[3], 'relative', '-10%', '2%');
+
+    setInterval(function(){
+      topBox[3].animate([
+        {left : '-10%'},
+        {left : '-11%'},
+        {left : '-10%'},
+        {left : '-11%'},
+        {left : '-10%'}
+    ], 2000);
+    },2000);
 
     for(let i = 0; i<3; i++){
       functionObj.createElement('div', contentBox[1]);
@@ -66,8 +76,18 @@ export function somedayPageMaker(){
     bottomBox[1].style.textAlign = 'justify';
     bottomBox[1].innerHTML = somedayText2;
 
-    functionObj.boxStyle(bottomBox[2], '45%', '45%', colorArr[0]);
+    functionObj.boxStyle(bottomBox[2], '45%', '45%', colorArr[0], '100%');
     functionObj.position(bottomBox[2], 'relative', '10%', '2%');
+
+    setInterval(function(){
+      bottomBox[2].animate([
+        {left : '10%'},
+        {left : '11%'},
+        {left : '10%'},
+        {left : '11%'},
+        {left : '10%'}
+    ], 2000);
+    },2000);
 
 
     const pageBox = contentBox[2];

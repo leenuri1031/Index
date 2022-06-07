@@ -1,6 +1,7 @@
 import { functionObj } from "../basic/function_obj.js";
 import { colorArr } from "../basic/array.js";
 import { root, mobileWidth, tabletWidth, desktopWidth, textIllust, contentText1, contentText2, contentText3, contentText4, contentText5} from "../basic/const.js";
+import { pageMove} from "./desktop_page_function.js";
 
 export function pcVerContentPage(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === true){
@@ -60,24 +61,48 @@ export function pcVerContentPage(){
       boxContents1[0].style.cursor = 'pointer';
       boxContents1[1].innerHTML = contentText1;
 
+      boxContents1[0].addEventListener('click', ()=> {
+        window.scrollTo({top : sections[2].offsetTop , behavior : "smooth"});
+      });
+      // contentPageMove(boxContents1, sections[2]);
+
       let boxContents2 = textContentBox[2].children;
       boxContents2[0].textContent = 'Now I am...';
       boxContents2[0].style.cursor = 'pointer';
       boxContents2[1].innerHTML = contentText2;
+
+      boxContents2[0].addEventListener('click', ()=> {
+        window.scrollTo({top : sections[3].offsetTop , behavior : "smooth"});
+      });
 
       let boxContents3 = textContentBox[3].children;
       boxContents3[0].textContent = 'This is my...';
       boxContents3[0].style.cursor = 'pointer';
       boxContents3[1].innerHTML = contentText3;
 
+      boxContents3[0].addEventListener('click', ()=> {
+        window.scrollTo({top : sections[3].offsetTop , behavior : "smooth"});
+      });
+
       let boxContents4 = textContentBox[4].children;
       boxContents4[0].textContent = 'Someday I...';
       boxContents4[0].style.cursor = 'pointer';
       boxContents4[1].innerHTML = contentText4;
 
+      boxContents4[0].addEventListener('click', ()=> {
+        window.scrollTo({top : sections[5].offsetTop , behavior : "smooth"});
+      });
+
       let boxContents5 = textContentBox[5].children;
       boxContents5[0].textContent = 'Contact me';
       boxContents5[0].style.cursor = 'pointer';
       boxContents5[1].innerHTML = contentText5;
+
+      boxContents5[0].addEventListener('click', ()=> {
+        window.scrollTo({top : sections[6].offsetTop , behavior : "smooth"});
+      });
+
+      const sectionsPagesbottom = sections[1].children[1];
+      pageMove(sectionsPagesbottom , sections[2] ,sections[0]);
   }
 }

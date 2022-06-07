@@ -1,6 +1,7 @@
 import { functionObj } from "../basic/function_obj.js";
 import { colorArr } from "../basic/array.js";
 import { root, mobileWidth, tabletWidth, desktopWidth, pcProjectText1, pcProjectText2 } from "../basic/const.js";
+import { pageMove } from "./desktop_page_function.js";
 
 export function pcVerProjectPage(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === true){
@@ -21,12 +22,11 @@ export function pcVerProjectPage(){
 
     for(let i = 0; i<3; i++){
       for(let i = 0; i<leftContainer.children.length; i++){
-      functionObj.createElement('div', leftContainer.children[i]);
+      functionObj.createElement('div', leftContainer.children[0]);
       }
     }
 
     let leftTop = leftContainer.children[0].children;
-    let leftBottom = leftContainer.children[1].children;
 
     functionObj.iAmPageTextBox(leftTop[0], '10%');
     functionObj.font(leftTop[0], '1rem', '550');
@@ -45,6 +45,14 @@ export function pcVerProjectPage(){
     leftTop[1].innerHTML = pcProjectText1;
     leftTop[2].innerHTML = pcProjectText2;
 
+    leftContainer.children[1].innerHTML = `
+    <div>프로젝트</div>
+    <div>page sample</div>
+    <div><a href = "https://github.com/leenuri1031/project-1.git" target="_blank">github</a></div>
+    `;
+
+    // console.log(leftContainer.children[1]);
+    let leftBottom = leftContainer.children[1].children;
     functionObj.iAmPageTextBox(leftBottom[0], '10%');
     functionObj.font(leftBottom[0], '1rem', '550');
     leftBottom[0].textContent = '프로젝트';
@@ -55,9 +63,6 @@ export function pcVerProjectPage(){
       functionObj.position(leftBottom[i], 'relative','-35%');
       leftBottom[i].style.cursor = 'pointer';
     }
-
-    leftBottom[1].textContent = 'page sample';
-    leftBottom[2].textContent = 'github';
 
 
     for(let i = 0; i< 3; i++){
@@ -94,5 +99,7 @@ export function pcVerProjectPage(){
       functionObj.boxStyle(event.target, '40%', '35%', colorArr[0]);
     });
 
+    const sectionsPagesbottom = sections[4].children[1];
+    pageMove(sectionsPagesbottom, sections[5], sections[3]);
   }
 }

@@ -55,8 +55,28 @@ export function nowIPageMaker(){
     }
 
     functionObj.position(imgBox.children[0], 'relative', '10%');
-    functionObj.position(imgBox.children[1], 'relative', '50%');
 
+    setInterval(function(){
+      imgBox.children[0].animate([
+        {left : '10%'},
+        {left : '11%'},
+        {left : '10%'},
+        {left : '11%'},
+        {left : '10%'}
+    ], 2000);
+    },2000);
+
+    functionObj.position(imgBox.children[1], 'relative', '50%');
+    
+    setInterval(function(){
+      imgBox.children[1].animate([
+        {left : '50%'},
+        {left : '49%'},
+        {left : '50%'},
+        {left : '49%'},
+        {left : '50%'}
+    ], 2000);
+    },2000);
 
     const pageBox = container.children[2];
     functionObj.size(pageBox, '25%', '5%');
