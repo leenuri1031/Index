@@ -46,7 +46,7 @@ export function somedayPageMaker(){
     topBox[2].style.textAlign = 'justify';
     topBox[2].innerHTML = somedayText1;
 
-    functionObj.boxStyle(topBox[3], '45%', '35%', colorArr[0], '100%');
+    functionObj.boxStyle(topBox[3], '150px', '150px', colorArr[0], '100%');
     functionObj.position(topBox[3], 'relative', '-10%', '2%');
 
     setInterval(function(){
@@ -76,7 +76,7 @@ export function somedayPageMaker(){
     bottomBox[1].style.textAlign = 'justify';
     bottomBox[1].innerHTML = somedayText2;
 
-    functionObj.boxStyle(bottomBox[2], '45%', '45%', colorArr[0], '100%');
+    functionObj.boxStyle(bottomBox[2], '150px', '150px', colorArr[0], '100%');
     functionObj.position(bottomBox[2], 'relative', '10%', '2%');
 
     setInterval(function(){
