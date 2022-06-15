@@ -1,7 +1,7 @@
 import { functionObj } from "../basic/function_obj.js";
 import { colorArr } from "../basic/array.js";
 import { root, mobileWidth, tabletWidth, desktopWidth, contactText} from "../basic/const.js";
-
+import { pageMove } from "./desktop_page_function.js";
 
 export function pcVerContactPage(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === true){
@@ -93,5 +93,7 @@ export function pcVerContactPage(){
     functionObj.createElement('h1', rightContainer.children[0]);
     rightContainer.children[0].children[0].textContent = 'The END?';
 
+    const sectionsPagesbottom = sections[6].children[1];
+    pageMove(sectionsPagesbottom, sections[0], sections[5]);
   }
 }

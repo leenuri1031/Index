@@ -6,7 +6,7 @@ import { bookcoverMaker } from "../bookcover_page/bookcover_page_mobile.js";
 import { contentPageMaker } from "../content_page/content_page_mobile.js";
 import { nowIPageMaker } from "../now_I_page/now_I_am_page_mobile.js";
 
-
+// console.dir(window.location);
 
 export function iAmPageMaker(){
   if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){
@@ -42,13 +42,44 @@ export function iAmPageMaker(){
     }
 
     functionObj.boxStyle(textBox[0].children[1], '30vw', '30vw', colorArr[0], '100%');
-    functionObj.position(textBox[0].children[1], 'absolute', '65%', '12%');
+    functionObj.position(textBox[0].children[1], 'absolute', '60%', '12%');
+    
+    // console.dir(textBox[0].children[1]);
+    setInterval(function(){
+      textBox[0].children[1].animate([
+        {left : '60%'},
+        {left : '61%'},
+        {left : '60%'},
+        {left : '61%'},
+        {left : '60%'}
+    ], 2000);
+    },2000);
 
     functionObj.boxStyle(textBox[1].children[1], '35vw', '35vw', colorArr[0], '100%');
     functionObj.position(textBox[1].children[1], 'absolute', '52%', '36%');
 
+    setInterval(function(){
+      textBox[1].children[1].animate([
+        {left : '52%'},
+        {left : '51%'},
+        {left : '52%'},
+        {left : '51%'},
+        {left : '52%'}
+    ], 2000);
+    },2000);
+
     functionObj.boxStyle(textBox[2].children[1], '28vw', '28vw', colorArr[0], '100%');
     functionObj.position(textBox[2].children[1], 'absolute', '60%', '75%');
+
+    setInterval(function(){
+      textBox[2].children[1].animate([
+        {left : '60%'},
+        {left : '61%'},
+        {left : '60%'},
+        {left : '61%'},
+        {left : '60%'}
+    ], 2000);
+    },2000);
 
     // console.dir(textBox[0].children);
     let textBoxContent = [textBox[0].children[0], textBox[1].children[0], textBox[2].children[0]];

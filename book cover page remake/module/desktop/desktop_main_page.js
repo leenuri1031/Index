@@ -1,7 +1,7 @@
 import { functionObj } from "../basic/function_obj.js";
 import { colorArr } from "../basic/array.js";
 import { root, mobileWidth, tabletWidth, desktopWidth} from "../basic/const.js";
-import { sectionPageLoop, sectionChildLoop, pageBoxLoop, sectionChildStyle,pageBoxText } from "./desktop_page_function.js";
+import { sectionPageLoop, sectionChildLoop, pageBoxLoop, sectionChildStyle,pageBoxText, pageMove } from "./desktop_page_function.js";
 import { pcVerContentPage } from "./desktop _content_page.js";
 import { pcVerIamPage } from "./desltop_Iam_page.js";
 import { pcVerNowIPage } from "./desktop_now_page.js";
@@ -23,18 +23,24 @@ export function desktopPageMaker(){
     pageBoxLoop();
     sectionChildStyle();
     pageBoxText();
-
+    
     const sections = root.children;
     // console.log(sections);
     let coverPage  = sections[0].children[0].children;
-    // console.log(coverPage);
+    // // console.log(coverPage);
 
-    for(let i = 0; i<2; i++){
+    // coverPage[0].innerHTML = `
+    // <img src="../img/paper.png"></img>
+    // <p>Qué será será</p>
+    // <p>El mundo’s story</p>
+    // `;
+      for(let i = 0; i<2; i++){
       functionObj.createElement('div', coverPage[i]);
       }
 
-    functionObj.boxStyle(coverPage[0].children[0], '80%', '80%', colorArr[0]);
     
+    functionObj.size(coverPage[0].children[0], '80%', '80%');
+    // console.dir(coverPage[0].children[0]);
     let coverImgBox = coverPage[0].children[0];
     functionObj.flex(coverImgBox, 'center', 'center', 'column');
     
@@ -48,29 +54,34 @@ export function desktopPageMaker(){
     coverImgBox.children[1].textContent = 'El mundo’s story';
     functionObj.font(coverImgBox.children[1], '1.1rem', 550);
 
-    // console.log(coverPage[1].children[0]);
     for(let i = 0; i<3; i++){
-    functionObj.createElement('div', coverPage[1].children[0]); 
-    functionObj.size(coverPage[1].children[0], '80%', '80%');   
-    functionObj.flex(coverPage[1].children[0], 'center', 'center', 'column');
-    }
-
-    let coverRightContent = coverPage[1].children[0].children;
-    // console.log(coverRightContent);
-
-    functionObj.boxStyle(coverRightContent[0], '50%', '60%', colorArr[0], '100px');
-    coverRightContent[0].style.marginBottom = '5vh';
-
-    for(let i = 1; i<3; i++){
-      functionObj.container(coverRightContent[i], '40%', '10%');
-      functionObj.font(coverRightContent[i], '1rem', 550);
+      functionObj.createElement('div', coverPage[1].children[0]); 
+      functionObj.size(coverPage[1].children[0], '80%', '80%');   
+      functionObj.flex(coverPage[1].children[0], 'center', 'center', 'column');
       }
-      coverRightContent[1].textContent = 'Written by El mundo';
-      coverRightContent[2].textContent = 'Illust by El mundo';
+  
+      let coverRightContent = coverPage[1].children[0].children;
+      // console.log(coverRightContent);
+  
+      functionObj.boxStyle(coverRightContent[0], '50%', '60%', colorArr[0], '100px');
+      coverRightContent[0].style.marginBottom = '5vh';
+  
+      for(let i = 1; i<3; i++){
+        functionObj.container(coverRightContent[i], '40%', '10%');
+        functionObj.font(coverRightContent[i], '1rem', 550);
+        }
+        coverRightContent[1].textContent = 'Written by El mundo';
+        coverRightContent[2].textContent = 'Illust by El mundo';
+  
+      // console.log(root.offsetHeight);
+      // console.log(sections[0].offsetHeight);
+      // console.log(window.scrollY);    // 수직 scroll 한 값 
 
+      const sectionsPagesbottom = sections[0].children[1];
+      pageMove(sectionsPagesbottom, sections[1] ,sections[6]);
   }
   pcVerContentPage();
-  pcVerIamPage();
+  pcVerIamPage(); 
   pcVerNowIPage();
   pcVerProjectPage();
   pcVerSomedayPage();

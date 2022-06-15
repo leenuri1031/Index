@@ -1,6 +1,7 @@
 import { functionObj } from "../basic/function_obj.js";
 import { colorArr } from "../basic/array.js";
 import { root, mobileWidth, tabletWidth, desktopWidth, nowI1, nowI2 } from "../basic/const.js";
+import { pageMove } from "./desktop_page_function.js";
 
 export function pcVerNowIPage(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === true){
@@ -32,6 +33,16 @@ export function pcVerNowIPage(){
     functionObj.boxStyle(topBox[0].children[1], '180px', '180px', colorArr[0], '100%');
     functionObj.position(topBox[0].children[1], 'relative', '-1%', '-25%');
 
+    setInterval(function(){
+      topBox[0].children[1].animate([
+        {left : '-1%'},
+        {left : '0%'},
+        {left : '-1%'},
+        {left : '0%'},
+        {left : '-1%'}
+    ], 2000);
+    },2000);
+
     for(let i = 0; i<3; i++){
       functionObj.createElement('p', topBox[0].children[0]);
     }
@@ -58,8 +69,28 @@ export function pcVerNowIPage(){
     let bottomImgBox = leftContainer.children[2].children;
     functionObj.boxStyle(bottomImgBox[0], '200px', '200px', colorArr[0], '100%');
     functionObj.position(bottomImgBox[0], 'relative', '5%');
+
+    setInterval(function(){
+      bottomImgBox[0].animate([
+        {left : '5%'},
+        {left : '4%'},
+        {left : '5%'},
+        {left : '4%'},
+        {left : '5%'}
+    ], 2000);
+    },2000);
+
     functionObj.boxStyle(bottomImgBox[1], '150px', '150px', colorArr[0], '100%');
     functionObj.position(bottomImgBox[1], 'relative', '25%', '-25%');
+    setInterval(function(){
+      bottomImgBox[1].animate([
+        {left : '25%'},
+        {left : '26%'},
+        {left : '25%'},
+        {left : '26%'},
+        {left : '25%'}
+    ], 2000);
+    },2000);
 
     // console.log(rightContainer);
     for(let i = 0; i<2; i++){
@@ -107,6 +138,7 @@ export function pcVerNowIPage(){
       functionObj.boxStyle(event.target, '40%', '35%', colorArr[0]);
     });
 
-
+    const sectionsPagesbottom = sections[3].children[1];
+    pageMove(sectionsPagesbottom, sections[4], sections[2]);
   }
 }

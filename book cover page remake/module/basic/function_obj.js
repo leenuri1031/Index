@@ -75,8 +75,21 @@ export const functionObj = {
     target.style.alignItems = 'center';
     target.style.border = 'solid 1px gray';
     target.style.borderRadius = radius;
-  }
+  },
+
+  // moving : function interval(target, value1, value2, value3,value4, value5,){
+  //   setInterval(function(){
+  //     target.animate([
+  //       {left : value1},
+  //       {left : value2},
+  //       {left : value3},
+  //       {left : value4},
+  //       {left : value5}
+  //     ], 1000);
+  //   }, 1000);
+  // }
 }
+
 
 
 

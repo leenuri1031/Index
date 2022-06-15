@@ -1,6 +1,7 @@
 import { functionObj } from "../basic/function_obj.js";
 import { colorArr } from "../basic/array.js";
 import { root, mobileWidth, tabletWidth, desktopWidth, pcProject2Text, somedayText1, somedayText2} from "../basic/const.js";
+import { pageMove } from "./desktop_page_function.js";
 
 export function pcVerSomedayPage(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === true){
@@ -20,23 +21,27 @@ export function pcVerSomedayPage(){
     for(let i = 0 ; i<2; i++){
       functionObj.createElement('div', leftContainer.children[0]);
     }
-    for(let i = 0 ; i<3; i++){
-      functionObj.createElement('div', leftContainer.children[1]);
-    }
 
     let leftTop = leftContainer.children[0].children;
-    let leftBottom = leftContainer.children[1].children;
-
+    
     functionObj.iAmPageTextBox(leftTop[0], '10%');
     functionObj.font(leftTop[0], '1rem', '550');
     leftTop[0].textContent = '나는 이렇게 만들었습니다.';
-
+    
     functionObj.iAmPageTextBox(leftTop[1], '80%', '92%');
     functionObj.font(leftTop[1], '0.8rem', '500');
     leftTop[1].style.paddingLeft = '2vh';
     leftTop[1].style.lineHeight = '200%';
     leftTop[1].style.textAlign = 'justify';
     leftTop[1].innerHTML = pcProject2Text;
+    
+    leftContainer.children[1].innerHTML = `
+    <div>프로젝트</div>
+    <div>page sample</div>
+    <div><a href = "https://github.com/leenuri1031/project-2.git" target="_blank">github</a></div>
+    `;
+
+    let leftBottom = leftContainer.children[1].children;
 
     functionObj.iAmPageTextBox(leftBottom[0], '10%');
     functionObj.font(leftBottom[0], '1rem', '550');
@@ -48,9 +53,6 @@ export function pcVerSomedayPage(){
       functionObj.position(leftBottom[i], 'relative','-35%');
       leftBottom[i].style.cursor = 'pointer';
     }
-
-    leftBottom[1].textContent = 'page sample';
-    leftBottom[2].textContent = 'github';
 
     functionObj.container(rightContainer.children[0], '90%', '55%');
     functionObj.container(rightContainer.children[1], '90%', '30%', 'row');
@@ -103,7 +105,28 @@ export function pcVerSomedayPage(){
     functionObj.position(rightBottom[0], 'relative', '-5%', '5%');
     functionObj.position(rightBottom[1], 'relative', '5%', '-10%');
 
+    setInterval(function(){
+      rightBottom[0].animate([
+        {left : '-5%'},
+        {left : '-4%'},
+        {left : '-5%'},
+        {left : '-4%'},
+        {left : '-5%'}
+    ], 2000);
+    },2000);
+
+    setInterval(function(){
+      rightBottom[1].animate([
+        {left : '5%'},
+        {left : '4%'},
+        {left : '5%'},
+        {left : '4%'},
+        {left : '5%'}
+    ], 2000);
+    },2000);
 
 
+    const sectionsPagesbottom = sections[5].children[1];
+    pageMove(sectionsPagesbottom, sections[6], sections[4]);
   }
 }

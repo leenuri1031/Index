@@ -75,6 +75,47 @@ export function pageBoxText(){
   }
 }
 
+export function pageMove(target, nextPage, prePage){
+  if(boolean === true){
+    const sections = root.children;
+
+    // console.log(sectionsPagesbottom);
+      let leftBtn = target.children[0];
+      let pageBtn = target.children[1];
+      let rightBtn = target.children[2];
+
+      // console.dir(rightBtn);
+      // console.log(rightBtn.offsetTop);
+
+      let heightValue = 0;
+      let switchValue = true;
+      rightBtn.addEventListener('click', ()=> {
+        if(switchValue === true){
+          heightValue = heightValue + nextPage.offsetTop;
+          window.scrollTo({top : heightValue , behavior : "smooth"});
+          if(heightValue >= 5778){
+            switchValue = false;
+          };
+        } else{
+          heightValue = 0;
+          window.scrollTo({top : heightValue , behavior : "smooth"});
+          switchValue = true;
+        }
+      });
+
+      pageBtn.addEventListener('click', ()=>{
+        window.scrollTo({top : 0 , behavior : "smooth"});
+      });
+
+      leftBtn.addEventListener('click', ()=> {
+        window.scrollTo({top : prePage.offsetTop , behavior : "smooth"});
+      });
+  }
+}
+
+
+
+
     // root.style.height = '700vh';
 
     // for(let i = 0; i < 7; i++){
