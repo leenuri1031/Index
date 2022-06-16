@@ -1,9 +1,10 @@
 import { functionObj } from "../basic/function_obj.js";
 import { colorArr, imgUrl } from "../basic/array.js";
-import { root,header, main, footer, mobileWidth, tabletWidth, desktopWidth, boolean } from "../basic/const.js";
-import {mainSection}  from "./middle_section.js";
-import { mainSectionTopStyle } from "./middle_section_style_1.js";
-import { mainSectionBottomStyle } from "./middle_section_style_2.js";
+import { header,  mobileWidth, tabletWidth, desktopWidth, boolean } from "../basic/const.js";
+import {mainSection}  from "./middle_section_markup.js";
+import { footerMenu } from "./bottom_section_markup.js";
+import { tabletMain } from "../main_page_tablet/main_page_tablet.js";
+import { pcMain } from "../main_page_pc/main_page_pc.js";
 
 export function  mobileMain(){
   if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){
@@ -21,9 +22,9 @@ export function  mobileMain(){
     functionObj.position(title, 'absolute', '24%', '10%');
 
     mainSection();
-    mainSectionTopStyle();
-    mainSectionBottomStyle();
+    footerMenu();
     // console.dir(main);
-
   }
+  tabletMain();
+  pcMain();
 }
