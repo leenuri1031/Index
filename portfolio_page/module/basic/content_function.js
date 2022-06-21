@@ -9,7 +9,7 @@ function innerHTMLContent(){
         <p>나는 했습니다.</p>
       </div>
       <div>
-        <h3>Now I'm</h3>
+        <h3>Now I...</h3>
         <p>나는 지금 합니다.</p>
       </div>
       <div>

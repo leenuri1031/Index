@@ -23,7 +23,7 @@ export function iAmPageMaker(){
 
     // let textTitle = container.children[0];
     functionObj.iAmPageTextBox(container.children[0].children[0], '5%');
-    sections[0].style.color = colorArr[5];
+    container.children[0].children[0].style.color = colorArr[5];
 
     functionObj.iAmPageTextBox(sections[0], '20%');
     functionObj.iAmPageTextBox(sections[1], '30%');

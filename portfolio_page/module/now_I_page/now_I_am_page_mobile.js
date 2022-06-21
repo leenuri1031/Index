@@ -5,101 +5,68 @@ import { tabletVerNowPage } from "./now_I_am_page_tablet.js";
 import { bookcoverMaker } from "../bookcover_page/bookcover_page_mobile.js";
 import { iAmPageMaker } from "../Iam_page/I_am_page_mobile.js";
 import { project1PageMaker } from "../project_page/project1_page_mobile.js";
-
+import innerHTMLNowI from "../basic/now_I_function.js";
+import move from "../basic/animate.js";
 
 export function nowIPageMaker(){
   if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){
-
     functionObj.createElement('div', root);
 
     const container = root.children[0];
     functionObj.container(container, '95%' , '95%');
+    container.innerHTML = innerHTMLNowI(nowI1, nowI2);
+    // console.log(container.children[0].children);
+    functionObj.container(container.children[0], '95%', '90%');
 
-    for(let i = 0; i< 3; i++){
-      functionObj.createElement('div', container);
+    const sections = container.children[0].children;
+
+    functionObj.container(sections[0], '100%', '60%');
+    functionObj.container(sections[1], '100%', '35%');
+
+    // console.log(sections[0].children);
+    for(let i = 0 ; i<2; i++){
+      functionObj.iAmPageTextBox(sections[0].children[i], '7%');
+      sections[0].children[i].style.color = colorArr[5];
     }
+    sections[0].children[1].style.paddingLeft = '1vh';
 
-    let textBox = container.children[0];
-    functionObj.container(textBox, '95%','50%');
+    const textContent = Array.from(document.getElementsByTagName('p'));
 
-    for(let i = 0; i< 4; i++){
-      functionObj.createElement('div', textBox);
+    for(let i = 0; i<textContent.length; i++){
+      functionObj.iAmPageTextBox(textContent[i], '35%', '97%');
+      functionObj.font(textContent[i], '0.8rem', '500');
+      textContent[i].style.paddingLeft = '2vh';
+      textContent[i].style.lineHeight = '200%';
+      textContent[i].style.textAlign = 'justify';
+      textContent[i].style.color = colorArr[4];
     }
-
-    let titleTextPart = [textBox.children[0], textBox.children[1]];
-    let commonTextPart = [textBox.children[2],textBox.children[3]];
-
-    for(let i = 0; i<2; i++){
-      functionObj.iAmPageTextBox(titleTextPart[i], '7%');
-      functionObj.iAmPageTextBox(commonTextPart[i], '38%');
-      functionObj.font(commonTextPart[i], '0.8rem', '500');
-      commonTextPart[i].style.paddingLeft = '1vh';
-      commonTextPart[i].style.lineHeight = '200%';
-      commonTextPart[i].style.textAlign = 'justify';
-    }
-
-    functionObj.font(titleTextPart[0], '1.5rem', '550');
-    titleTextPart[0].textContent = '2. Now I...'
-    functionObj.font(titleTextPart[1], '1rem', '500');
-    titleTextPart[1].style.paddingLeft = '0.5vh';
-    titleTextPart[1].textContent = '나는 지금 합니다.'
-    commonTextPart[0].innerHTML = nowI1;
-    commonTextPart[1].innerHTML = nowI2;
-
-    let imgBox = container.children[1];
-    functionObj.size(imgBox, '95%', '40%');
 
     for(let i = 0; i< 2; i++){
-      functionObj.createElement('div', imgBox);
-      functionObj.boxStyle(imgBox.children[i], '40vw', '40vw', colorArr[0], '100%');
+      functionObj.boxStyle(sections[1].children[i], '35vw', '35vw', colorArr[0], '100%');
     }
 
-    functionObj.position(imgBox.children[0], 'relative', '10%');
+    functionObj.position(sections[1].children[0], 'relative', '-20%');
+    move(sections[1].children[0], '-20%', '-19%');
+    functionObj.bgiStyle(sections[1].children[0],'./module/image/layout.png', 'center', 'cover', 0.8);
 
-    setInterval(function(){
-      imgBox.children[0].animate([
-        {left : '10%'},
-        {left : '11%'},
-        {left : '10%'},
-        {left : '11%'},
-        {left : '10%'}
-    ], 2000);
-    },2000);
+    functionObj.position(sections[1].children[1], 'relative', '20%');
+    move(sections[1].children[1], '20%', '19%');
+    functionObj.bgiStyle(sections[1].children[1],'./module/image/coding.png', 'center', 'cover', 0.8);
 
-    functionObj.position(imgBox.children[1], 'relative', '50%');
-    
-    setInterval(function(){
-      imgBox.children[1].animate([
-        {left : '50%'},
-        {left : '49%'},
-        {left : '50%'},
-        {left : '49%'},
-        {left : '50%'}
-    ], 2000);
-    },2000);
-
-    const pageBox = container.children[2];
-    functionObj.size(pageBox, '25%', '5%');
-    functionObj.flex(pageBox,'space-evenly', 'center');
+    const pageBox = document.getElementById('page-box3');
+  
+    functionObj.container(pageBox, '25%', '5%', 'row');
     functionObj.position(pageBox, 'absolute', '35%' , '95%');
-
-  
-    for(let i = 0; i< 3; i++){
-      functionObj.createElement('div', pageBox);
-    }
-  
+    pageBox.style.color = colorArr[5];
+    
     let leftBtn = pageBox.children[0];
     let pageTxt = pageBox.children[1];
     let rightBtn = pageBox.children[2];
   
-    leftBtn.textContent = '<';
-    pageTxt.textContent = 'page';
-    rightBtn.textContent = '>';
-  
     leftBtn.style.cursor = 'pointer';
     pageTxt.style.cursor = 'pointer';
     rightBtn.style.cursor = 'pointer';
-
+  
     pageTxt.addEventListener('click', ()=> {
       root.removeChild(root.children[0]);
       bookcoverMaker();

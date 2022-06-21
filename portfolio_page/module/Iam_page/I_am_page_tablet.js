@@ -21,139 +21,80 @@ export function tabletVerIAm(){
     const sections = document.getElementsByTagName('section');
 
     functionObj.iAmPageTextBox(container.children[0].children[0], '8%');
-    sections[0].style.color = colorArr[5];
+    container.children[0].children[0].style.color = colorArr[5];
 
     functionObj.iAmPageTextBox(sections[0], '20%');
     functionObj.iAmPageTextBox(sections[1], '30%');
     functionObj.iAmPageTextBox(sections[2], '30%');
 
-    // for(let i = 0; i< 5; i++){
-    //   functionObj.createElement('div', container);
-    // }
-    
-    // let textTitle = container.children[0];
-    
-    // functionObj.iAmPageTextBox(textTitle, '8%');
-    // textTitle.textContent = '1. I am...';
-    // functionObj.font(textTitle, '1.5rem', '550');
-    
-    // let textBox = [container.children[1], container.children[2], container.children[3]];
+    for(let i = 0; i<2; i++){
+      for(let i = 0; i < sections.length; i++){
+        functionObj.size(sections[i].children[0], '100%', '100%');
+        functionObj.flex(sections[i].children[0], 'space-evenly', 'flex-start', 'column');
+        sections[i].children[0].style.paddingLeft = '1.5vh';
+        sections[i].children[0].style.zIndex = 1;
+      }
+    }
 
-    // functionObj.iAmPageTextBox(textBox[0], '20%');
-    // functionObj.iAmPageTextBox(textBox[1], '30%');
-    // functionObj.iAmPageTextBox(textBox[2], '30%');
+    functionObj.boxStyle(sections[0].children[1], '22vw', '22vw', colorArr[0], '100%');
+    functionObj.position(sections[0].children[1], 'absolute', '60%', '12%');
+    functionObj.bgiStyle(sections[0].children[1],'./module/image/Iam_illust1.png', 'center', 'cover', 0.8);
+    move(sections[0].children[1], '45%', '46%');
 
+    functionObj.boxStyle(sections[1].children[1], '35vw', '35vw', colorArr[0], '100%');
+    functionObj.position(sections[1].children[1], 'absolute', '52%', '36%');
+    functionObj.bgiStyle(sections[1].children[1],'./module/image/Iam_illust2.png', 'center', 'cover', 0.8);
+    move(sections[1].children[1], '52%', '51%');
 
-    // for(let i = 0; i<2; i++){
-    //   for(let i = 0; i < textBox.length; i++){
-    //     functionObj.createElement('div', textBox[i]);
-    //     functionObj.size(textBox[i].children[0], '95%', '95%');
-    //     functionObj.flex(textBox[i].children[0], 'space-evenly', 'flex-start', 'column');
-    //     textBox[i].children[0].style.paddingLeft = '2vh';
-    //     textBox[i].children[0].style.zIndex = 1;
-    //   }
-    // }
+    functionObj.boxStyle(sections[2].children[1], '20vw', '20vw', colorArr[0], '100%');
+    functionObj.position(sections[2].children[1], 'absolute', '60%', '75%');
+    functionObj.bgiStyle(sections[2].children[1],'./module/image/Iam_illust3.png', 'center', 'cover', 0.8);
+    move(sections[2].children[1], '60%', '61%');
 
-    // functionObj.boxStyle(textBox[0].children[1], '22vw', '22vw', colorArr[0], '100%');
-    // functionObj.position(textBox[0].children[1], 'absolute', '45%', '12%');
-    
-    // setInterval(function(){
-    //   textBox[0].children[1].animate([
-    //     {left : '45%'},
-    //     {left : '46%'},
-    //     {left : '45%'},
-    //     {left : '46%'},
-    //     {left : '45%'}
-    // ], 2000);
-    // },2000);
+    const titleTextArr = Array.from(document.getElementsByTagName('h4'));
+    for(let i = 0; i < titleTextArr.length; i++){
+      functionObj.iAmPageTextBox(titleTextArr[i], '10%', '80%');
+      titleTextArr[i].style.marginLeft = '1vw';
+      titleTextArr[i].style.color = colorArr[5];
+    }
 
-    // functionObj.boxStyle(textBox[1].children[1], '35vw', '35vw', colorArr[0], '100%');
-    // functionObj.position(textBox[1].children[1], 'absolute', '52%', '36%');
+    const subTextArr = Array.from(document.getElementsByTagName('p'));
+    for(let i = 0; i < subTextArr.length; i++){
+      functionObj.iAmPageTextBox(subTextArr[i], '80%', '95%');
+      functionObj.font(subTextArr[i], '0.8rem', 500);
+      subTextArr[i].style.marginLeft = '2vh';
+      subTextArr[i].style.color = colorArr[4];
+      subTextArr[i].style.lineHeight = '180%';
+    }
 
-    // setInterval(function(){
-    //   textBox[1].children[1].animate([
-    //     {left : '52%'},
-    //     {left : '51%'},
-    //     {left : '52%'},
-    //     {left : '51%'},
-    //     {left : '52%'}
-    // ], 2000);
-    // },2000);
+    const pageBox = document.getElementById('page-box2');
 
-    // functionObj.boxStyle(textBox[2].children[1], '20vw', '20vw', colorArr[0], '100%');
-    // functionObj.position(textBox[2].children[1], 'absolute', '60%', '75%');
-
-    // setInterval(function(){
-    //   textBox[2].children[1].animate([
-    //     {left : '60%'},
-    //     {left : '61%'},
-    //     {left : '60%'},
-    //     {left : '61%'},
-    //     {left : '60%'}
-    // ], 2000);
-    // },2000);
-
-    // let textBoxContent = [textBox[0].children[0], textBox[1].children[0], textBox[2].children[0]];
-
-    // for(let i = 0; i<2; i++){
-    //   for(let i = 0; i < textBoxContent.length; i++){
-    //     functionObj.createElement('div', textBoxContent[i]);
-    //     functionObj.font(textBoxContent[i].children[0], '1rem', '550');
-    //   }
-    // }
-
-    // for(let i = 0; i < textBoxContent.length; i++){
-    //   functionObj.font(textBoxContent[i].children[1], '0.8rem', '500');
-    //   textBoxContent[i].style.lineHeight = '150%';
-    // }
-
-    // textBoxContent[0].children[0].textContent = '나는 입니다.';
-    // textBoxContent[0].children[1].innerHTML = textIAm; 
-
-    // textBoxContent[1].children[0].textContent = '나는 좋아합니다.';
-    // textBoxContent[1].children[1].innerHTML = textILike; 
-
-
-    // textBoxContent[2].children[0].textContent = '나는 했습니다.';
-    // textBoxContent[2].children[1].innerHTML = textIDid; 
-
-    
-    // const pageBox = container.children[4];
-    // functionObj.size(pageBox, '25%', '5%');
-    // functionObj.flex(pageBox,'space-evenly', 'center');
-    // functionObj.position(pageBox, 'absolute', '38%' , '92.5%');
-
+    functionObj.container(pageBox, '25%', '5%', 'row');
+    functionObj.position(pageBox, 'absolute', '38%' , '92.5%');
+    pageBox.style.color = colorArr[5];
   
-    // for(let i = 0; i< 3; i++){
-    //   functionObj.createElement('div', pageBox);
-    // }
+    let leftBtn = pageBox.children[0];
+    let pageTxt = pageBox.children[1];
+    let rightBtn = pageBox.children[2];
   
-    // let leftBtn = pageBox.children[0];
-    // let pageTxt = pageBox.children[1];
-    // let rightBtn = pageBox.children[2];
-  
-    // leftBtn.textContent = '<';
-    // pageTxt.textContent = 'page';
-    // rightBtn.textContent = '>';
-  
-    // leftBtn.style.cursor = 'pointer';
-    // pageTxt.style.cursor = 'pointer';
-    // rightBtn.style.cursor = 'pointer';
+    leftBtn.style.cursor = 'pointer';
+    pageTxt.style.cursor = 'pointer';
+    rightBtn.style.cursor = 'pointer';
 
-    // pageTxt.addEventListener('click', ()=> {
-    //   root.removeChild(root.children[0]);
-    //   tabletVerBookcover();
-    // });
+    pageTxt.addEventListener('click', ()=> {
+      root.removeChild(root.children[0]);
+      tabletVerBookcover();
+    });
 
-    // leftBtn.addEventListener('click', ()=> {
-    //   root.removeChild(root.children[0]);
-    //   tabletVerContent();
-    //   // console.log('TEST');
-    // });
+    leftBtn.addEventListener('click', ()=> {
+      root.removeChild(root.children[0]);
+      tabletVerContent();
+      // console.log('TEST');
+    });
   
-    // rightBtn.addEventListener('click', ()=> {
-    //   root.removeChild(root.children[0]);
-    //   tabletVerNowPage();
-    // });
+    rightBtn.addEventListener('click', ()=> {
+      root.removeChild(root.children[0]);
+      tabletVerNowPage();
+    });
   }
 }
