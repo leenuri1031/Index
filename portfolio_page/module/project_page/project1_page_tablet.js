@@ -104,6 +104,10 @@ export function tabletVerProject1Page(){
     functionObj.flex(pageBox,'space-evenly', 'center');
     functionObj.position(pageBox, 'absolute', '38%' , '92.5%');
   
+    for(let i = 0 ; i<pageBox.children.length; i++){
+      functionObj.font(pageBox.children[i], '1rem', 600);
+      }
+
     for(let i = 0; i< 3; i++){
       functionObj.createElement('div', pageBox);
     }

@@ -33,7 +33,7 @@ export function bookcoverMaker(){
     const bottomContentBox = imgContainer.children[1];
 
     for(let i = 0 ; i<2; i++){
-      functionObj.font(bottomContentBox.children[i], '1rem', 550);
+      functionObj.font(bottomContentBox.children[i], '1rem', 600);
     }
 
     if(boolean === true){

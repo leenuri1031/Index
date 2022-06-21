@@ -1,3 +1,4 @@
+import { root } from '../module/basic/const.js';
 // import './bookcover_page.js';
 // import './illust_page.js'
 // import './content_page.js';
@@ -9,3 +10,4 @@ import './project1_page.js';
 // import './contact_page.js';
 // import './end_page.js';
 import './desktop_page.js';
+root.style.fontFamily = 'serif';

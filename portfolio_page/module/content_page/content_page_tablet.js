@@ -46,7 +46,7 @@ export function tabletVerContent(){
 
     for(let i = 0; i < subTextArr.length; i++){
       functionObj.iAmPageTextBox(subTextArr[i], '12%', '80%');
-      functionObj.font(subTextArr[i], '0.8rem', 500);
+      functionObj.font(subTextArr[i], '0.9rem', 550);
       subTextArr[i].style.marginLeft = '2vh';
       subTextArr[i].style.color = colorArr[4];
     }

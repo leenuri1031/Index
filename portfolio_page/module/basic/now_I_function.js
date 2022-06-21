@@ -3,7 +3,7 @@ function innerHTMLNowI(now1, now2){
     `<div>
       <section>
         <h2>2. Now I...</h2>
-        <h4>나는 지금 합니다.</h4>
+        <h4>Now I...ing</h4>
         <p>${now1}</p>
         <p>${now2}</p>
       </section>

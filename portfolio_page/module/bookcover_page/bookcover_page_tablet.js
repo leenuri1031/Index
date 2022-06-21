@@ -38,7 +38,7 @@ export const tabletVerBookcover = function tabletPage(){
     containerContent[0].children[0].style.opacity = 0.8;
 
     for(let i = 0 ; i<2; i++){
-      functionObj.font(containerContent[1].children[i], '1rem', 550);
+      functionObj.font(containerContent[1].children[i], '1rem', 600);
     }
     
     if(boolean === true){

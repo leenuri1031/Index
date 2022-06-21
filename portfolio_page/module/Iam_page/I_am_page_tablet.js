@@ -72,6 +72,10 @@ export function tabletVerIAm(){
     functionObj.container(pageBox, '25%', '5%', 'row');
     functionObj.position(pageBox, 'absolute', '38%' , '92.5%');
     pageBox.style.color = colorArr[5];
+
+    for(let i = 0 ; i<pageBox.children.length; i++){
+      functionObj.font(pageBox.children[i], '1rem', 600);
+      }
   
     let leftBtn = pageBox.children[0];
     let pageTxt = pageBox.children[1];

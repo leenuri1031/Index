@@ -4,29 +4,29 @@ function innerHTMLContent(){
       <h1> Content </h1>
       <div>
         <h3> 1. I'm... </h3>
-        <p>나는 입니다.</p>
-        <p>나는 좋아합니다.</p>
-        <p>나는 했습니다.</p>
+        <p>I am...</p>
+        <p>I like...</p>
+        <p>I did...</p>
       </div>
       <div>
         <h3>Now I...</h3>
-        <p>나는 지금 합니다.</p>
+        <p>Now I...ing</p>
       </div>
       <div>
         <h3>This is my...</h3>
-        <p>이것은 나의 프로젝트 입니다.</p>
-        <p>나는 이렇게 만들었습니다.</p>
-        <p>프로젝트 확인</p>
+        <p>This is my project</p>
+        <p>I made...</p>
+        <p>See a project</p>
       </div>
       <div>
         <h3>Someday I...</h3>
-        <p>언젠가 나는 하고싶습니다.</p>
-        <p>나의 최종 꿈은... 입니다.</p>
+        <p>Someday I want...</p>
+        <p>My dream is...</p>
       </div>
       <div>
         <h3>Contact me</h3>
-        <p>그러니까 나는</p>
-        <p>연락하고 싶다면</p>
+        <p>So I...</p>
+        <p>If you want to contact to me</p>
         <p>Resume</p>
       </div>
     </div>

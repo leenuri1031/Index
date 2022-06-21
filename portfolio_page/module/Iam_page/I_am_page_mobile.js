@@ -86,6 +86,10 @@ export function iAmPageMaker(){
     let leftBtn = pageBox.children[0];
     let pageTxt = pageBox.children[1];
     let rightBtn = pageBox.children[2];
+
+    for(let i = 0 ; i<pageBox.children.length; i++){
+      functionObj.font(pageBox.children[i], '1rem', 600);
+      }
   
     leftBtn.style.cursor = 'pointer';
     pageTxt.style.cursor = 'pointer';
