@@ -5,8 +5,8 @@ import { tabletVerIAm } from "./I_am_page_tablet.js";
 import { bookcoverMaker } from "../bookcover_page/bookcover_page_mobile.js";
 import { contentPageMaker } from "../content_page/content_page_mobile.js";
 import { nowIPageMaker } from "../now_I_page/now_I_am_page_mobile.js";
-
-// console.dir(window.location);
+import innerHTMLIAm from "../basic/I_am_function.js";
+import move from "../basic/animate.js";
 
 export function iAmPageMaker(){
   if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){
@@ -14,117 +14,78 @@ export function iAmPageMaker(){
 
     const container = root.children[0];
     functionObj.container(container, '95%' , '95%');
+    container.innerHTML = innerHTMLIAm(textIAm, textILike, textIDid);
 
-    for(let i = 0; i< 5; i++){
-      functionObj.createElement('div', container);
-    }
-    
-    let textTitle = container.children[0];
-    
-    functionObj.iAmPageTextBox(textTitle, '5%');
-    textTitle.textContent = '1. I am...';
-    functionObj.font(textTitle, '1.5rem', '550');
-    
-    let textBox = [container.children[1], container.children[2], container.children[3]];
+    // console.log(container.children[0].children);
+    functionObj.container(container.children[0], '95%', '90%');
+    const sections = document.getElementsByTagName('section');
+    // console.log(sections);
 
-    functionObj.iAmPageTextBox(textBox[0], '15%');
-    functionObj.iAmPageTextBox(textBox[1], '25%');
-    functionObj.iAmPageTextBox(textBox[2], '30%');
+    // let textTitle = container.children[0];
+    functionObj.iAmPageTextBox(container.children[0].children[0], '5%');
+    sections[0].style.color = colorArr[5];
+
+    functionObj.iAmPageTextBox(sections[0], '20%');
+    functionObj.iAmPageTextBox(sections[1], '30%');
+    functionObj.iAmPageTextBox(sections[2], '35%');
 
     for(let i = 0; i<2; i++){
-      for(let i = 0; i < textBox.length; i++){
-        functionObj.createElement('div', textBox[i]);
-        functionObj.size(textBox[i].children[0], '100%', '100%');
-        functionObj.flex(textBox[i].children[0], 'space-evenly', 'flex-start', 'column');
-        textBox[i].children[0].style.paddingLeft = '1vh';
-        textBox[i].children[0].style.zIndex = 1;
+      for(let i = 0; i < sections.length; i++){
+        functionObj.size(sections[i].children[0], '100%', '100%');
+        functionObj.flex(sections[i].children[0], 'space-evenly', 'flex-start', 'column');
+        sections[i].children[0].style.paddingLeft = '1vh';
+        sections[i].children[0].style.zIndex = 1;
       }
     }
 
-    functionObj.boxStyle(textBox[0].children[1], '30vw', '30vw', colorArr[0], '100%');
-    functionObj.position(textBox[0].children[1], 'absolute', '60%', '12%');
-    
-    // console.dir(textBox[0].children[1]);
-    setInterval(function(){
-      textBox[0].children[1].animate([
-        {left : '60%'},
-        {left : '61%'},
-        {left : '60%'},
-        {left : '61%'},
-        {left : '60%'}
-    ], 2000);
-    },2000);
+    functionObj.boxStyle(sections[0].children[1], '30vw', '30vw', colorArr[0], '100%');
+    functionObj.position(sections[0].children[1], 'absolute', '60%', '12%');
+    functionObj.bgiStyle(sections[0].children[1],'./module/image/Iam_illust1.png', 'center', 'cover', 0.8);
+    move(sections[0].children[1], '60%', '61%');
+    // setInterval(function(){
+    //   sections[0].children[1].animate([
+    //     {left : '60%'},
+    //     {left : '61%'},
+    //     {left : '60%'},
+    //     {left : '61%'},
+    //     {left : '60%'}
+    // ], 2000);
+    // },2000);
 
-    functionObj.boxStyle(textBox[1].children[1], '35vw', '35vw', colorArr[0], '100%');
-    functionObj.position(textBox[1].children[1], 'absolute', '52%', '36%');
+    functionObj.boxStyle(sections[1].children[1], '35vw', '35vw', colorArr[0], '100%');
+    functionObj.position(sections[1].children[1], 'absolute', '52%', '36%');
+    functionObj.bgiStyle(sections[1].children[1],'./module/image/Iam_illust2.png', 'center', 'cover', 0.8);
+    move(sections[1].children[1], '52%', '51%');
 
-    setInterval(function(){
-      textBox[1].children[1].animate([
-        {left : '52%'},
-        {left : '51%'},
-        {left : '52%'},
-        {left : '51%'},
-        {left : '52%'}
-    ], 2000);
-    },2000);
+    functionObj.boxStyle(sections[2].children[1], '28vw', '28vw', colorArr[0], '100%');
+    functionObj.position(sections[2].children[1], 'absolute', '60%', '75%');
+    functionObj.bgiStyle(sections[2].children[1],'./module/image/Iam_illust3.png', 'center', 'cover', 0.8);
+    move(sections[2].children[1], '60%', '61%');
 
-    functionObj.boxStyle(textBox[2].children[1], '28vw', '28vw', colorArr[0], '100%');
-    functionObj.position(textBox[2].children[1], 'absolute', '60%', '75%');
-
-    setInterval(function(){
-      textBox[2].children[1].animate([
-        {left : '60%'},
-        {left : '61%'},
-        {left : '60%'},
-        {left : '61%'},
-        {left : '60%'}
-    ], 2000);
-    },2000);
-
-    // console.dir(textBox[0].children);
-    let textBoxContent = [textBox[0].children[0], textBox[1].children[0], textBox[2].children[0]];
-    // console.log(textBoxContent);
-
-    for(let i = 0; i<2; i++){
-      for(let i = 0; i < textBoxContent.length; i++){
-        functionObj.createElement('div', textBoxContent[i]);
-        functionObj.font(textBoxContent[i].children[0], '1rem', '550');
-      }
+    const titleTextArr = Array.from(document.getElementsByTagName('h4'));
+    for(let i = 0; i < titleTextArr.length; i++){
+      functionObj.iAmPageTextBox(titleTextArr[i], '10%', '80%');
+      titleTextArr[i].style.marginLeft = '1vw';
+      titleTextArr[i].style.color = colorArr[5];
     }
 
-    for(let i = 0; i < textBoxContent.length; i++){
-      functionObj.font(textBoxContent[i].children[1], '0.8rem', '500');
-      textBoxContent[i].style.lineHeight = '150%';
+    const subTextArr = Array.from(document.getElementsByTagName('p'));
+    for(let i = 0; i < subTextArr.length; i++){
+      functionObj.iAmPageTextBox(subTextArr[i], '80%', '95%');
+      functionObj.font(subTextArr[i], '0.8rem', 500);
+      subTextArr[i].style.marginLeft = '2vh';
+      subTextArr[i].style.color = colorArr[4];
+      subTextArr[i].style.lineHeight = '180%';
     }
-
-    textBoxContent[0].children[0].textContent = '나는 입니다.';
-    textBoxContent[0].children[1].innerHTML = textIAm; 
-
-    textBoxContent[1].children[0].textContent = '나는 좋아합니다.';
-    textBoxContent[1].children[1].innerHTML = textILike; 
-
-
-    textBoxContent[2].children[0].textContent = '나는 했습니다.';
-    textBoxContent[2].children[1].innerHTML = textIDid; 
-
     
-    const pageBox = container.children[4];
-    functionObj.size(pageBox, '25%', '5%');
-    functionObj.flex(pageBox,'space-evenly', 'center');
+    const pageBox = document.getElementById('page-box2');
+  
+    functionObj.container(pageBox, '25%', '5%', 'row');
     functionObj.position(pageBox, 'absolute', '35%' , '95%');
-
-  
-    for(let i = 0; i< 3; i++){
-      functionObj.createElement('div', pageBox);
-    }
-  
+    pageBox.style.color = colorArr[5];
     let leftBtn = pageBox.children[0];
     let pageTxt = pageBox.children[1];
     let rightBtn = pageBox.children[2];
-  
-    leftBtn.textContent = '<';
-    pageTxt.textContent = 'page';
-    rightBtn.textContent = '>';
   
     leftBtn.style.cursor = 'pointer';
     pageTxt.style.cursor = 'pointer';

@@ -77,6 +77,13 @@ export const functionObj = {
     target.style.borderRadius = radius;
   },
 
+  bgiStyle : function imageStyle (target, url, posi, size,opac){
+    target.style.backgroundImage = `url(${url})`;
+    target.style.backgroundPosition = posi;
+    target.style.backgroundSize = size;
+    target.style.opacity = opac;
+  }
+
   // moving : function interval(target, value1, value2, value3,value4, value5,){
   //   setInterval(function(){
   //     target.animate([
