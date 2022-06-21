@@ -9,7 +9,6 @@ import innerHTMLIllust from "../basic/illust_function.js";
 export function illustPageMaker(){
   if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){
 
-
     functionObj.createElement('div',root);
     const container = root.children[0];
     functionObj.container(container, '95%' , '95%');
