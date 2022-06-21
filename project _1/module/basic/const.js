@@ -9,3 +9,5 @@ export const tabletWidth = window.matchMedia(`(min-width: 600px)`);
 export const desktopWidth = window.matchMedia(`(min-width: 1000px)`);
 
 export const boolean = true;
+
+export const bottomText = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, ea? Doloremque, consectetur quasi veritatis suscipit quisquam, eligendi voluptates veniam illo omnis similique animi ratione dolores autem sint exercitationem recusandae laudantium!'

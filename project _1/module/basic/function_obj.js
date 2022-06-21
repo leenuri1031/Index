@@ -52,14 +52,14 @@ export const functionObj = {
     parent.insertBefore(tagName, tag);
   },
 
-  borderRound : function raoundBorderStyle (target, w, h, border ,radius ){
+  borderRound : function raoundBorderStyle (target, w, h,radius,border = 'none'){
     target.style.width = w;
     target.style.height = h;
     target.style.display = 'flex';
     target.style.justifyContent = 'center';
     target.style.alignItems = 'center';
-    target.style.border = border;
     target.style.borderRadius = radius;
+    target.style.border = border;
   },
 
   addImage : function imageLoop(arr, tag){

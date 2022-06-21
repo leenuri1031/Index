@@ -7,22 +7,27 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
 */
 // -----------------------------------------
 
-#root{
-  @include mixin.main-root-style;
-  @include mixin.flex-setting(space-evenly, center, column);
-}
 
-#top{
-  @include mixin.size(var.$per-100, 25vh);
-  @include mixin.flex-setting(space-evenly, center, column);
-}
+  #root{
+    @include mixin.main-root-style;
+    @include mixin.flex-setting(space-evenly, center, column);
+  }
+  
+  #top{
+    @include mixin.size(var.$per-100, 25vh);
+    @include mixin.flex-setting(space-evenly, center, column);
+  }
+  
+  #middle{
+    @include mixin.size(var.$per-100, 120vh);
+    @include mixin.flex-setting(space-evenly, center, column);
+  }
+  
+  #bottom{
+    @include mixin.box-style(var.$per-100, 5vh, var.$color-5);
+    @include mixin.flex-setting(space-evenly, center);
+  }
 
-#middle{
-  @include mixin.size(var.$per-100, 120vh);
-  @include mixin.flex-setting(space-evenly, center, column);
-}
 
-#bottom{
-  @include mixin.size(var.$per-100, 5vh);
-  @include mixin.flex-setting(space-evenly, center);
-}
+
+
