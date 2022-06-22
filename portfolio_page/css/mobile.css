@@ -67,6 +67,7 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  flex-direction: row;
   color: #5D707A;
 }
 
@@ -76,6 +77,20 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  border: solid 1px #5D707A;
+  border-radius: 30px;
+  color: #6A808C;
+  font-size: 0.8rem;
+}
+
+.tablet-round-border {
+  width: 20%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   border: solid 1px #5D707A;
   border-radius: 30px;
   color: #6A808C;
@@ -86,4 +101,31 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
   width: 35vw;
   height: 35vw;
   background-color: beige;
+}
+
+.content-txt {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #6A808C;
+  padding-left: 2vh;
+  line-height: 200%;
+  text-align: justify;
+}
+
+.img-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: aliceblue;
+}
+
+.tablet-img-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: aliceblue;
 }/*# sourceMappingURL=mobile.css.map */

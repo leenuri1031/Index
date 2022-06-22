@@ -4,8 +4,7 @@ import { root, mobileWidth, tabletWidth, desktopWidth, project1Text} from "../ba
 import { tabletVerBookcover } from "../bookcover_page/bookcover_page_tablet.js";
 import { tabletVerNowPage } from "../now_I_page/now_I_am_page_tablet.js";
 import { tabletVerProject2Page } from "./project2_page_tablet.js";
-
-
+import innerHTMLProject1 from "../basic/project1_function.js"
 
 export function tabletVerProject1Page(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === false){
@@ -14,63 +13,32 @@ export function tabletVerProject1Page(){
 
     const container = root.children[0];
     functionObj.container(container, '95%' , '95%');
-    container.style.border = '1px dotted gray';
+    container.style.border = `1px dotted ${colorArr[5]}`;
 
-    for(let i = 0; i< 5; i++){
-      functionObj.createElement('div', container);
-    }
+    container.innerHTML = innerHTMLProject1(project1Text);
 
-    let contentContainers = [container.children[0], container.children[3]];
-    for(let i = 0; i<contentContainers.length; i++){
-      functionObj.iAmPageTextBox(contentContainers[i], '10%');
-      contentContainers[i].style.flexDirection = 'column'
-      for(let i = 0; i<2; i++){
-        functionObj.createElement('div', contentContainers[i]);
-      }
+    functionObj.container(container.children[0], '95%', '90%');
+
+    const sections = container.children[0].children;
+
+    functionObj.container(sections[0], '100%', '40%');
+    functionObj.container(sections[1], '100%', '40%');
+    functionObj.container(sections[2], '100%', '15%');
+
+    const subTitles = document.getElementsByTagName('h4');
+    // console.log(subTitles);
+    for(let i=0; i< subTitles.length; i++){
+      subTitles[i].style.paddingLeft = '1vh';
     }
 
     for(let i = 0; i<2; i++){
-      functionObj.size(contentContainers[i].children[0], '100%', '45%');
-      functionObj.size(contentContainers[i].children[1], '100%', '45%');
+      functionObj.container(sections[0].children[2], '95%', '65%', 'row');
     }
 
-    let projectViewBox = contentContainers[1].children;
-    functionObj.size(projectViewBox[0],'100%' ,'100%');
-    functionObj.font(projectViewBox[0], '1rem', '500');
-    projectViewBox[0].textContent = '프로젝트 확인';
-    projectViewBox[0].style.paddingLeft = '2vh';
+    let imgBox = sections[0].children[2].children;
 
-    functionObj.container(projectViewBox[1], '100%', '100%', 'row');
-
-    projectViewBox[1].innerHTML = `
-    <div>프로젝트</div>
-    <div>page sample</div>
-    <div><a href = "https://github.com/leenuri1031/project-1.git" target="_blank">github</a></div>
-    `;
-
-    for(let i = 0; i<3; i++){
-      functionObj.borderRound(projectViewBox[1].children[i], '20%', '66%', '30px');
-      functionObj.font(projectViewBox[1].children[i], '0.8rem', '500');
-      projectViewBox[1].children[i].style.cursor = 'pointer';
-    }
-    
-    let titleText = contentContainers[0].children;
-    functionObj.font(titleText[0], '1.5rem', '550');
-    titleText[0].textContent = '3. This is my...';
-    functionObj.font(titleText[1], '1rem', '500');
-    titleText[1].style.paddingLeft = '1vh';
-    titleText[1].style.paddingTop = '1vh';
-    titleText[1].textContent = '나의 첫번째 프로젝트 입니다.'
-
-    functionObj.size(container.children[1], '90%', '20%');
-    functionObj.flex(container.children[1], 'space-around', 'center');
-
-    for(let i = 0; i< 2; i++){
-      functionObj.createElement('div', container.children[1]);
-      functionObj.createElement('div', container.children[2]);
-    }
-
-    let imgBox = container.children[1].children;
+    functionObj.bgiStyle(imgBox[0],'./module/image/project1_img1.png', 'center', 'cover', 0.9);
+    functionObj.bgiStyle(imgBox[1],'./module/image/project1_img2.png', 'center', 'cover', 0.9);
 
     for(let i = 0; i< 2; i++){
       functionObj.boxStyle(imgBox[i], '20vw', '20vw', colorArr[0]);
@@ -82,43 +50,35 @@ export function tabletVerProject1Page(){
       });
     }
 
-    functionObj.size(container.children[2], '90%','30%');
-    functionObj.flex(container.children[2], 'sapce-evenly', 'flex-sart', 'column');
-    // container.children[2].style.paddingLeft = '1vh';
+    const textContent = document.getElementById('project-text1');
 
-    let textBox = container.children[2].children;
+    functionObj.iAmPageTextBox(textContent, '35%', '90%');
+    functionObj.font(textContent, '0.8rem', '500');
+    textContent.style.lineHeight = '200%';
+    textContent.style.textAlign = 'justify';
+    textContent.style.color = colorArr[4];
 
-    functionObj.iAmPageTextBox(textBox[0], '10%');
-    functionObj.font(textBox[0], '1rem', '500');
-    textBox[0].textContent = '나는 이렇게 만들었습니다.'
+    functionObj.container(sections[2].children[1], '100%', '80%', 'row');
 
-    functionObj.iAmPageTextBox(textBox[1], '80%');
-    functionObj.font(textBox[1], '0.8rem', '500');
-    textBox[1].style.paddingLeft = '1vh';
-    textBox[1].style.lineHeight = '200%';
-    textBox[1].style.textAlign = 'justify';
-    textBox[1].textContent = project1Text;
+    const projectLink = Array.from(sections[2].children[1].children);
+    // console.log(projectLink[0]);
+    for(let i=0; i<projectLink.length; i++){
+      projectLink[i].classList.replace('round-border', 'tablet-round-border');
+    }
 
-    const pageBox = container.children[4];
-    functionObj.size(pageBox, '25%', '5%');
-    functionObj.flex(pageBox,'space-evenly', 'center');
-    functionObj.position(pageBox, 'absolute', '38%' , '92.5%');
+    const pageBox = document.getElementById('page-box4');
   
+    functionObj.container(pageBox, '25%', '5%', 'row');
+    functionObj.position(pageBox, 'absolute', '38%' , '92.5%');
+    pageBox.style.color = colorArr[5];
+
     for(let i = 0 ; i<pageBox.children.length; i++){
       functionObj.font(pageBox.children[i], '1rem', 600);
       }
-
-    for(let i = 0; i< 3; i++){
-      functionObj.createElement('div', pageBox);
-    }
-  
+    
     let leftBtn = pageBox.children[0];
     let pageTxt = pageBox.children[1];
     let rightBtn = pageBox.children[2];
-  
-    leftBtn.textContent = '<';
-    pageTxt.textContent = 'page';
-    rightBtn.textContent = '>';
   
     leftBtn.style.cursor = 'pointer';
     pageTxt.style.cursor = 'pointer';

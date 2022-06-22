@@ -30,7 +30,7 @@ function innerHTMLContent(){
         <p>Resume</p>
       </div>
     </div>
-    <div id = "page-box">
+    <div id = "page-box1">
       <div>
       <i class="fa-solid fa-caret-left"></i>
       </div>

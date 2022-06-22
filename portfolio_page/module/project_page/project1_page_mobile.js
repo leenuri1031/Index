@@ -61,7 +61,6 @@ export function project1PageMaker(){
     textContent.style.textAlign = 'justify';
     textContent.style.color = colorArr[4];
 
-    console.log(sections[2].children[1]);
     functionObj.container(sections[2].children[1], '100%', '80%', 'row');
 
     const pageBox = document.getElementById('page-box4');
@@ -72,15 +71,12 @@ export function project1PageMaker(){
 
     for(let i = 0 ; i<pageBox.children.length; i++){
       functionObj.font(pageBox.children[i], '1rem', 600);
+      pageBox.children[i].style.cursor = 'pointer';
       }
     
     let leftBtn = pageBox.children[0];
     let pageTxt = pageBox.children[1];
     let rightBtn = pageBox.children[2];
-  
-    leftBtn.style.cursor = 'pointer';
-    pageTxt.style.cursor = 'pointer';
-    rightBtn.style.cursor = 'pointer';
 
     pageTxt.addEventListener('click', ()=> {
       root.removeChild(root.children[0]);

@@ -31,7 +31,7 @@ export function tabletVerIllust(){
   functionObj.position(textBox, 'relative', '0%', '0%' ,1);
   functionObj.font(textBox, '1.2rem', 600);
   
-  const pageBox = container.children[1];
+  const pageBox = document.getElementById('page-box');
 
   functionObj.container(pageBox, '25%', '5%', 'row');
   functionObj.position(pageBox, 'absolute', '38%' , '92.5%');
@@ -39,15 +39,12 @@ export function tabletVerIllust(){
   
   for(let i = 0 ; i<pageBox.children.length; i++){
     functionObj.font(pageBox.children[i], '1rem', 600);
+    pageBox.children[i].style.cursor = 'pointer';
     }
 
   let leftBtn = pageBox.children[0];
   let pageTxt = pageBox.children[1];
   let rightBtn = pageBox.children[2];
-
-  leftBtn.style.cursor = 'pointer';
-  pageTxt.style.cursor = 'pointer';
-  rightBtn.style.cursor = 'pointer';
 
   pageTxt.addEventListener('click', ()=> {
     root.removeChild(root.children[0]);

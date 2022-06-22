@@ -46,7 +46,7 @@ export function contentPageMaker(){
 
     for(let i = 0; i < subTextArr.length; i++){
       functionObj.iAmPageTextBox(subTextArr[i], '12%', '80%');
-      functionObj.font(subTextArr[i], '0.9rem', 550);
+      functionObj.font(subTextArr[i], '0.8rem', 560);
       subTextArr[i].style.marginLeft = '2vh';
       subTextArr[i].style.color = colorArr[4];
     }
@@ -77,19 +77,21 @@ export function contentPageMaker(){
         contactPageMaker();
       });
 
-    const pageBox = document.getElementById('page-box');
+    const pageBox = document.getElementById('page-box1');
   
     functionObj.container(pageBox, '25%', '5%', 'row');
     functionObj.position(pageBox, 'absolute', '35%' , '95%');
     pageBox.style.color = colorArr[5];
+
+    for(let i = 0 ; i<pageBox.children.length; i++){
+      functionObj.font(pageBox.children[i], '1rem', 600);
+      pageBox.children[i].style.cursor = 'pointer';
+      }
+
     let leftBtn = pageBox.children[0];
     let pageTxt = pageBox.children[1];
     let rightBtn = pageBox.children[2];
   
-    leftBtn.style.cursor = 'pointer';
-    pageTxt.style.cursor = 'pointer';
-    rightBtn.style.cursor = 'pointer';
-
     pageTxt.addEventListener('click', ()=> {
       root.removeChild(root.children[0]);
       bookcoverMaker();

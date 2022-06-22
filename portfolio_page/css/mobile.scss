@@ -16,18 +16,24 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
 .sub-title-txt {
   width : 100%;
   height : 10%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  @include mixin.flex-setting(flex-start, center);
   color: var.$col-6;
 }
 
 .round-border {
   width : 30%;
   height : 40%;
-  display : flex;
-  justify-content: center;
-  align-items: center;
+  @include mixin.flex-setting(center, center);
+  border : solid 1px var.$col-6;
+  border-radius: 30px;
+  color: var.$col-5;
+  font-size: 0.8rem;
+}
+
+.tablet-round-border {
+  width: 20%;
+  height: 30%;
+  @include mixin.flex-setting(center, center);
   border : solid 1px var.$col-6;
   border-radius: 30px;
   color: var.$col-5;
@@ -38,4 +44,24 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
   width: 35vw;
   height: 35vw;
   background-color: beige;
+}
+
+.content-txt {
+  @include mixin.flex-setting(flex-start, center);
+  @include mixin.font-style(0.8rem, 500, var.$col-5);
+  padding-left: 2vh;
+  line-height: 200%;
+  text-align: justify;
+}
+
+.img-circle {
+  @include mixin.size(150px, 150px);
+  border-radius: 50%;
+  background-color: aliceblue;
+}
+
+.tablet-img-circle {
+  @include mixin.size(200px, 200px);
+  border-radius: 50%;
+  background-color: aliceblue;
 }

@@ -77,19 +77,19 @@ export function tabletVerContent(){
       tabletVerContactPage();
     });
 
-    const pageBox = document.getElementById('page-box');
+    const pageBox = document.getElementById('page-box1');
   
     functionObj.container(pageBox, '25%', '5%', 'row');
     functionObj.position(pageBox, 'absolute', '38%', '92.5%');
     pageBox.style.color = colorArr[5];
 
+    for(let i = 0 ; i<pageBox.children.length; i++){
+      functionObj.font(pageBox.children[i], '1rem', 600);
+      pageBox.children[i].style.cursor = 'pointer';
+      }
     let leftBtn = pageBox.children[0];
     let pageTxt = pageBox.children[1];
     let rightBtn = pageBox.children[2];
-  
-    leftBtn.style.cursor = 'pointer';
-    pageTxt.style.cursor = 'pointer';
-    rightBtn.style.cursor = 'pointer';
 
     pageTxt.addEventListener('click', ()=> {
       root.removeChild(root.children[0]);

@@ -82,6 +82,7 @@ export const functionObj = {
     target.style.backgroundPosition = posi;
     target.style.backgroundSize = size;
     target.style.opacity = opac;
+    target.style.backgroundRepeat = 'no-repeat';
   }
 
   // moving : function interval(target, value1, value2, value3,value4, value5,){
