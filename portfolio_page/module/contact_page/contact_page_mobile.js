@@ -54,7 +54,7 @@ export function contactPageMaker(){
     sections[1].children[3].style.marginLeft = '2vh';
 
     functionObj.size(sections[1].children[3].children[1], '95px','95px');
-    functionObj.position(sections[1].children[3].children[1], 'absolute', '11%', '67%');
+    functionObj.position(sections[1].children[3].children[1], 'relative', '0%', '5%');
     functionObj.bgiStyle(sections[1].children[3].children[1],'./module/image/contact_img.png','center','contain',0.9);
 
     // console.log(sections[2].children[1]);
