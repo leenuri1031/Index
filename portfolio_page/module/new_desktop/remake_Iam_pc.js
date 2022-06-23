@@ -41,9 +41,9 @@ function remakePcIam(){
 
   const iLikeImg = leftContents[2].children[1];
   functionObj.boxStyle(iLikeImg, '220px','220px', colorArr[0], '50%');
-  functionObj.position(iLikeImg, 'absolute', '55%', '5%');
+  functionObj.position(iLikeImg, 'absolute', '60%', '5%');
   functionObj.bgiStyle(iLikeImg,'./module/image/Iam_illust2.png', 'center', 'cover', 0.8);
-  move(iLikeImg, '55%', '54%');
+  move(iLikeImg, '60%', '59%');
 
   // console.log(containers[1].children[0].children);
   const rightContents = containers[1].children[0].children;

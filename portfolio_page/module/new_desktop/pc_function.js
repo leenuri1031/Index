@@ -63,6 +63,11 @@ export function pageMove(target, nextPage, prePage){
   }
 }
 
+export function movingImg(target, size, col, left, top = 0, index = 0){
+  functionObj.boxStyle(target,size,size,col, '50%');
+  functionObj.position(target, 'absolute',left,top,index );
+}
+
 
     // for(let i = 0; i < 7; i++){
     //   functionObj.createElement('div', root);
