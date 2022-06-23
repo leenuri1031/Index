@@ -53,9 +53,40 @@ function remakePcNow(){
   functionObj.bgiStyle(leftContents[2].children[1],'./module/image/code.png', 'center', 'cover', 0.9);
   move(leftContents[2].children[1], '55%', '56%');
 
+  container[1].innerHTML = pcInnerHTMLProject1('This is my first project');
+  functionObj.container(container[1].children[0], '95%', '95%');
+  // console.log(container[1].children[0].children);
+  const rightContents = container[1].children[0].children;
+  functionObj.iAmPageTextBox(rightContents[0], '5%');
+  rightContents[0].style.color = colorArr[5];
 
-  pageMove(sections[3].children[1], sections[4] ,sections[2]);
+  for(let i = 1; i< rightContents.length; i++){
+  functionObj.container(rightContents[i], '95%', '40%');
+  }
+  functionObj.size(rightContents[1].children[0],'95%', '10%');
+  rightContents[1].children[0].classList.add('sub-title-txt');
+  functionObj.container(rightContents[1].children[1], '95%', '80%', 'row');
 
+  const rightTopImg = rightContents[1].children[1].children;
+  // console.log(rightTopImg);
+
+  for(let i=0; i<rightTopImg.length; i++){
+    functionObj.boxStyle(rightTopImg[i], '40%', '90%', colorArr[0]);
+    rightTopImg[i].addEventListener('mouseover', (event)=> {
+      functionObj.boxStyle(event.target, '60%', '100%', colorArr[0]);
+    });
+    rightTopImg[i].addEventListener('mouseout', (event)=> {
+      functionObj.boxStyle(event.target, '40%', '90%', colorArr[0]);
+    });
+  }
+
+  functionObj.bgiStyle(rightTopImg[0], './module/image/project1_img1.png', 'center', 'cover', 0.9);
+  functionObj.bgiStyle(rightTopImg[1], './module/image/project1_img2.png', 'center', 'cover', 0.9);
+
+// console.log(rightContents[2].children);
+  functionObj.boxStyle(rightContents[2].children[0], '40%', '90%', colorArr[0]);
+  functionObj.bgiStyle(rightContents[2].children[0], './module/image/project1_process.png', '', 'cover', 0.9);
+
+pageMove(sections[3].children[1], sections[4] ,sections[2]);
 }
-
 export default remakePcNow;

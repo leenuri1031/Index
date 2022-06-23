@@ -92,20 +92,40 @@ export function pcInnerHTMLNow(now1, now2){
   );
 }
 
-export function pcInnerHTMLProject1(){
+export function pcInnerHTMLProject1(txt){
   return(
     `
   <div>
     <h2>3. This is my...</h2>
     <div>
-      <h4>This is my first project</h4>
+      <h4>${txt}</h4>
       <div>
         <div></div>
         <div></div>
       </div>
     </div>
-    <div></div>
+    <div>
+      <div></div>
+    </div>
   </div>`
+  );
+}
+
+export function pcInnerHTMLProject2(txt){
+  return(
+    `
+  <div>
+    <div>
+      <h4>I made it like this</h4>
+      <div>${txt}</div>
+    </div>
+    <div>
+      <h4>See a project</h4>
+      <div>sample page</div>
+      <div><a href = "https://github.com/leenuri1031/project-1.git" target="_blank">github</a></div>
+    </div>
+  </div>
+  `
   );
 }
 
