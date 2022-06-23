@@ -3,25 +3,16 @@ import { colorArr } from "../basic/array.js";
 import { root, mobileWidth, tabletWidth, desktopWidth} from "../basic/const.js";
 import { sectionPageLoop, sectionChildLoop, pageBoxLoop, sectionChildStyle,pageBoxText, pageMove } from "./desktop_page_function.js";
 import { pcVerContentPage } from "./desktop _content_page.js";
-import { pcVerIamPage } from "./desltop_Iam_page.js";
+import { pcVerIamPage } from "./desktop_Iam_page.js";
 import { pcVerNowIPage } from "./desktop_now_page.js";
 import { pcVerProjectPage } from "./desktop_project_page.js";
 import { pcVerSomedayPage } from "./desktop_someday_page.js";
 import { pcVerContactPage } from "./desktop_contact_page.js";
 
-// console.log(mobileWidth);
-// console.log(tabletWidth);
-// console.log(desktopWidth);
-// console.log(mobileWidth.matches);
-// console.log(tabletWidth.matches);
-// console.log(desktopWidth.matches);
 export function desktopPageMaker(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === true){
     console.log(root);
-    // root.style.backgroundImage = 'url(./img/pc_ver_background_image.png)';
-    // root.style.backgroundSize = '100vw 100vh';
-    // root.style.backgroundRepeat = 'repeat';
-
+    
     sectionPageLoop();
     sectionChildLoop();
     pageBoxLoop();

@@ -18,6 +18,7 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
   height : 10%;
   @include mixin.flex-setting(flex-start, center);
   color: var.$col-6;
+  padding-left: 1vh;
 }
 
 .round-border {

@@ -10,6 +10,7 @@ import move from "../basic/animate.js";
 
 export function somedayPageMaker(){
   if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){
+    functionObj.bgiStyle(root, './module/image/main_background.png', 'center', 'cover', 1);
 
     functionObj.createElement('div', root);
     const container = root.children[0];
@@ -50,14 +51,14 @@ export function somedayPageMaker(){
     functionObj.position(pageBox, 'absolute', '35%' , '95%');
     pageBox.style.color = colorArr[5];
 
-    let leftBtn = pageBox.children[0];
-    let pageTxt = pageBox.children[1];
-    let rightBtn = pageBox.children[2];
-
     for(let i = 0 ; i<pageBox.children.length; i++){
       functionObj.font(pageBox.children[i], '1rem', 600);
       pageBox.children[i].style.cursor = 'pointer';
       }
+      
+    let leftBtn = pageBox.children[0];
+    let pageTxt = pageBox.children[1];
+    let rightBtn = pageBox.children[2];
 
     pageTxt.addEventListener('click', ()=> {
       root.removeChild(root.children[0]);

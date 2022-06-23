@@ -8,6 +8,7 @@ import innerHTMLProject1 from "../basic/project1_function.js"
 
 export function tabletVerProject1Page(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === false){
+    functionObj.bgiStyle(root, './module/image/main_background.png', 'center', 'cover', 1);
 
     functionObj.createElement('div', root);
 

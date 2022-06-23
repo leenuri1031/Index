@@ -13,6 +13,7 @@ import innerHTMLContent from "../basic/content_function.js";
 export function tabletVerContent(){
   
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === false){
+    functionObj.bgiStyle(root, './module/image/main_background.png', 'center', 'cover', 1);
 
     functionObj.createElement('div', root);
     const container = root.children[0];

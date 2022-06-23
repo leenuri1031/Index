@@ -10,6 +10,7 @@ import move from "../basic/animate.js";
 
 export function iAmPageMaker(){
   if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){
+    functionObj.bgiStyle(root, './module/image/main_background.png', 'center', 'cover', 1);
     functionObj.createElement('div', root);
 
     const container = root.children[0];

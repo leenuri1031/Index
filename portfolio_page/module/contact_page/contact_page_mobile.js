@@ -9,6 +9,7 @@ import innerHTMLContact from "../basic/contact_function.js";
 
 export function contactPageMaker(){
   if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){
+    functionObj.bgiStyle(root, './module/image/main_background.png', 'center', 'cover', 1);
 
     functionObj.createElement('div', root);
     const container = root.children[0];

@@ -7,7 +7,7 @@ import innerHTMLIllust from "../basic/illust_function.js";
 
 export function tabletVerIllust(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === false){
-  // console.log('tablet');
+    functionObj.bgiStyle(root, './module/image/cover_background_mobile.png', 'center', 'cover', 1);
 
   functionObj.createElement('div',root);
   const container = root.children[0];

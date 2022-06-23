@@ -9,6 +9,7 @@ import innerHTMLProject1 from "../basic/project1_function.js"
 
 export function project1PageMaker(){
   if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){
+    functionObj.bgiStyle(root, './module/image/main_background.png', 'center', 'cover', 1);
 
     functionObj.createElement('div', root);
 

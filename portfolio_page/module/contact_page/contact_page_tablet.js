@@ -8,6 +8,8 @@ import innerHTMLContact from "../basic/contact_function.js";
 
 export function tabletVerContactPage(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === false){
+    functionObj.bgiStyle(root, './module/image/main_background.png', 'center', 'cover', 1);
+    
     functionObj.createElement('div', root);
     const container = root.children[0];
     functionObj.container(container, '95%' , '95%');
@@ -66,6 +68,7 @@ export function tabletVerContactPage(){
     const pageBox = document.getElementById('page-box7');
     functionObj.container(pageBox, '25%', '5%', 'row');
     functionObj.position(pageBox, 'absolute', '38%' , '92.5%');
+    pageBox.style.color = colorArr[5];
 
     for(let i = 0 ; i<pageBox.children.length; i++){
       functionObj.font(pageBox.children[i], '1rem', 600);

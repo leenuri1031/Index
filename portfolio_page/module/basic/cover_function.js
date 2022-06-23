@@ -7,8 +7,8 @@ function innerHTMLCover(src){
         <h3>El mundo’s story</h3>
       </div>
       <div>
-        <p>Written & Illust</p>
-        <p>by El mundo</p>
+        <div>Written & Illust</div>
+        <div>by El mundo</div>
       </div>
     </div>`
   );

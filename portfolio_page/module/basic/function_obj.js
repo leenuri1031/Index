@@ -77,12 +77,18 @@ export const functionObj = {
     target.style.borderRadius = radius;
   },
 
-  bgiStyle : function imageStyle (target, url, posi, size,opac){
+  bgiStyle : function imageStyle (target, url, posi, size,opac, repeat = 'no-repeat'){
     target.style.backgroundImage = `url(${url})`;
     target.style.backgroundPosition = posi;
     target.style.backgroundSize = size;
     target.style.opacity = opac;
-    target.style.backgroundRepeat = 'no-repeat';
+    target.style.backgroundRepeat = repeat;
+  },
+
+  txtStyle : function textStyle(target, col, rem = "1rem", bold){
+    target.style.color = col
+    target.style.fontSize = rem;
+    target.style.fontWeight = bold;
   }
 
   // moving : function interval(target, value1, value2, value3,value4, value5,){
