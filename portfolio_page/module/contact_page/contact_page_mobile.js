@@ -63,8 +63,6 @@ export function contactPageMaker(){
     functionObj.position(sections[2].children[1], 'relative', '-30%', '5%');
     sections[2].children[1].style.cursor ='pointer';
 
-
-
     const pageBox = document.getElementById('page-box7');
     functionObj.container(pageBox, '25%', '5%', 'row');
     functionObj.position(pageBox, 'absolute', '35%' , '95%');
