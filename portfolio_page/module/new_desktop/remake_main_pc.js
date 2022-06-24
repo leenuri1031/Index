@@ -7,6 +7,9 @@ import { pcInnerHTMLTitle, pcInnerHTMLSub } from "./innerHTML.js";
 import remakePcContent from "./remake_content_pc.js";
 import remakePcIam from "./remake_Iam_pc.js";
 import remakePcNow from "./remake_now_I_pc.js";
+import remakeProject1 from "./remake_project_pc.js";
+import remakeSomeday from "./remake_someday_pc.js";
+import remakeContact from "./remake_contact_pc.js";
 
 export function remakePcMain(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === true){
@@ -69,11 +72,10 @@ export function remakePcMain(){
     remakePcContent();
     remakePcIam();
     remakePcNow();
+    remakeProject1();
+    remakeSomeday();
+    remakeContact();
     // console.log(sections[0].children);
     pageMove(sections[0].children[1], sections[1] ,sections[6]);
-    pageMove(sections[4].children[1], sections[5] ,sections[3]);
-    pageMove(sections[5].children[1], sections[6] ,sections[4]);
-    pageMove(sections[6].children[1], sections[0] ,sections[5]);
-
   }
 }

@@ -67,13 +67,13 @@ export const functionObj = {
     target.style.alignItems = 'center';
   },
 
-  borderRound : function raoundBorderStyle (target, w, h, radius ){
+  borderRound : function raoundBorderStyle (target, w, h, radius, col = 'gray' ){
     target.style.width = w;
     target.style.height = h;
     target.style.display = 'flex';
     target.style.justifyContent = 'center';
     target.style.alignItems = 'center';
-    target.style.border = 'solid 1px gray';
+    target.style.border = `solid 1px ${col}`;
     target.style.borderRadius = radius;
   },
 
@@ -89,6 +89,8 @@ export const functionObj = {
     target.style.color = col
     target.style.fontSize = rem;
     target.style.fontWeight = bold;
+    target.style.textAlign = 'justify';
+    target.style.lineHeight = '200%'
   }
 
   // moving : function interval(target, value1, value2, value3,value4, value5,){

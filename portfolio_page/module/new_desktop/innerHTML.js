@@ -39,14 +39,14 @@ export function pcInnerHTMLIamLeft(iam, like){
     <div>
       <div>
         <h4>I am...</h4>
-        <p>${iam}</p>
+        <div>${iam}</div>
       </div>
       <div></div>
     </div>
     <div>
       <div>
         <h4>I like...</h4>
-        <p>${like}</p>
+        <div>${like}</div>
       </div>
       <div></div>
     </div>`
@@ -59,7 +59,7 @@ export function pcInnerHTMLIamRignt(did){
     <div>
       <div>
         <h4>I did</h4>
-        <p>${did}</p>
+        <div>${did}</div>
       </div>
       <div></div>
     </div>
@@ -79,8 +79,8 @@ export function pcInnerHTMLNow(now1, now2){
     <div>
       <div>
         <h4>Now I...ing</h4>
-        <p>${now1}</p>
-        <p>${now2}</p>
+        <div>${now1}</div>
+        <div>${now2}</div>
       </div>
       <div></div>
     </div>
@@ -98,7 +98,7 @@ export function pcInnerHTMLProject1(txt){
   <div>
     <h2>3. This is my...</h2>
     <div>
-      <h4>${txt}</h4>
+      <h4>This is my ${txt} project</h4>
       <div>
         <div></div>
         <div></div>
@@ -111,7 +111,7 @@ export function pcInnerHTMLProject1(txt){
   );
 }
 
-export function pcInnerHTMLProject2(txt){
+export function pcInnerHTMLProject2(txt, num){
   return(
     `
   <div>
@@ -122,7 +122,7 @@ export function pcInnerHTMLProject2(txt){
     <div>
       <h4>See a project</h4>
       <div>sample page</div>
-      <div><a href = "https://github.com/leenuri1031/project-1.git" target="_blank">github</a></div>
+      <div><a href = "https://github.com/leenuri1031/project-${num}.git" target="_blank">github</a></div>
     </div>
   </div>
   `

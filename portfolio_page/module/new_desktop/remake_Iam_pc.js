@@ -29,8 +29,8 @@ function remakePcIam(){
     leftContents[i].style.position='relative';
     functionObj.container(leftContents[i].children[0], '95%','100%');
     leftContents[i].children[0].children[0].classList.add('sub-title-txt');
-    functionObj.size(leftContents[i].children[0].children[1], '95%', '75%');
-    leftContents[i].children[0].children[1].classList.add('content-txt');
+    functionObj.size(leftContents[i].children[0].children[1], '95%', '60%');
+    functionObj.txtStyle(leftContents[i].children[0].children[1], colorArr[4], '0.9rem', 500);
   }
   
   const iAmImg = leftContents[1].children[1];
@@ -57,8 +57,9 @@ function remakePcIam(){
   // console.log(iDid);
   functionObj.container(iDid[0], '95%','90%');
   iDid[0].children[0].classList.add('sub-title-txt');
-  functionObj.size(iDid[0].children[1], '95%', '75%');
-  iDid[0].children[1].classList.add('content-txt');
+  functionObj.size(iDid[0].children[1], '95%', '60%');
+  // iDid[0].children[1].classList.add('content-txt');
+  functionObj.txtStyle(iDid[0].children[1], colorArr[4], '0.9rem', 500);
 
   functionObj.boxStyle(iDid[1], '180px','180px', colorArr[0], '50%');
   functionObj.position(iDid[1], 'absolute', '65%', '15%');

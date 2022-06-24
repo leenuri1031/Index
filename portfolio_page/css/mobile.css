@@ -69,6 +69,7 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
   align-items: center;
   flex-direction: row;
   color: #5D707A;
+  padding-left: 1vh;
 }
 
 .round-border {
@@ -114,6 +115,7 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
   padding-left: 2vh;
   line-height: 200%;
   text-align: justify;
+  color: #6A808C;
 }
 
 .img-circle {
@@ -128,4 +130,8 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
   height: 200px;
   border-radius: 50%;
   background-color: aliceblue;
+}
+
+.data {
+  color: #5D707A;
 }/*# sourceMappingURL=mobile.css.map */

@@ -37,7 +37,8 @@ function remakePcNow(){
 
   for(let i=1; i<3; i++){
     functionObj.size(leftContents[1].children[0].children[i], '95%', '40%');
-    leftContents[1].children[0].children[i].classList.add('content-txt');
+    // leftContents[1].children[0].children[i].classList.add('content-txt');
+    functionObj.txtStyle(leftContents[1].children[0].children[i], colorArr[4], '0.9rem', 500);
   }
 
   const nowImg = leftContents[1].children[1];
@@ -53,7 +54,7 @@ function remakePcNow(){
   functionObj.bgiStyle(leftContents[2].children[1],'./module/image/code.png', 'center', 'cover', 0.9);
   move(leftContents[2].children[1], '55%', '56%');
 
-  container[1].innerHTML = pcInnerHTMLProject1('This is my first project');
+  container[1].innerHTML = pcInnerHTMLProject1('first');
   functionObj.container(container[1].children[0], '95%', '95%');
   // console.log(container[1].children[0].children);
   const rightContents = container[1].children[0].children;

@@ -1,15 +1,15 @@
-function innerHTMLSomeday(text1, text2){
+function innerHTMLSomeday(text1, text2 ){
   return (
 `    <div>
       <section>
         <h2 class = "sub-title-txt">4. Someday I...</h2>
-        <h4>Someday I want...</h4>
-        <p>${text1}</p>
+        <h4 data-sub = "1">Someday I want...</h4>
+        <p data-txt = "1">${text1}</p>
         <div class = "img-circle"></div>
       </section>
       <section>
-        <h4>My dream is...</h4>
-        <p>${text2}</p>
+        <h4 data-sub = "1">My dream is...</h4>
+        <p data-txt = "1">${text2}</p>
         <div class = "img-circle"></div>
       </section>
     </div>

@@ -53,6 +53,7 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
   padding-left: 2vh;
   line-height: 200%;
   text-align: justify;
+  color: var.$col-5;
 }
 
 .img-circle {
@@ -65,4 +66,8 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
   @include mixin.size(200px, 200px);
   border-radius: 50%;
   background-color: aliceblue;
+}
+
+.data {
+  color: var.$col-6;
 }
