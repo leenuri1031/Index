@@ -65,6 +65,11 @@ export function tabletVerContactPage(){
     functionObj.position(sections[2].children[1], 'relative', '-38%', '5%');
     sections[2].children[1].style.cursor ='pointer';
 
+    // console.log(sections[2].children[2]);
+    functionObj.boxStyle(sections[2].children[2], '25%', '24%', colorArr[0], '40%');
+    functionObj.position(sections[2].children[2], 'absolute', '60%', '65%');
+    functionObj.bgiStyle(sections[2].children[2], './module/image/me.png', 'center', 'cover', 0.8);
+
     const pageBox = document.getElementById('page-box7');
     functionObj.container(pageBox, '25%', '5%', 'row');
     functionObj.position(pageBox, 'absolute', '38%' , '92.5%');

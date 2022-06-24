@@ -9,12 +9,8 @@ function remakeProject1(){
 
   const container = sections[4].children[0].children;
 
-  for(let i=0; i<container.length; i++){
-    functionObj.bgiStyle(container[i], './module/image/pc_ver_background_image.png', '', 'cover', 0.9);
-  }
-
   container[0].innerHTML = pcInnerHTMLProject2(pcProjectText1, 1);
-  container[1].innerHTML = pcInnerHTMLProject1('second');
+  container[1].innerHTML = pcInnerHTMLProject1('second',2);
 
   for(let i = 0 ; i<container.length; i++){
     functionObj.container(container[i].children[0], '95%', '95%');
@@ -57,10 +53,19 @@ function remakeProject1(){
       functionObj.boxStyle(event.target, '40%', '90%', colorArr[0]);
     });
   }
-  functionObj.bgiStyle(rightTopImg[0], './module/image/project1_img1.png', 'center', 'cover', 0.9);
-  functionObj.bgiStyle(rightTopImg[1], './module/image/project1_img2.png', 'center', 'cover', 0.9);
+  functionObj.bgiStyle(rightTopImg[0], './module/image/project2_img1.png', 'center', 'cover', 0.9);
+  functionObj.bgiStyle(rightTopImg[1], './module/image/project2_img2.png', 'center', 'cover', 0.9);
   functionObj.boxStyle(rightContents[2].children[0], '40%', '90%', colorArr[0]);
   functionObj.bgiStyle(rightContents[2].children[0], './module/image/project2_process.png', '', 'cover', 0.9);
+  rightContents[2].children[0].style.cursor = 'pointer';
+
+  rightContents[2].children[0].style.cursor = 'pointer';
+  rightContents[2].children[0].addEventListener('mouseover', (event)=> {
+    functionObj.boxStyle(event.target, '60%', '100%', colorArr[0]);
+  });
+  rightContents[2].children[0].addEventListener('mouseout', (event)=> {
+    functionObj.boxStyle(event.target, '40%', '90%', colorArr[0]);
+  });
 
   pageMove(sections[4].children[1], sections[5] ,sections[3]);
 

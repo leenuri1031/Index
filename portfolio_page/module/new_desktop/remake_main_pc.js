@@ -13,7 +13,7 @@ import remakeContact from "./remake_contact_pc.js";
 
 export function remakePcMain(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === true){
-    functionObj.bgiStyle(root, './module/image/pc_ver_cover_background.png', '', '100vw 100vh',1, 'repeat');
+    functionObj.bgiStyle(root, './module/image/pc_ver_background_image.png', '', '100vw 100vh',1, 'repeat');
 
     sectionMaker();
     sectionChildMaker('page-box');
@@ -24,6 +24,7 @@ export function remakePcMain(){
     for(let i=0; i<sections.length; i++){
       containers.push(document.getElementById(`container-${i}`));
       functionObj.container(containers[i], '100%', '100%', 'row' );
+
       const contentBox = containers[i].children;
       // console.log(contentBox);
       for(let i=0; i<contentBox.length; i++){

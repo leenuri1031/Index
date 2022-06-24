@@ -52,7 +52,7 @@ export function project1PageMaker(){
         functionObj.boxStyle(event.target, '35vw', '35vw', colorArr[0]);
       });
     }
-
+// portfolio_page/module/project_link/project1_page.html
     const textContent = document.getElementById('project-text1');
 
     functionObj.iAmPageTextBox(textContent, '35%', '97%');

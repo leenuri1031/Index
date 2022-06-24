@@ -4,7 +4,6 @@ function innerHTMLEnd(src){
         <img src = "${src}">
         <h1>The End?</h1>
       </div>
-    </div>
     <div id = "page-box8">
       <div>
       <i class="fa-solid fa-caret-left"></i>

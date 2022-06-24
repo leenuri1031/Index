@@ -10,9 +10,7 @@ function remakePcIam(){
 
   const containers = sections[2].children[0].children;
   // console.log(containers.length);  
-  for(let i=0; i<containers.length; i++){
-    functionObj.bgiStyle(containers[i], './module/image/pc_ver_background_image.png', '', 'cover', 0.9);
-  }
+
   containers[0].innerHTML = pcInnerHTMLIamLeft(textIAm, textILike);
   functionObj.container(containers[0].children[0], '95%', '95%');
 

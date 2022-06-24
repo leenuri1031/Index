@@ -22,7 +22,6 @@ function remakePcContent() {
   functionObj.position(leftContent[1], 'relative', '-5%', '-50%');
 
   // console.log(contentBoxes[1]);
-  functionObj.bgiStyle(contentBoxes[1], './module/image/pc_ver_background_image.png', '', 'cover', 0.9);
   contentBoxes[1].innerHTML = innerHTMLContent();
 
   // console.log(contentBoxes[1].children[0]);

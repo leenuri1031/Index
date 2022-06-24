@@ -92,7 +92,7 @@ export function pcInnerHTMLNow(now1, now2){
   );
 }
 
-export function pcInnerHTMLProject1(txt){
+export function pcInnerHTMLProject1(txt, num){
   return(
     `
   <div>
@@ -105,7 +105,7 @@ export function pcInnerHTMLProject1(txt){
       </div>
     </div>
     <div>
-      <div></div>
+      <a href = "module/project_link/project${num}_page.html" target="_blank"></a>
     </div>
   </div>`
   );
@@ -129,3 +129,14 @@ export function pcInnerHTMLProject2(txt, num){
   );
 }
 
+export function pcInnerHTMLEnd(src){
+  return (
+`   <div>
+      <div>
+        <img src = "${src}">
+        <h1>The End?</h1>
+      </div>
+    </div>
+    `
+  )
+}
