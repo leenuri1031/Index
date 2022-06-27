@@ -1,0 +1,15 @@
+@media (min-width: 1020px) {
+  header > div:nth-child(1) {
+    display: none;
+  }
+
+  main > section:nth-child(2) > div > div {
+    width: 300px;
+    height: 300px;
+  }
+  main > section:nth-child(2) > div > div > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}/*# sourceMappingURL=desktop_style.css.map */

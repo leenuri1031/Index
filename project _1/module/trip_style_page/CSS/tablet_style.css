@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 500px) {
+  #root > header {
+    order: 1;
+  }
+  #root > main {
+    order: 3;
+  }
+  #root > footer {
+    order: 2;
+  }
+
+  main > div:nth-child(1) {
+    width: 90%;
+  }
+  main > div:nth-child(2) {
+    width: 90%;
+  }
+  main > div:nth-child(3) {
+    width: 90%;
+  }
+  main > div:nth-child(3) > div {
+    width: 35%;
+    height: 80%;
+  }
+}/*# sourceMappingURL=tablet_style.css.map */

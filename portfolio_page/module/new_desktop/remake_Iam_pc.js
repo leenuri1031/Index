@@ -66,13 +66,13 @@ function remakePcIam(){
 
   // console.log(rightContents[1].children);
   const images = rightContents[1].children;
-  functionObj.boxStyle(images[0], '180px','180px', colorArr[0], '50%');
-  functionObj.position(images[0], 'absolute', '10%', '5%');
+  functionObj.boxStyle(images[0], '220px','220px', colorArr[0], '50%');
+  functionObj.position(images[0], 'absolute', '10%', '0%');
   functionObj.bgiStyle(images[0],'./module/image/painting.png', 'center', 'cover', 0.8);
   move(images[0], '10%', '9%');
 
   functionObj.boxStyle(images[1], '200px','200px', colorArr[0], '50%');
-  functionObj.position(images[1], 'absolute', '60%', '25%');
+  functionObj.position(images[1], 'absolute', '60%', '30%');
   functionObj.bgiStyle(images[1],'./module/image/yukata.png', 'center', 'cover', 0.8);
   move(images[1], '60%', '61%');
 

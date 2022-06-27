@@ -1,0 +1,150 @@
+@use './var'as var;
+@use './mixin' as mixin;
+@use './basic';
+
+
+// -----------------------------------------------------------------------------
+
+#root{
+  width: var.$width-root;
+  height: var.$height-root;
+  @include mixin.flex-setting(space-evenly, center, column);
+}
+
+header{
+  width: var.$per-100;
+  height: 20%;
+  @include mixin.flex-setting(space-evenly, center, column);
+  // border: $solid-gray;
+
+  &>div:nth-child(1){
+    width: var.$per-100;
+    @include mixin.flex-setting(flex-start, end);
+    flex-grow: 1;
+
+    &>div{
+    @include mixin.flex-setting(center, center, column);
+    width: 50px;
+    height: 50px;
+    border: var.$solid-pink;
+    border-radius: 50%;
+    margin-left: 5%;
+      &>i{
+        color: var.$color-4;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &>div:nth-child(2){
+    @include mixin.flex-setting(flex-start, center);
+    width: var.$per-100;
+    flex-grow: 0.8;
+
+    &>h2{
+      @include mixin.flex-setting(flex-start, end);
+      width: var.$per-100;
+      height: 70%;
+      color: var.$color-4;
+      margin-left: 5%;
+    }
+  }
+}
+
+main{
+  width: var.$per-100;
+  height: 75%;
+  @include mixin.flex-setting(center, center, column);
+  // border: $solid-gray;
+
+  &>div:first-child{
+    width: var.$per-100;
+    height: var.$per-100;
+    @include mixin.flex-setting(center, center, column);
+
+    &>div:nth-child(1){
+      width: var.$per-100;
+      height: 35%;
+      @include mixin.flex-setting(space-evenly, center);
+  
+      &>div:nth-child(1){
+        width: 40%;
+        height: 80%;
+  
+        &>img{
+          width: 90%;
+          height: 85%;
+        }
+      }
+  
+      &>div:nth-child(2){
+        width: 55%;
+        height: var.$per-100;
+        @include mixin.font-style(0.9rem, 500, var.$color-4);
+        @include mixin.flex-setting(center, center);
+      }
+    }
+  
+    &>div:nth-child(2){
+      width: var.$per-100;
+      height: 30%;
+      @include mixin.flex-setting(center, center);
+      cursor: pointer;
+  
+      &>div{
+        @include mixin.box-style(200px, 200px, var.$color-1, 50% );
+        @include mixin.flex-setting(center, center,column);
+        text-align: center;
+        line-height: 30px;
+        color: var.$color-4;
+  
+        &>i{
+          margin-top: 1vh;
+        }
+      }
+    }
+  
+    &>div:nth-child(3){
+      width: var.$per-100;
+      height: 30%;
+      @include mixin.flex-setting(space-evenly, center);
+  
+      &>div{
+        width: 40%;
+        height: 80%;
+  
+        &>img{
+          width: var.$per-100;
+          height: var.$per-100;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  &>div:last-child{
+    display: none;
+  }
+
+}
+
+footer{
+  @include mixin.size(var.$per-100, 5%);
+  background-color: var.$color-5;
+
+  &>ul{
+    @include mixin.flex-setting(space-evenly, center);
+    list-style-type: none;
+    width: var.$per-100;
+    height: var.$per-100;
+    color: var.$color-6;
+
+    &> li{
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+

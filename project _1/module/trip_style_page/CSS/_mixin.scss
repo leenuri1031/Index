@@ -1,0 +1,67 @@
+@use './var'as var;
+
+@mixin position($posi, $zindx) {
+  position: $posi;
+  z-index: $zindx;
+}
+
+@mixin flex-setting($jus, $ali, $flexdirection : row) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+  flex-direction: $flexdirection;
+}
+
+@mixin main-root-style {
+  width: var.$width-root-main;
+  height: var.$height-root-main;
+}  
+
+@mixin root-style {
+  width: var.$width-root;
+  height: var.$height-root;
+}  
+
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin box-style($w, $h, $col, $radius : 0) {
+  width: $w;
+  height: $h;
+  background-color: $col;
+  border-radius: $radius;
+}
+
+
+@mixin font-style($rem, $weight, $col) {
+  font-size: $rem ;
+  font-weight: $weight;
+  color: $col;
+}
+
+@mixin posi-style($posi, $left, $top, $zin) {
+  position: $posi;
+  left: $left;
+  top: $top;
+  z-index: $zin;
+}
+
+
+// .animation{
+//   animation-duration: 5s;
+//   animation-timing-function: linear;
+//   animation-iteration-count: infinite;
+// }
+
+
+
+// @keyframes animation{
+//   0%{top: 0px;} 
+//   25%{top: 5px;} 
+//   50%{top: 10px;}
+//   75%{top: 5px;} 
+//   100%{top: 0px;}
+// }
