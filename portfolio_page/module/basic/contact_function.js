@@ -28,7 +28,7 @@ function innerHTMLContact(text1, url1, url2){
 
       <section>
         <h4 data-sub = "2">Resume</h4>
-        <div><a href = "module/basic/Resume" target="_blank">이력서 보기</a></div>
+        <div><a href = "/portfolio_page/module/pdfjs/web/viewer.html" target="_blank">이력서 보기</a></div>
         <div></div>
       </section>
     </div>
