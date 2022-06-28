@@ -17,7 +17,7 @@ function innerHTMLProject2(txt){
         <h4>See a project</h4>
         <div>
           <div class = "round-border"><a href = "module/project_link/project2_page.html" target="_blank">project process</a></div>
-          <div class = "round-border">sample page</div>
+          <div class = "round-border"><a href = "/project_2/main.html" target="_blank">sample page</a></div>
           <div class = "round-border"><a href = "https://github.com/leenuri1031/project-2.git" target="_blank">github</a>
           </div>
         </div>

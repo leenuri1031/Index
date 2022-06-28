@@ -9,7 +9,7 @@ function remakeProject1(){
 
   const container = sections[4].children[0].children;
 
-  container[0].innerHTML = pcInnerHTMLProject2(pcProjectText1, 1);
+  container[0].innerHTML = pcInnerHTMLProject2(pcProjectText1, 1, 'index');
   container[1].innerHTML = pcInnerHTMLProject1('second',2);
 
   for(let i = 0 ; i<container.length; i++){

@@ -10,7 +10,7 @@ function remakeSomeday(){
   const sections = root.children;
   const container = sections[5].children[0].children;
 
-  container[0].innerHTML = pcInnerHTMLProject2(pcProject2Text,2);
+  container[0].innerHTML = pcInnerHTMLProject2(pcProject2Text,2, 'main');
   container[1].innerHTML = innerHTMLSomeday(somedayText1,somedayText2);
   container[1].children[1].style.display ='none';
 
