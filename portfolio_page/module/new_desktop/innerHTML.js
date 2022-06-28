@@ -121,7 +121,7 @@ export function pcInnerHTMLProject2(txt, num){
     </div>
     <div>
       <h4>See a project</h4>
-      <div>sample page</div>
+      <div><a href = "/project _1/index.html" target="_blank">sample page</a></div>
       <div><a href = "https://github.com/leenuri1031/project-${num}.git" target="_blank">github</a></div>
     </div>
   </div>
