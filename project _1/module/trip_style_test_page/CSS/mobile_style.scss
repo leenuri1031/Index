@@ -5,87 +5,6 @@
 
 // -----------------------------------------------------------------------------
 
-.flex{display: flex;}
-
-.flex-center-center{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex-center-start{
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.flex-center-end{
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-
-.flex-around-center{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.flex-around-start{
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-}
-
-.flex-between-center{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.flex-between-start{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.flex-between-end{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-
-.flex-evnenly-center{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.flex-end-center{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.flex-start-end{
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-}
-
-
-.flex-column{flex-direction: column;}
-
-.flex-row{flex-direction: row;}
-
-.position-absolute{position: absolute;}
-
-.position-relative{position: relative;}
-
-// ------------------------------------------------------
-
 #root{
   width: var.$width-root;
   height: var.$height-root;
@@ -94,71 +13,79 @@
 
 header{
   width: var.$per-100;
-  height: 15%;
+  height: 20%;
   @include mixin.flex-setting(space-evenly, center, column);
 
-  &>div{
+  &>div:first-child{
     width: 90%;
-    height: 35%;
+    height: 60%;
     @include mixin.flex-setting(flex-start, end);
 
     &>div{
-      @include mixin.size(50px, 50px);
+      @include mixin.size(40px, 40px);
       @include mixin.flex-setting(center, center, column);
       border: var.$solid-pink;
       border-radius: 50%;
-
       
       &>i{
         color: var.$color-4;
         cursor: pointer;
       }
     }
+  }
 
+  &>div:last-child{
+    display: none;
   }
 }
 
 main{
   width: var.$per-100;
-  height: 80%;
-  flex-direction: column;
+  height: 75%;
+  @include mixin.flex-setting(space-evenly, center, column);
 
   &>section:nth-child(1){
-    width: 80%;
-    height: 20%;
+    width: 90%;
+    height: 5%;
+    @include mixin.flex-setting(flex-start, flex-end, column);
 
-    &>h3{
-      width: 80%;
-      height: 60%;
-      // color: $color-gray;
+    &>h2{
+      width: var.$per-100;
+      height: var.$per-100;
+      color: var.$color-4;
     }
   }
 
-  // &>section:nth-child(2){
-  //   width: 80%;
-  //   height: 70%;
-  //   flex-direction: column;
+  &>section:nth-child(2){
+    width: 80%;
+    height: 90%;
+    @include mixin.flex-setting(space-evenly, center, column);
 
-  //   &>div{
-  //     width: $width-per;
-  //     height: $width-per;
-  //     flex-direction: column;
+    &>div:nth-child(1){
+      width: var.$per-100;
+      height: 10%;
+      @include mixin.flex-setting(space-evenly, center, column);
+      @include mixin.font-style(1.1rem, 550, var.$color-8);
+    }
 
-  //     &>div{
-  //       width: 200px;
-  //       height: 200px;
-  //       background-color: $color-gray;
-  //       border-radius: 50%;
-  
-  //       &>p{
-  //         width: 60%;
-  //         height: 60%;
-  //         text-align: justify;
-  //         color: $color-dark-gray;
-  //       }
-  //     }
-  //   }
-  // }
+    &>div:nth-child(2){
+      width: var.$per-100;
+      height: 85%;
+      @include mixin.flex-setting(space-evenly, center, column);
+
+      &>div{
+        width: 220px;
+        height: 220px;
+        background-color: var.$color-2;
+        border-radius: 50%;
+        @include mixin.font-style(0.8rem, 500, var.$color-8);
+        @include mixin.flex-setting(space-evenly, center, column);
+        text-align: center;
+        line-height: 25px;
+        cursor: pointer;
+      }
+    }
+  }
 
   
 }
@@ -176,7 +103,8 @@ footer{
 
     &> li{
       cursor: pointer;
-      font-size: 0.9rem;
+      @include mixin.font-style(0.9rem, 550, var.$color-6);
+
     }
   }
 }

@@ -6,18 +6,31 @@
 
 @media(min-width:1020px){
 
-header{
-  // border: var.$solid-gray;
-  width: 90%;
-  height: 15%;
-  &>div:nth-child(1){
-    display: none;
-  }
-}
+  
+  header{
+    // border: var.$solid-gray;
+    width: 90%;
+    height: 15%;
+    
+    @for $i from 1 to 3 {
+      div:nth-child(#{$i}) {
+        display: none;
+      }
+    }
 
-#text{
-  width: 50%;
-  position: relative;
+  &>div:nth-child(3){
+    @include mixin.flex-setting(flex-start, center);
+    width: 95%;
+    flex-grow: 0.8;
+
+      &>h2{
+        @include mixin.flex-setting(flex-start, end);
+        width: var.$per-100;
+        height: 70%;
+        color: var.$color-8;
+        margin-left: 5%;
+      }
+  }
 }
 
 
@@ -93,14 +106,14 @@ header{
         }
       }
     }
-
-
   }
 
 }
 
 footer{
   width: 85%;
+  @include mixin.font-style(1.1rem, 550, var.$color-6);
+
 }
 
 }

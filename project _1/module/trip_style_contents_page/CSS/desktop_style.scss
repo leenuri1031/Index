@@ -1,28 +1,6 @@
-$width-root:100vw;
-$height-root:100vh;
-$color-black:black;
-$color-white:white;
-$color-bright-gray:#e2e2e2;
-$color-gray:#c4c4c4;
-$color-dark-gray:#838383;
-$color-light-pink:#FFEAE6;
-$color-dark-red: #6E1A26;
-$color-mid-red: #CA9E97;
-$color-mid-beige: #E0CDC9;
-$color-mid-pink: #FFAE9B;
-$color-dark-pink: #ED9D90;
-$solid-black:1px solid black;
-$solid-gray:1px solid #888;
-$solid-red:1px solid #613c3c;
-$solid-pink:2px solid #FFAE9B;
-$solid-blue:1px solid #4f508b;
-$dotted-color:1px dotted #3b3e49;
-$dotted-pink:1px dotted #FFAE9B;
-$border-radius:50%;
-$border-radius-round:20px;
-$width-per:100%;
-
-
+@use './var'as var;
+@use './mixin' as mixin;
+@use './basic';
 
 // -----------------------------------------------------------------------------
 
@@ -31,49 +9,78 @@ $width-per:100%;
   #root{height: 100vh;}
 
   header{
+    width: 80%;
     height: 10%;
 
     &>div:nth-child(1){display: none;}
+
+    &>h2:nth-child(3){
+    width: 90%;
+    height: 40%;
+    @include mixin.flex-setting(flex-start, center);
+    color: var.$color-8;
+    }
   }
 
   main{
-    flex-direction: row;
+    width: 80%;
+    height: 80%;
+    @include mixin.flex-setting(space-around, center);
 
     &>section:nth-child(1){
-      width: 50%;
+      @include mixin.flex-setting(space-evenly, center, column);
+      width: 35%;
       height: 80%;
 
+      &>h2{
+        width: 90%;
+        height: 20%;
+        @include mixin.flex-setting(center, center);
+        color: var.$color-4;
+      }
+
       &>div{
-        &>div{
-          width: 50px;
-          height: 50px;
-        }
+        width: 90%;
+        height: 70%;
       }
     }
 
     &>section:nth-child(2){
-      width: 50%;
+      width: 55%;
       height: 80%;
 
-      &>div:nth-child(1){
-        width: 80%;
-        height: 5;
-      }
-
       &>div:nth-child(2){
-        width: 90%;
-        height: 75%;
-        flex-direction: row;
+        width: 100%;
+        height: 80%;
+        @include mixin.flex-setting(space-between, center);
         
         &>div{
-          width:30%;
-          height:50%; 
-          background-color: $color-gray;
-          color: $color-bright-gray;
-          border-radius: 30px;
+          width: 30%;
+          height: 90%;
+          @include mixin.flex-setting(space-evenly, center,column);
+  
+          &>div:nth-child(1){
+            width: 80%;
+            height: 40%;
+          }
+          
+          &>div:nth-child(2){
+            width: 80%;
+            height: 45%;
+            @include mixin.font-style(1rem, 500, var.$color-4);
+  
+            &>div:nth-child(2){
+              width: 80%;
+              height: 20%;
+            }
+          }
         }
       }
     }
+  }
 
+  footer{
+    @include mixin.size(80%, 5vh);
+    @include mixin.font-style(1.1rem, 550, var.$color-6);
   }
 }

@@ -9,8 +9,10 @@ export function mainSection(){
     <section data-section-content= "0">
       <div>
         <div>
+        <a href="/project _1/module/trip_style_page/2022.04.05_trip_style.html">
         <p>my trip style </p>
-        <p>-></p>
+        <i class="fa-solid fa-angles-right"></i>
+        </a>
         </div>
       </div>
       <div></div>

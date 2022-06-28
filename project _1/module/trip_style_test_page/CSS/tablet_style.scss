@@ -23,28 +23,33 @@
 
   main{
 
+    &>section:nth-child(1){
+      height: 15%;
+
+      &>h2{
+        @include mixin.flex-setting(center, flex-start, column);
+      }
+    }
+
     &>section:nth-child(2){
+      height: 80%;
+      border: var.$dotted-pink;
+      border-radius: 20px;
+
+      &>div:nth-child(1){
+        width: 90%;
+        height: 15%;
+        @include mixin.flex-setting(center, flex-start, column);
+      }
   
-      // &>div{
-      //   width: $width-per;
-      //   height: $width-per;
-      //   flex-direction: row;
-      //   border: $dotted-color;
+      &>div:nth-child(2){
+        height: 80%;
+        @include mixin.flex-setting(space-evenly, center);
   
-      //   &>div{
-      //     width: 200px;
-      //     height: 200px;
-      //     background-color: $color-gray;
-      //     border-radius: 40px;
-    
-      //     &>p{
-      //       width: 60%;
-      //       height: 60%;
-      //       text-align: justify;
-      //       color: $color-dark-gray;
-      //     }
-      //   }
-      // }
+        &>div{
+          border-radius: 50px;
+        }
+      }
     }
 }
   

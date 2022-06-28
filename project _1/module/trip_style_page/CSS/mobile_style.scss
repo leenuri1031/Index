@@ -24,8 +24,8 @@ header{
 
     &>div{
     @include mixin.flex-setting(center, center, column);
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border: var.$solid-pink;
     border-radius: 50%;
     margin-left: 5%;
@@ -48,6 +48,10 @@ header{
       color: var.$color-4;
       margin-left: 5%;
     }
+  }
+
+  &>div:nth-child(3){
+    display: none;
   }
 }
 
@@ -141,7 +145,7 @@ footer{
 
     &> li{
       cursor: pointer;
-      font-size: 0.9rem;
+      @include mixin.font-style(0.9rem, 550, var.$color-6);
     }
   }
 }

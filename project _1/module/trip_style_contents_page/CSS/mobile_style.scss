@@ -1,292 +1,188 @@
-
-
-  $width-root:100vw;
-  $height-root:120vh;
-  $color-black:black;
-  $color-white:white;
-  $color-bright-gray:#e2e2e2;
-  $color-gray:#c4c4c4;
-  $color-dark-gray:#838383;
-  $color-light-pink:#FFEAE6;
-  $color-dark-red: #6E1A26;
-  $color-mid-red: #CA9E97;
-  $color-mid-beige: #E0CDC9;
-  $color-mid-pink: #FFAE9B;
-  $color-dark-pink: #ED9D90;
-  $solid-black:1px solid black;
-  $solid-gray:1px solid #838383;;
-  $solid-red:1px solid #613c3c;
-  $solid-pink:1px solid #FFAE9B;
-  $solid-blue:1px solid #4f508b;
-  $dotted-color:1px dotted #3b3e49;
-  $dotted-pink:1px dotted #FFAE9B;
-  $border-radius:50%;
-  $border-radius-round:20px;
-  $width-per:100%;
-  $justi-start:flex-start;
-  $justi-end:flex-end;
-  $justi-center:center;
-  $justi-around:space-around;
-  $justi-between:space-between;
-  $justi-evenly:space-evenly;
-  $ali-center:center;
-  $ali-start:flex-start;
-  $ali-end:flex-end;
-  
-
-
-// -----------------------------------------------------------------------------
-
-*{margin: 0; padding: 0;}
-
-
-.flex{display: flex;}
-
-.flex-center-center{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex-around-center{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.flex-evenly-center{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.flex-between-center{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.flex-around-end{
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-}
-
-.flex-end-end{
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-.flex-between-start{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.flex-between-end{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.flex-center-start{
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.ali-end{align-items: flex-end;}
-
-.ali-start{align-items: flex-start;}
-
-.ali-center{align-items: center;}
-
-.justi-center{justify-content: center;}
-
-.justi-around{justify-content: space-around;}
-
-.justi-between{justify-content: space-between;}
-
-.justi-evenly{justify-content: space-evenly;}
-
-.justi-start{justify-content: flex-start;}
-
-.justi-end{justify-content: flex-end;}
-
-
-
-.flex-column{flex-direction: column;}
-
-.flex-row{flex-direction: row;}
-
-.position-absolute{position: absolute;}
-
-.position-relative{position: relative;}
-
-.border-black{border: $solid-black;}
-
-.border-pink{border:$solid-pink;}
-
-.arrow-box-style{
-  width: 45px;
-  height: 45px;
-  border: $solid-gray;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $color-gray;
-}
-
-.menu-style{
-  list-style-type: none;
-  width: $width-per;
-  height: $width-per;
-  color: $color-bright-gray;
-  font-size: 14px;
-}
-
-.button-style{
-  background-color: $color-gray;
-  color: $color-dark-gray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 30px;
-}
-
-.search-box-style{
-  width: 80%;
-  height: $width-per;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $color-dark-gray;
-}
-
-.icon-dwon-style{
-  width: 10%;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $color-dark-gray;
-}
+@use './var'as var;
+@use './mixin' as mixin;
+@use './basic';
 
 // ------------------------------------------------------
 
 #root{
-  width: $width-root;
-  height: $height-root;
+  width: var.$width-root;
+  height: 110vh;
+  @include mixin.flex-setting(space-evenly, center, column);
 }
 
 header{
-  width: $width-per;
-  height: 15%;
-  align-items: center;
+  width: var.$per-100;
+  height: 15vh;
+  @include mixin.flex-setting(space-evenly, center, column);
 
-  &>div{
+  &>div:first-child{
     width: 90%;
-    flex-grow: 1;
-    // border: $dotted-pink;
+    height: 80%;
+    @include mixin.flex-setting(flex-start, end);
 
-    &>h2{
-      width: $width-per;
-      height: 90%;
-      color: $color-gray;
+    &>div{
+      @include mixin.size(40px, 40px);
+      @include mixin.flex-setting(center, center, column);
+      border: var.$solid-pink;
+      border-radius: 50%;
+      
+      &>i{
+        color: var.$color-4;
+        cursor: pointer;
+      }
     }
   }
+
+  &>h2:nth-child(2){
+    width: 90%;
+    height: 40%;
+    @include mixin.flex-setting(center, center);
+    color: var.$color-4;
+  }
+
+  &>h2:nth-child(3){
+    display: none;
+  }
+
 }
 
-
-
 main{
-  width: $width-per;
-  height: 80%;
-  flex-direction: column;
-
+  width: var.$per-100;
+  height: 95vh;
+  @include mixin.flex-setting(space-evenly, center, column);
 
   &>section:nth-child(1){
     width: 90%;
-    height: 25%;
+    height: 35%;
+    @include mixin.flex-setting(center, center, column);
 
-    &>h2{display: none;}
+    &>h2{
+      display: none;
+    }
 
     &>div{
-      width: $width-per;
-      height: $width-per;
-      flex-direction: column;
-      background-color: $color-gray;
+      width: 90%;
+      height: var.$per-100;
+      border: var.$dotted-pink;
       border-radius: 30px;
-
-      &>div{
-        width: 45px;
-        height: 45px;
-        background-color: $color-white;
-        border-radius: 50%;
-        color: $color-gray;
-        left: 3%;
-      }
-    }
-
-  }
-
-  &>section:nth-child(2){
-    width: 90%;
-    height: 70%;
-    flex-direction: column;
-
-    &>div:nth-child(1){
-      width: 90%;
-      height: 8%;
-
-      &>h4{
-        width: 60%;
-        height: $width-per;
-        border: $solid-gray;
-        color: $color-gray;
-        border-radius: 30px;
-      }
-    }
-
-    &>div:nth-child(2){
-      width: 90%;
-      height: 75%;
-      flex-direction: column;
-      
-      &>div{
-        width:60%;
-        height:30%; 
-        background-color: $color-gray;
-        color: $color-bright-gray;
-        border-radius: 30px;
-      }
-    }
-
-    &>div:nth-child(3){
-      width: 90%;
-      height: 12%;
-      flex-direction: column;
+      @include mixin.flex-setting(center, center, column);
+      background-image: url("/img/trip_content.png") ;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
 
       &>div:nth-child(1){
-        width: 60%;
-        height: 50%;
+        @include mixin.flex-setting(center, center);
+        width: 90%;
+        height: 95%;
+        @include mixin.font-style(1rem, 550, var.$color-1);
+        line-height: 30px;
+        padding-top: 5vh;
       }
 
       &>div:nth-child(2){
-        width: 40%;
-        height: 40%;
+        @include mixin.box-style(45px, 45px, var.$color-1, 50%);
+        @include mixin.posi-style(relative, 0%, 0%,2);
+        @include mixin.flex-setting(center, center);
+        color: #FA6747;
+        @include mixin.posi-style(relative, 43%, 4%,1);
+      }
+    }
+  } 
+  
+  &>section:nth-child(2){
+    width: 90%;
+    height: 65%;
+    @include mixin.flex-setting(space-around, center, column);
+
+    &>div:nth-child(1){
+      width: 90%;
+      height: 10%;
+      @include mixin.flex-setting(center, center);
+      
+      &>h4{
+        @include mixin.box-style(60%, 60%, var.$color-2, 20px);
+        @include mixin.flex-setting(center, center);
+        color: var.$color-4;
+      }
+
+    }
+    
+    &>div:nth-child(2){
+      width: 90%;
+      height: 60%;
+      @include mixin.flex-setting(space-evenly, center, column);
+      
+      &>div{
+        width: 90%;
+        height: 30%;
+        @include mixin.flex-setting(space-evenly, center);
+
+        &>div:nth-child(1){
+          width: 40%;
+          height: 95%;
+
+          .img-style{
+            width:var.$per-100 ;
+            height: var.$per-100;
+            opacity: 0.8;
+          }
+        }
+
+        &>div:nth-child(2){
+          width: 50%;
+          height: 95%;
+          @include mixin.flex-setting(space-evenly, center, column);
+          @include mixin.font-style(0.8rem, 500, var.$color-4);
+
+          &>div:nth-child(2){
+            width: 60%;
+            height: 25%;
+            @include mixin.flex-setting(center, center);
+            border: var.$solid-pink;
+            border-radius: 20px;
+            cursor: pointer;
+          }
+
+        }
+      }
+      
+    }
+    
+    &>div:nth-child(3){
+      width: 90%;
+      height: 20%;
+      @include mixin.flex-setting(space-evenly, center, column);
+      
+      &>div{
+        @include mixin.box-style(60%, 40%, var.$color-3, 30px);
+        @include mixin.flex-setting(center, center);
+        @include mixin.font-style(0.8rem, 550, var.$color-5);
+        cursor: pointer;
       }
     }
   }
-} 
-
-
-
-
-footer{  
-  width: $width-per;
-  height: 5%;
-  background-color: $color-dark-gray;
+      
 }
+
+
+
+
+footer{
+  @include mixin.size(var.$per-100, 5vh);
+  background-color: var.$color-5;
+
+  &>ul{
+    @include mixin.flex-setting(space-evenly, center);
+    list-style-type: none;
+    width: var.$per-100;
+    height: var.$per-100;
+    color: var.$color-6;
+
+    &> li{
+      cursor: pointer;
+      @include mixin.font-style(0.9rem, 550, var.$color-6);
+    }
+  }
+}
+
