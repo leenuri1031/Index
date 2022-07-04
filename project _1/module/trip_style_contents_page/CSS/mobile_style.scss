@@ -66,7 +66,7 @@ main{
       border: var.$dotted-pink;
       border-radius: 30px;
       @include mixin.flex-setting(center, center, column);
-      background-image: url("/img/trip_content.png") ;
+      background-image: url("/project _1/module/img/trip_content.png") ;
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
@@ -75,7 +75,7 @@ main{
         @include mixin.flex-setting(center, center);
         width: 90%;
         height: 95%;
-        @include mixin.font-style(1rem, 550, var.$color-1);
+        @include mixin.font-style(0.8rem, 550, var.$color-1);
         line-height: 30px;
         padding-top: 5vh;
       }

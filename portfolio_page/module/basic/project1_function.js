@@ -1,6 +1,5 @@
-function innerHTMLProject1(txt){
-  return(
-`    <div>
+function innerHTMLProject1(txt) {
+  return `    <div>
       <section>
         <h2 class = "sub-title-txt">3. This is my...</h2>
         <h4 class = "sub-title-txt">This is my first project</h4>
@@ -31,8 +30,7 @@ function innerHTMLProject1(txt){
         <i class="fa-solid fa-caret-right"></i>
     </div>
   </div>
-    `
-  );
+    `;
 }
 
 export default innerHTMLProject1;

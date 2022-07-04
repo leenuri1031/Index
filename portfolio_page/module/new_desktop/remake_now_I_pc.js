@@ -29,9 +29,10 @@ function remakePcNow() {
 
   functionObj.container(leftContents[1].children[0], "95%", "100%");
   leftContents[1].children[0].children[0].classList.add("sub-title-txt");
+  // leftContents[1].children[0].children[1].style.border = "1px solid black";
 
   for (let i = 1; i < 3; i++) {
-    functionObj.size(leftContents[1].children[0].children[i], "95%", "40%");
+    functionObj.size(leftContents[1].children[0].children[i], "90%", "40%");
     // leftContents[1].children[0].children[i].classList.add('content-txt');
     functionObj.txtStyle(
       leftContents[1].children[0].children[i],
@@ -72,11 +73,7 @@ function remakePcNow() {
   );
   move(leftContents[2].children[1], "55%", "56%");
 
-  container[1].innerHTML = pcInnerHTMLProject1(
-    "first",
-    1,
-    "/project _1/index.html"
-  );
+  container[1].innerHTML = pcInnerHTMLProject1("first", 1);
   functionObj.container(container[1].children[0], "95%", "95%");
   // console.log(container[1].children[0].children);
   const rightContents = container[1].children[0].children;

@@ -1,9 +1,7 @@
-import {footer,mobileWidth, tabletWidth, desktopWidth} from "../basic/const.js";
+import { footer } from "../basic/const.js";
 import { footerStyle } from "./bottom_section_style.js";
 
-
-export function footerMenu(){
-
+export function footerMenu() {
   footer.innerHTML = `
   <ul>
   <li>my trip</li>

@@ -84,7 +84,7 @@ main > section:nth-child(1) > div {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url("/img/trip_content.png");
+  background-image: url("/project _1/module/img/trip_content.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -96,7 +96,7 @@ main > section:nth-child(1) > div > div:nth-child(1) {
   flex-direction: row;
   width: 90%;
   height: 95%;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 550;
   color: #F4F4EF;
   line-height: 30px;

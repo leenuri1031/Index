@@ -9,12 +9,12 @@ function remakeProject1() {
 
   const container = sections[4].children[0].children;
 
-  container[0].innerHTML = pcInnerHTMLProject2(pcProjectText1, 1, "index");
-  container[1].innerHTML = pcInnerHTMLProject1(
-    "second",
-    2,
-    "/project _2/main_page_new_ver/main_page.html"
+  container[0].innerHTML = pcInnerHTMLProject2(
+    pcProjectText1,
+    1,
+    "/project _1/index.html"
   );
+  container[1].innerHTML = pcInnerHTMLProject1("second", 2);
 
   for (let i = 0; i < container.length; i++) {
     functionObj.container(container[i].children[0], "95%", "95%");
@@ -26,7 +26,7 @@ function remakeProject1() {
     leftContents[i].children[0].classList.add("sub-title-txt");
   }
 
-  functionObj.size(leftContents[0].children[1], "92%", "60%");
+  functionObj.size(leftContents[0].children[1], "90%", "60%");
   // leftContents[0].children[1].classList.add('content-txt');
   functionObj.txtStyle(leftContents[0].children[1], colorArr[4], "0.9rem", 500);
   // console.log(leftContents[1].children);
