@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+#root {
+  width: 100vw;
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  color: #4F787D;
+  background-color: #BCDAC5;
+}
+
+header {
+  width: 100%;
+  height: 20vh;
+}
+header > div {
+  width: 95%;
+  height: 40%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+header > div > a > i {
+  margin: 10px;
+  cursor: pointer;
+}
+header > h1 {
+  width: 90%;
+  height: 60%;
+  margin-left: 10px;
+  border-bottom: 2px dotted #888;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+main > h3 {
+  width: 90%;
+  flex-grow: 0.1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+main > section {
+  width: 90%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main > section > div:first-child {
+  width: 35%;
+  height: 50%;
+}
+main > section > div:last-child {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: column;
+}
+main > section > div:last-child > p {
+  width: 60%;
+  height: 15%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(114, 114, 114);
+  color: #4F787D;
+}
+main > section > div:last-child > div:nth-child(2) {
+  width: 95%;
+  height: 50%;
+}
+main > section > div:last-child > div:nth-child(3) {
+  width: 25%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #4F787D;
+  border-radius: 20px;
+  cursor: pointer;
+}
+main > section:nth-child(2) > div:nth-child(1) {
+  background-image: url(./img/1st_album.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+main > section:nth-child(3) > div:nth-child(1) {
+  background-image: url(./img/2nd_album.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+main > section:nth-child(4) > div:nth-child(1) {
+  background-image: url(./img/3rd_album.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}/*# sourceMappingURL=mobile.ver.css.map */

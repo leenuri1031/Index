@@ -1,0 +1,111 @@
+@use './var'as var;
+@use './mixin' as mixin;
+@use './basic';
+
+
+// -----------------------------------------------------------------------------
+
+#root{
+  width: var.$width-root;
+  height: var.$height-root;
+  @include mixin.flex-setting(space-evenly, center, column);
+}
+
+header{
+  width: var.$per-100;
+  height: 20%;
+  @include mixin.flex-setting(space-evenly, center, column);
+
+  &>div:first-child{
+    width: 90%;
+    height: 60%;
+    @include mixin.flex-setting(flex-start, end);
+
+    &>div{
+      @include mixin.size(40px, 40px);
+      @include mixin.flex-setting(center, center, column);
+      border: var.$solid-pink;
+      border-radius: 50%;
+      
+      &>i{
+        color: var.$color-4;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &>div:last-child{
+    display: none;
+  }
+}
+
+main{
+  width: var.$per-100;
+  height: 75%;
+  @include mixin.flex-setting(space-evenly, center, column);
+
+  &>section:nth-child(1){
+    width: 90%;
+    height: 5%;
+    @include mixin.flex-setting(flex-start, flex-end, column);
+
+    &>h2{
+      width: var.$per-100;
+      height: var.$per-100;
+      color: var.$color-4;
+    }
+  }
+
+  &>section:nth-child(2){
+    width: 80%;
+    height: 90%;
+    @include mixin.flex-setting(space-evenly, center, column);
+
+    &>div:nth-child(1){
+      width: var.$per-100;
+      height: 10%;
+      @include mixin.flex-setting(space-evenly, center, column);
+      @include mixin.font-style(1.1rem, 550, var.$color-8);
+    }
+
+    &>div:nth-child(2){
+      width: var.$per-100;
+      height: 85%;
+      @include mixin.flex-setting(space-evenly, center, column);
+
+      &>div{
+        width: 220px;
+        height: 220px;
+        background-color: var.$color-2;
+        border-radius: 50%;
+        @include mixin.font-style(0.8rem, 500, var.$color-8);
+        @include mixin.flex-setting(space-evenly, center, column);
+        text-align: center;
+        line-height: 25px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  
+}
+
+footer{
+  @include mixin.size(var.$per-100, 5%);
+  background-color: var.$color-5;
+
+  &>ul{
+    @include mixin.flex-setting(space-evenly, center);
+    list-style-type: none;
+    width: var.$per-100;
+    height: var.$per-100;
+    color: var.$color-6;
+
+    &> li{
+      cursor: pointer;
+      @include mixin.font-style(0.9rem, 550, var.$color-6);
+
+    }
+  }
+}
+

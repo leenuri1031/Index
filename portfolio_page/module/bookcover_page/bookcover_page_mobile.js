@@ -9,7 +9,9 @@ import innerHTMLCover from "../basic/cover_function.js"
 
 export function bookcoverMaker(){
   if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){
+    functionObj.bgiStyle(root, './module/image/cover_background_mobile.png', 'center', 'cover', 1);
     // console.log('mobile');
+
     functionObj.createElement('div',root);
     const container = root.children[0];
     functionObj.container(container, '100%' , '100%');
@@ -33,7 +35,7 @@ export function bookcoverMaker(){
     const bottomContentBox = imgContainer.children[1];
 
     for(let i = 0 ; i<2; i++){
-      functionObj.font(bottomContentBox.children[i], '1rem', 550);
+      functionObj.font(bottomContentBox.children[i], '1rem', 600);
     }
 
     if(boolean === true){

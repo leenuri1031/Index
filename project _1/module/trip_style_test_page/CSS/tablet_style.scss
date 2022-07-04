@@ -1,0 +1,58 @@
+@use './var'as var;
+@use './mixin' as mixin;
+@use './basic';
+// -----------------------------------------------------------------------------
+
+@media(min-width:500px){
+
+  #root {
+    // justify-content: center;
+    
+    &>header{order:1;}
+    &>main{order:3;}
+    &>footer{order:2;}
+  }
+  
+  header{
+
+    &>div{
+      width: 95%;
+      height: 50%;
+    }
+  } 
+
+  main{
+
+    &>section:nth-child(1){
+      height: 15%;
+
+      &>h2{
+        @include mixin.flex-setting(center, flex-start, column);
+      }
+    }
+
+    &>section:nth-child(2){
+      height: 80%;
+      border: var.$dotted-pink;
+      border-radius: 20px;
+
+      &>div:nth-child(1){
+        width: 90%;
+        height: 15%;
+        @include mixin.flex-setting(center, flex-start, column);
+      }
+  
+      &>div:nth-child(2){
+        height: 80%;
+        @include mixin.flex-setting(space-evenly, center);
+  
+        &>div{
+          border-radius: 50px;
+        }
+      }
+    }
+}
+  
+  
+  
+}

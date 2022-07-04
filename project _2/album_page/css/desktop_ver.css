@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+@media (min-width: 1020px) {
+  header > div {
+    display: none;
+  }
+  header > h1 {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-left: 4vw;
+    padding-bottom: 10px;
+  }
+
+  main > h3 {
+    flex-grow: 0.2;
+  }
+  main > section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  main > section > div:first-child {
+    width: 10%;
+    height: 60%;
+  }
+  main > section > div:last-child {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-left: 10vw;
+  }
+  main > section > div:last-child > p {
+    width: 50%;
+    height: 15%;
+  }
+  main > section > div:last-child > div:nth-child(2) {
+    width: 30%;
+    height: 50%;
+  }
+  main > section > div:last-child > div:nth-child(3) {
+    width: 15%;
+    height: 10%;
+    position: relative;
+    right: 0vw;
+  }
+}/*# sourceMappingURL=desktop_ver.css.map */

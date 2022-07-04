@@ -3,61 +3,54 @@ import { colorArr } from "../basic/array.js";
 import { root, mobileWidth, tabletWidth, desktopWidth} from "../basic/const.js";
 import { tabletVerBookcover } from "../bookcover_page/bookcover_page_tablet.js";
 import { tabletVerContent } from "../content_page/content_page_tablet.js";
-
+import innerHTMLIllust from "../basic/illust_function.js";
 
 export function tabletVerIllust(){
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === false){
-  // console.log('tablet');
+    functionObj.bgiStyle(root, './module/image/cover_background_mobile.png', 'center', 'cover', 1);
 
   functionObj.createElement('div',root);
   const container = root.children[0];
 
   functionObj.container(container, '95%' , '95%');
-  container.style.border = '1px dotted gray';
+  container.style.border = `1px dotted ${colorArr[5]}`;
 
-  for(let i = 0; i< 2; i++){
-    functionObj.createElement('div', container);
-  }
-
+  container.innerHTML = innerHTMLIllust();
   const illustBox = container.children[0];
-  const pageBox = container.children[1];
-
-  functionObj.boxStyle(illustBox, '80%', '90%', colorArr[0]);
-  illustBox.style.paddingLeft = '5vw';
-  illustBox.style.paddingBottom = '10vw';
-  functionObj.flex(illustBox,'center', 'center');
-
-  functionObj.createElement('p', illustBox);
-  let textBox = illustBox.children[0]
+  
+  functionObj.container(illustBox, '80%', '80%');
+  
+  functionObj.size(illustBox.children[0], '80%', '75%');
+  functionObj.position(illustBox.children[0], 'absolute', '10%', '10%');
+  illustBox.children[0].style.backgroundImage = 'url(./module/image/illust_background.png)';
+  illustBox.children[0].style.backgroundSize = 'cover';
+  
+  let textBox = illustBox.children[1];
   functionObj.size(textBox, '60%', '10%');
-  textBox.textContent = 'If you’re curious about my story, please read it to the end even if you feel bored.';
+  textBox.style.color = colorArr[6];
+  functionObj.position(textBox, 'relative', '0%', '0%' ,1);
+  functionObj.font(textBox, '1.2rem', 600);
+  
+  const pageBox = document.getElementById('page-box');
 
-  functionObj.size(pageBox, '25%', '5%');
-  functionObj.flex(pageBox,'space-evenly', 'center');
+  functionObj.container(pageBox, '25%', '5%', 'row');
   functionObj.position(pageBox, 'absolute', '38%' , '92.5%');
-
-
-  for(let i = 0; i< 3; i++){
-    functionObj.createElement('div', pageBox);
-  }
+  pageBox.style.color = colorArr[5];
+  
+  for(let i = 0 ; i<pageBox.children.length; i++){
+    functionObj.font(pageBox.children[i], '1rem', 600);
+    pageBox.children[i].style.cursor = 'pointer';
+    }
 
   let leftBtn = pageBox.children[0];
   let pageTxt = pageBox.children[1];
   let rightBtn = pageBox.children[2];
 
-  leftBtn.textContent = '<';
-  pageTxt.textContent = 'page';
-  rightBtn.textContent = '>';
-
-  leftBtn.style.cursor = 'pointer';
-  pageTxt.style.cursor = 'pointer';
-  rightBtn.style.cursor = 'pointer';
-
   pageTxt.addEventListener('click', ()=> {
     root.removeChild(root.children[0]);
     tabletVerBookcover();
   });
-
+  
   leftBtn.addEventListener('click', ()=> {
     root.removeChild(root.children[0]);
     tabletVerBookcover();
@@ -67,6 +60,9 @@ export function tabletVerIllust(){
     root.removeChild(root.children[0]);
     tabletVerContent();
   });
+  
+
+
 
 } 
 }

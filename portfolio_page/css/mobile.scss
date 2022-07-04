@@ -4,11 +4,70 @@
 @use './tablet';
 
 /* 
-namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin에서 vqr시트를 @use했더니 ok
+namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin에서 var시트를 @use했더니 ok
 */
 // -----------------------------------------
 
 #root{
   @include mixin.root-style;
   @include mixin.flex-setting(space-evenly, center, column);
+}
+
+.sub-title-txt {
+  width : 95%;
+  height : 10%;
+  @include mixin.flex-setting(flex-start, center);
+  color: var.$col-6;
+  padding-left: 1vh;
+}
+
+.round-border {
+  width : 30%;
+  height : 40%;
+  @include mixin.flex-setting(center, center);
+  border : solid 1px var.$col-6;
+  border-radius: 30px;
+  color: var.$col-5;
+  font-size: 0.8rem;
+}
+
+.tablet-round-border {
+  width: 15%;
+  height: 30%;
+  @include mixin.flex-setting(center, center);
+  border : solid 1px var.$col-6;
+  border-radius: 30px;
+  color: var.$col-5;
+  font-size: 0.8rem;
+}
+
+.img-box {
+  width: 35vw;
+  height: 35vw;
+  background-color: beige;
+}
+
+.content-txt {
+  @include mixin.flex-setting(flex-start, center);
+  @include mixin.font-style(0.8rem, 500, var.$col-5);
+  padding-left: 2vh;
+  line-height: 200%;
+  text-align: justify;
+  color: var.$col-5;
+}
+
+.img-circle {
+  @include mixin.size(150px, 150px);
+  border-radius: 50%;
+  background-color: aliceblue;
+}
+
+.tablet-img-circle {
+  @include mixin.size(180px, 180px);
+  border-radius: 50%;
+  background-color: aliceblue;
+}
+
+.data {
+  color: var.$col-6;
 }

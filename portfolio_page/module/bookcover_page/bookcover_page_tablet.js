@@ -8,6 +8,7 @@ export const tabletVerBookcover = function tabletPage(){
   
   if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === false){
     // console.log('tablet');
+    functionObj.bgiStyle(root, './module/image/cover_background_mobile.png', 'center', 'cover', 1);
   
     functionObj.createElement('div',root);
     const container = root.children[0];
@@ -38,7 +39,7 @@ export const tabletVerBookcover = function tabletPage(){
     containerContent[0].children[0].style.opacity = 0.8;
 
     for(let i = 0 ; i<2; i++){
-      functionObj.font(containerContent[1].children[i], '1rem', 550);
+      functionObj.font(containerContent[1].children[i], '1rem', 600);
     }
     
     if(boolean === true){

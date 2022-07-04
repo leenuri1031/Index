@@ -8,7 +8,7 @@ import innerHTMLIllust from "../basic/illust_function.js";
 
 export function illustPageMaker(){
   if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){
-
+    functionObj.bgiStyle(root, './module/image/cover_background_mobile.png', 'center', 'cover', 1);
 
     functionObj.createElement('div',root);
     const container = root.children[0];
@@ -16,7 +16,6 @@ export function illustPageMaker(){
     container.innerHTML = innerHTMLIllust();
 
   const illustBox = container.children[0];
-  const pageBox = container.children[1];
 
   functionObj.container(illustBox, '80%', '80%');
 
@@ -29,18 +28,22 @@ export function illustPageMaker(){
   functionObj.size(textBox, '60%', '10%');
   textBox.style.color = colorArr[6];
   functionObj.position(textBox, 'relative', '0%', '0%' ,1);
-  functionObj.font(textBox, '1.1rem', 530);
+  functionObj.font(textBox, '1.1rem', 600);
+  
+  const pageBox = document.getElementById('page-box');
 
   functionObj.container(pageBox, '25%', '5%', 'row');
   functionObj.position(pageBox, 'absolute', '35%' , '95%');
   pageBox.style.color = colorArr[5];
+
+  for(let i = 0 ; i<pageBox.children.length; i++){
+  functionObj.font(pageBox.children[i], '1rem', 600);
+  pageBox.children[i].style.cursor = 'pointer';
+  }
+
   let leftBtn = pageBox.children[0];
   let pageTxt = pageBox.children[1];
   let rightBtn = pageBox.children[2];
-
-  leftBtn.style.cursor = 'pointer';
-  pageTxt.style.cursor = 'pointer';
-  rightBtn.style.cursor = 'pointer';
 
   pageTxt.addEventListener('click', ()=> {
     root.removeChild(root.children[0]);

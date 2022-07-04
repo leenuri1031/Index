@@ -1,115 +1,125 @@
 import { functionObj } from "../basic/function_obj.js";
 import { colorArr } from "../basic/array.js";
-import { root, mobileWidth, tabletWidth, desktopWidth, contactText} from "../basic/const.js";
+import {
+  root,
+  mobileWidth,
+  tabletWidth,
+  desktopWidth,
+  contactText,
+} from "../basic/const.js";
 import { bookcoverMaker } from "../bookcover_page/bookcover_page_mobile.js";
 import { somedayPageMaker } from "../someday_page/someday_page_mobile.js";
 import { tabletVerContactPage } from "./contact_page_tablet.js";
 import { endPageMaker } from "../end_page/end_page_mobile.js";
+import innerHTMLContact from "../basic/contact_function.js";
 
-export function contactPageMaker(){
-  if( mobileWidth.matches === true && tabletWidth.matches === false && desktopWidth.matches === false){
+export function contactPageMaker() {
+  if (
+    mobileWidth.matches === true &&
+    tabletWidth.matches === false &&
+    desktopWidth.matches === false
+  ) {
+    functionObj.bgiStyle(
+      root,
+      "./module/image/main_background.png",
+      "center",
+      "cover",
+      1
+    );
 
-    functionObj.createElement('div', root);
+    functionObj.createElement("div", root);
     const container = root.children[0];
-    functionObj.container(container, '95%' , '95%');
+    functionObj.container(container, "95%", "95%");
+    container.innerHTML = innerHTMLContact(
+      contactText,
+      "./module/image/mail.png",
+      "./module/image/mobile.png"
+    );
 
-    for(let i = 0; i< 4; i++){
-      functionObj.createElement('div', container);
-      container.children[i].style.width = '100%';
-      functionObj.flex(container.children[i], 'space-evenly', 'center', 'column');
-    }
-    
-    let contentBox = container.children;
-    contentBox[0].style.height = '40%';
-    contentBox[1].style.height = '30%';
-    contentBox[2].style.height = '15%';
+    functionObj.container(container.children[0], "100%", "100%");
 
-    for(let i = 0 ; i<3; i++){
-      functionObj.createElement('div', contentBox[0]);
-    }
+    const sections = container.children[0].children;
+    functionObj.container(sections[0], "100%", "40%");
+    functionObj.container(sections[1], "100%", "45%");
+    functionObj.container(sections[2], "100%", "10%");
 
-    let topBox = contentBox[0].children;
-    functionObj.iAmPageTextBox(topBox[0], '10%');
-    functionObj.font(topBox[0], '1.5rem', '550');
-    topBox[1].style.paddingLeft = '1vh';
-    topBox[0].textContent = '5. Contact me';
-
-    functionObj.iAmPageTextBox(topBox[1], '8%');
-    functionObj.font(topBox[1], '1rem', '500');
-    topBox[1].style.paddingLeft = '1vh';
-    topBox[1].textContent = '그러니까 나는';
-
-    functionObj.iAmPageTextBox(topBox[2], '35%');
-    functionObj.font(topBox[2], '0.8rem', '500');
-    topBox[2].style.paddingLeft = '1.5vh';
-    topBox[2].style.lineHeight = '180%';
-    topBox[2].style.textAlign = 'justify';
-    topBox[2].innerHTML = contactText;
-
-    for(let i = 0 ; i<5; i++){
-      functionObj.createElement('div', contentBox[1]);
-      let middleBox = contentBox[1].children;
-      for(let i = 0; i < middleBox.length-1; i++){
-        functionObj.iAmPageTextBox(middleBox[i], '10%');
-        functionObj.font(middleBox[i], '1rem', '500');
-        middleBox[i].style.paddingLeft = '1vh';
-      }
+    const subTitles = document.getElementsByTagName("h4");
+    for (let i = 0; i < subTitles.length; i++) {
+      subTitles[i].classList.add("sub-title-txt");
+      subTitles[i].style.paddingLeft = "1.5vh";
     }
 
-    contentBox[1].children[0].textContent = 'If you contact to me';
-    contentBox[1].children[1].textContent = 'E-mail : hello@contact.com';
-    contentBox[1].children[2].textContent = 'mobile : 010-1234-5678';
-    contentBox[1].children[3].textContent = 'Instargram';
-    
-    functionObj.boxStyle(contentBox[1].children[4], '25vw', '25vw', colorArr[0]);
-    functionObj.position(contentBox[1].children[4], 'relative', '-30%', '2%');
-
-    for(let i = 0 ; i<2; i++){
-      functionObj.createElement('div', contentBox[2]);
+    const textContent = document.getElementsByTagName("p");
+    for (let i = 0; i < textContent.length; i++) {
+      textContent[i].classList.add("content-txt");
+      functionObj.size(textContent[i], "90%", "60%");
     }
-    
-    functionObj.iAmPageTextBox(contentBox[2].children[0], '40%');
-    contentBox[2].children[0].textContent = 'Resume';
-    contentBox[2].children[0].style.paddingLeft = '1vh';
 
-    functionObj.borderRound(contentBox[2].children[1], '25%', '20%', '20px');
-    contentBox[2].children[1].textContent = '이력서 보기';
-    functionObj.font(contentBox[2].children[1], '0.8rem', '500');
-    functionObj.position(contentBox[2].children[1], 'relative', '-32%', '-5%');
-    contentBox[2].children[1].style.cursor = 'pointer';
-
-    const pageBox = contentBox[3];
-    functionObj.size(pageBox, '25%', '5%');
-    functionObj.flex(pageBox,'space-evenly', 'center');
-    functionObj.position(pageBox, 'absolute', '35%' , '95%');
-
-    for(let i = 0; i< 3; i++){
-      functionObj.createElement('div', pageBox);
+    for (let i = 1; i < 3; i++) {
+      functionObj.size(sections[1].children[i], "85%", "10%");
+      functionObj.font(sections[1].children[i], "0.9rem", 580);
+      sections[1].children[i].style.color = colorArr[5];
+      sections[1].children[i].style.marginLeft = "2vh";
     }
-  
+
+    const imgArr = document.getElementsByTagName("img");
+
+    for (let i = 0; i < imgArr.length; i++) {
+      functionObj.size(imgArr[i], "55%", "58%");
+      functionObj.position(imgArr[i], "relative", "18%", "-50%");
+      imgArr[i].style.opacity = 0.9;
+    }
+
+    functionObj.size(sections[1].children[3], "85%", "30%");
+    functionObj.font(sections[1].children[3], "0.9rem", 580);
+    sections[1].children[3].style.color = colorArr[5];
+    sections[1].children[3].style.marginLeft = "2vh";
+
+    functionObj.size(sections[1].children[3].children[1], "95px", "95px");
+    functionObj.position(
+      sections[1].children[3].children[1],
+      "relative",
+      "0%",
+      "5%"
+    );
+    functionObj.bgiStyle(
+      sections[1].children[3].children[1],
+      "./module/image/contact_img.png",
+      "center",
+      "contain",
+      0.9
+    );
+
+    // console.log(sections[2].children[1]);
+    sections[2].children[1].classList.add("round-border");
+    functionObj.position(sections[2].children[1], "relative", "-25%", "5%");
+    sections[2].children[1].style.cursor = "pointer";
+
+    const pageBox = document.getElementById("page-box7");
+    functionObj.container(pageBox, "25%", "5%", "row");
+    functionObj.position(pageBox, "absolute", "35%", "95%");
+    pageBox.style.color = colorArr[5];
+
+    for (let i = 0; i < pageBox.children.length; i++) {
+      functionObj.font(pageBox.children[i], "1rem", 600);
+      pageBox.children[i].style.cursor = "pointer";
+    }
+
     let leftBtn = pageBox.children[0];
     let pageTxt = pageBox.children[1];
     let rightBtn = pageBox.children[2];
-  
-    leftBtn.textContent = '<';
-    pageTxt.textContent = 'page';
-    rightBtn.textContent = '>';
-  
-    leftBtn.style.cursor = 'pointer';
-    pageTxt.style.cursor = 'pointer';
-    rightBtn.style.cursor = 'pointer';
 
-    pageTxt.addEventListener('click', ()=> {
+    pageTxt.addEventListener("click", () => {
       root.removeChild(root.children[0]);
       bookcoverMaker();
     });
 
-    leftBtn.addEventListener('click', ()=> {
+    leftBtn.addEventListener("click", () => {
       root.removeChild(root.children[0]);
       somedayPageMaker();
     });
 
-    rightBtn.addEventListener('click', ()=> {
+    rightBtn.addEventListener("click", () => {
       root.removeChild(root.children[0]);
       endPageMaker();
     });

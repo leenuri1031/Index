@@ -1,127 +1,116 @@
 import { functionObj } from "../basic/function_obj.js";
 import { colorArr } from "../basic/array.js";
-import { root, mobileWidth, tabletWidth, desktopWidth, somedayText1, somedayText2} from "../basic/const.js";
+import {
+  root,
+  mobileWidth,
+  tabletWidth,
+  desktopWidth,
+  somedayText1,
+  somedayText2,
+} from "../basic/const.js";
 import { tabletVerBookcover } from "../bookcover_page/bookcover_page_tablet.js";
 import { tabletVerProject2Page } from "../project_page/project2_page_tablet.js";
 import { tabletVerContactPage } from "../contact_page/contact_page_tablet.js";
+import innerHTMLSomeday from "../basic/someday_function.js";
+import move from "../basic/animate.js";
 
+export function tabletVerSomedayPage() {
+  if (
+    mobileWidth.matches === false &&
+    tabletWidth.matches === true &&
+    desktopWidth.matches === false
+  ) {
+    functionObj.bgiStyle(
+      root,
+      "./module/image/main_background.png",
+      "center",
+      "cover",
+      1
+    );
 
-export function tabletVerSomedayPage(){
-  if( mobileWidth.matches === false && tabletWidth.matches === true && desktopWidth.matches === false){
-
-    functionObj.createElement('div', root);
+    functionObj.createElement("div", root);
     const container = root.children[0];
-    functionObj.container(container, '95%' , '95%');
-    container.style.border = '1px dotted gray';
+    functionObj.container(container, "95%", "95%");
+    container.style.border = `1px dotted ${colorArr[5]}`;
+    container.innerHTML = innerHTMLSomeday(somedayText1, somedayText2);
 
-    for(let i = 0; i< 3; i++){
-      functionObj.createElement('div', container);
-      container.children[i].style.width = '100%';
-      functionObj.flex(container.children[i], 'space-evenly', 'center', 'column');
+    functionObj.container(container.children[0], "95%", "100%");
+
+    const sections = container.children[0].children;
+    for (let i = 0; i < 2; i++) {
+      functionObj.container(sections[i], "100%", "45%");
+      sections[i].style.position = "relative";
     }
 
-    let contentBox = container.children;
-    contentBox[0].style.height = '50%';
-    contentBox[1].style.height = '40%';
+    sections[0].style.marginTop = "-10%";
+    sections[1].style.marginTop = "-15%";
 
-    for(let i = 0; i<4; i++){
-      functionObj.createElement('div', contentBox[0]);
+    const subTitles = document.getElementsByTagName("h4");
+    for (let i = 0; i < subTitles.length; i++) {
+      subTitles[i].classList.add("sub-title-txt");
+      subTitles[i].style.paddingLeft = "1.5vh";
+      functionObj.size(subTitles[i], "92%", "10%");
     }
 
-    let topBox = contentBox[0].children;
-
-    functionObj.iAmPageTextBox(topBox[0], '10%');
-    topBox[0].style.paddingLeft = '1vh';
-    functionObj.font(topBox[0], '1.5rem', '550');
-    topBox[0].textContent = '4. Some day I...';
-
-    functionObj.iAmPageTextBox(topBox[1], '8%');
-    functionObj.font(topBox[1], '1rem', '500');
-    topBox[1].style.paddingLeft = '1vh';
-    topBox[1].textContent = '언젠가 나는 하고 싶습니다.';
-
-    functionObj.iAmPageTextBox(topBox[2], '35%');
-    functionObj.font(topBox[2], '0.8rem', '500');
-    topBox[2].style.paddingLeft = '1.5vh';
-    topBox[2].style.lineHeight = '180%';
-    topBox[2].style.textAlign = 'justify';
-    topBox[2].innerHTML = somedayText1;
-
-    functionObj.boxStyle(topBox[3], '200px', '200px', colorArr[0], '100%');
-    functionObj.position(topBox[3], 'relative', '-10%', '2%');
-
-    setInterval(function(){
-      topBox[3].animate([
-        {left : '-10%'},
-        {left : '-11%'},
-        {left : '-10%'},
-        {left : '-11%'},
-        {left : '-10%'}
-    ], 2000);
-    },2000);
-
-    for(let i = 0; i<3; i++){
-      functionObj.createElement('div', contentBox[1]);
+    const textContent = document.getElementsByTagName("p");
+    // console.log(textContent);
+    for (let i = 0; i < textContent.length; i++) {
+      functionObj.size(textContent[i], "90%", "50%");
+      functionObj.flex(textContent[i], "flex-start", "flex-start");
+      textContent[i].classList.add("content-txt");
     }
-    let bottomBox = contentBox[1].children;
+    textContent[1].style.marginTop = "-3%";
 
-    functionObj.iAmPageTextBox(bottomBox[0], '8%');
-    functionObj.font(bottomBox[0], '1rem', '500');
-    bottomBox[0].style.paddingLeft = '1vh';
-    bottomBox[0].textContent = '나의 최종 꿈은 ...';
-
-    functionObj.iAmPageTextBox(bottomBox[1], '35%');
-    functionObj.font(bottomBox[1], '0.8rem', '500');
-    bottomBox[1].style.paddingLeft = '1.5vh';
-    bottomBox[1].style.lineHeight = '180%';
-    bottomBox[1].style.textAlign = 'justify';
-    bottomBox[1].innerHTML = somedayText2;
-
-    functionObj.boxStyle(bottomBox[2], '200px', '200px', colorArr[0], '100%');
-    functionObj.position(bottomBox[2], 'relative', '10%', '-2%');
-
-    setInterval(function(){
-      bottomBox[2].animate([
-        {left : '10%'},
-        {left : '11%'},
-        {left : '10%'},
-        {left : '11%'},
-        {left : '10%'}
-    ], 2000);
-    },2000);
-
-    const pageBox = contentBox[2];
-    functionObj.size(pageBox, '25%', '5%');
-    functionObj.flex(pageBox,'space-evenly', 'center');
-    functionObj.position(pageBox, 'absolute', '38%' , '92.5%');
-
-    for(let i = 0; i< 3; i++){
-      functionObj.createElement('div', pageBox);
+    const circleImg = [sections[0].children[3], sections[1].children[2]];
+    for (let i = 0; i < circleImg.length; i++) {
+      circleImg[i].classList.replace("img-circle", "tablet-img-circle");
     }
-  
+
+    functionObj.position(circleImg[0], "absolute", "45%", "68%");
+    functionObj.bgiStyle(
+      circleImg[0],
+      "./module/image/study.png",
+      "center",
+      "cover",
+      0.8
+    );
+    move(circleImg[0], "45%", "46%");
+
+    functionObj.position(circleImg[1], "absolute", "60%", "50%");
+    functionObj.bgiStyle(
+      circleImg[1],
+      "./module/image/digital_nomad.png",
+      "center",
+      "cover",
+      0.8
+    );
+    move(circleImg[1], "60%", "59%");
+
+    const pageBox = document.getElementById("page-box6");
+    functionObj.container(pageBox, "25%", "5%", "row");
+    functionObj.position(pageBox, "absolute", "38%", "92.5%");
+    pageBox.style.color = colorArr[5];
+
     let leftBtn = pageBox.children[0];
     let pageTxt = pageBox.children[1];
     let rightBtn = pageBox.children[2];
-  
-    leftBtn.textContent = '<';
-    pageTxt.textContent = 'page';
-    rightBtn.textContent = '>';
-  
-    leftBtn.style.cursor = 'pointer';
-    pageTxt.style.cursor = 'pointer';
-    rightBtn.style.cursor = 'pointer';
 
-    pageTxt.addEventListener('click', ()=> {
+    for (let i = 0; i < pageBox.children.length; i++) {
+      functionObj.font(pageBox.children[i], "1rem", 600);
+      pageBox.children[i].style.cursor = "pointer";
+    }
+
+    pageTxt.addEventListener("click", () => {
       root.removeChild(root.children[0]);
       tabletVerBookcover();
     });
 
-    leftBtn.addEventListener('click', ()=> {
+    leftBtn.addEventListener("click", () => {
       root.removeChild(root.children[0]);
       tabletVerProject2Page();
     });
 
-    rightBtn.addEventListener('click', ()=> {
+    rightBtn.addEventListener("click", () => {
       root.removeChild(root.children[0]);
       tabletVerContactPage();
     });

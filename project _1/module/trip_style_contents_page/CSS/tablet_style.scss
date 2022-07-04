@@ -1,0 +1,92 @@
+@use './var'as var;
+@use './mixin' as mixin;
+@use './basic';
+// ------------------------------------------------------
+
+@media(min-width:450px){
+
+  #root {
+    height: 130vh;
+    // justify-content: center;
+    &>header{order:1;}
+    &>main{order:3;}
+    &>footer{order:2;}
+  }
+  
+  header{
+    height: 10vh;
+    &>h2:nth-child(2){
+      display: none;
+    }
+  }
+  
+  main{
+    height: 105vh;
+    
+    &>section:nth-child(1){
+      width: 75%;
+      height: 40%;
+
+      &>h2{
+        width: 90%;
+        height: 20%;
+        @include mixin.flex-setting(center, center);
+        color: var.$color-4;
+      }
+
+      &>div{
+        width: 70%;
+  
+        &>div:nth-child(2){
+          @include mixin.posi-style(relative, 45%, 4%,1);
+        }
+      }
+    }
+
+    &>section:nth-child(2){
+      height: 60%;
+
+      &>div:nth-child(1){
+        &>h4{
+          @include mixin.box-style(35%, 60%, var.$color-2, 20px);
+          @include mixin.flex-setting(center, center);
+          color: var.$color-4;
+        }
+      }
+
+      &>div:nth-child(2){
+        width: 70%;
+        @include mixin.flex-setting(space-between, center, column);
+        
+        &>div{
+          width: 90%;
+  
+          &>div:nth-child(1){
+            width: 20%;
+          }
+          
+          &>div:nth-child(2){
+            width: 40%;
+            height: 95%;
+            @include mixin.flex-setting(space-evenly, center, column);
+            @include mixin.font-style(0.8rem, 500, var.$color-4);
+  
+            &>div:nth-child(2){
+              width: 50%;
+              height: 25%;
+            }
+          }
+        }
+      }
+
+      &>div:nth-child(3){
+        height: 10%;
+        @include mixin.flex-setting(space-evenly, center);
+        
+        &>div{
+          @include mixin.box-style(25%, 60%, var.$color-3, 30px);
+        }
+      }
+    }
+  }
+}

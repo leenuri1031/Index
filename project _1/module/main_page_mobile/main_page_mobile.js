@@ -1,6 +1,6 @@
 import { functionObj } from "../basic/function_obj.js";
 import { colorArr, imgUrl } from "../basic/array.js";
-import { header,  mobileWidth, tabletWidth, desktopWidth, boolean } from "../basic/const.js";
+import { header,  mobileWidth, tabletWidth, desktopWidth } from "../basic/const.js";
 import {mainSection}  from "./middle_section_markup.js";
 import { footerMenu } from "./bottom_section_markup.js";
 import { tabletMain } from "../main_page_tablet/main_page_tablet.js";
@@ -23,7 +23,6 @@ export function  mobileMain(){
 
     mainSection();
     footerMenu();
-    // console.dir(main);
   }
   tabletMain();
   pcMain();

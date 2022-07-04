@@ -50,7 +50,7 @@
 }
 
 /* 
-namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin에서 vqr시트를 @use했더니 ok
+namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin에서 var시트를 @use했더니 ok
 */
 #root {
   width: 100vw;
@@ -59,5 +59,79 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  color: #838383;
+}
+
+.sub-title-txt {
+  width: 95%;
+  height: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  color: #5D707A;
+  padding-left: 1vh;
+}
+
+.round-border {
+  width: 30%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: solid 1px #5D707A;
+  border-radius: 30px;
+  color: #6A808C;
+  font-size: 0.8rem;
+}
+
+.tablet-round-border {
+  width: 15%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: solid 1px #5D707A;
+  border-radius: 30px;
+  color: #6A808C;
+  font-size: 0.8rem;
+}
+
+.img-box {
+  width: 35vw;
+  height: 35vw;
+  background-color: beige;
+}
+
+.content-txt {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #6A808C;
+  padding-left: 2vh;
+  line-height: 200%;
+  text-align: justify;
+  color: #6A808C;
+}
+
+.img-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: aliceblue;
+}
+
+.tablet-img-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: aliceblue;
+}
+
+.data {
+  color: #5D707A;
 }/*# sourceMappingURL=mobile.css.map */

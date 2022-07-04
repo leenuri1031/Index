@@ -1,0 +1,217 @@
+$width-root:100vw;
+$height-root:220vh;
+$color-black:black;
+$color-white:white;
+$solid-black:1px solid black;
+$solid-gray:1px solid #888;
+$solid-red:1px solid #613c3c;
+$per-100:100%;
+$color-1:rgb(222, 223, 224);
+$color-2:rgb(168, 168, 168);
+$color-3:rgb(114, 114, 114);
+$color-4:rgb(73, 73, 73);
+$color-5:rgb(77, 91, 105);
+$color-6:rgb(32, 42, 51);
+
+
+// ------------------------------------------------------------------
+
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+
+// ------------------------------------------------------------------
+
+.flex{display: flex;}
+
+.position-absolute{position: absolute;}
+
+.position-relative{position: relative;}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+
+@mixin flex-setting($jus, $ali) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+
+@mixin root-style {
+  width: $width-root;
+  height: $height-root;
+  display: flex;
+  flex-direction: column;
+}  
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin box-style($w, $h, $col) {
+  width: $w;
+  height: $h;
+  background-color: $col;
+}
+
+@mixin position-setting ($z-in,){
+  position: relative;
+  z-index: $z-in;
+}
+
+
+@mixin font-style($font-s, $font-w){
+  font-size: $font-s;
+  font-weight: $font-w;
+  color: $color-3;
+}
+
+@mixin text-style($jus, $ali) {
+  color: $color-3;
+  display: flex;
+  justify-content:$jus ;
+  align-items: $ali;
+}
+
+@mixin bgimg-style ($url){
+  background-image: $url;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+// ------------------------------------------------------------------
+
+@media(min-width:1600px){
+
+  // -------------- header-img
+
+header{
+  @include bgimg-style(url(./img/about_forestella_img.png));
+  background-position:  top;
+
+
+  &>h2{
+    margin-right: 5vw;
+    margin-bottom: 5vh;
+  }
+}
+
+// --------------- contents-part
+
+main{
+  &>section:nth-child(1){
+    background-position:  right 1% bottom 25%;
+
+    &>div{
+      &>div{
+        @include size(8%, 15% );
+      }
+    }
+  }
+
+  &>section:nth-child(2){
+    height: 65vh;
+    flex-direction: row;
+
+    &>div{
+      @include size(48%, $per-100);
+      @include flex-setting(space-evenly, center);
+    }
+
+    &>div:first-child{
+      
+      &>div:nth-child(1){
+        @include size(60%,70% );
+      }
+
+      
+      &>div:nth-child(2){
+        @include size(25%, 60%);
+      }
+    }
+
+    &>div:last-child{
+      &>div{
+        @include size(30%, 75% );
+        @include flex-setting(space-evenly, center);
+        flex-direction: column;
+
+        &>div:nth-child(1){
+          @include box-style(90%,50% ,$color-2 );
+        }
+
+        &>div:nth-child(2){
+          @include size(70%, 40%);
+        }
+      }
+    }
+  }
+
+  &>section:nth-child(3){
+    @include size($per-100, 50vh);
+    flex-direction: row;
+
+
+    &>div:first-child{
+      @include size(30%, 80%);
+      @include flex-setting(space-around, center);
+      flex-direction:column;
+
+      &>div:nth-child(1){
+        @include size(80%,20%);
+      // border: $solid-black;
+
+      }
+
+      &>div:nth-child(2){
+        @include box-style(60%, 60%, $color-2);
+        position: relative;
+        right: 4vw;
+      }
+    }
+
+
+    &>div:last-child{
+      @include size(50%, 80%);
+      @include flex-setting(space-evenly, center);
+
+
+      &>div:nth-child(1){
+        @include size(40%, 80%);
+        @include flex-setting(center, flex-start);
+        order: 2;
+
+        &>div:last-child{
+          @include size($per-100, 50%);
+          @include flex-setting(flex-start, flex-end);
+
+          &>ul{
+            @include size(50%, 80%);
+          }
+        }
+      }
+
+      &>div:nth-child(2){
+        @include box-style(30%,80% , $color-2);
+        order: 1
+      }
+    }
+  }
+
+}
+
+// --------------- footer-text
+footer{
+  @include flex-setting(center, flex-end);
+  
+  &>p{
+    @include size(90%, 30%);
+    text-align: center;
+  }
+}
+}

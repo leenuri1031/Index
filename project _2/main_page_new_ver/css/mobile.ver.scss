@@ -1,0 +1,314 @@
+$width-root:100vw;
+$height-root:220vh;
+$color-black:black;
+$color-white:white;
+$solid-black:1px solid black;
+$solid-gray:1px solid #888;
+$solid-red:1px solid #613c3c;
+$solid-col:1px solid #AACCBE;
+$per-100:100%;
+$color-1:rgb(222, 223, 224);
+$color-2:rgb(168, 168, 168);
+$color-3:rgb(114, 114, 114);
+$color-4:rgb(73, 73, 73);
+$color-5:rgb(77, 91, 105);
+$color-6:rgb(32, 42, 51);
+
+
+// ------------------------------------------------------------------
+
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+
+// ------------------------------------------------------------------
+
+.flex{display: flex;}
+
+.position-absolute{position: absolute;}
+
+.position-relative{position: relative;}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+
+@mixin flex-setting($jus, $ali) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+
+@mixin root-style {
+  width: $width-root;
+  height: $height-root;
+  display: flex;
+  flex-direction: column;
+}  
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin box-style($w, $h, $col) {
+  width: $w;
+  height: $h;
+  background-color: $col;
+}
+
+@mixin position-setting ($z-in,){
+  position: relative;
+  z-index: $z-in;
+}
+
+
+@mixin font-style($font-s, $font-w){
+  font-size: $font-s;
+  font-weight: $font-w;
+  color: $color-3;
+}
+
+@mixin text-style($jus, $ali) {
+  color: $color-3;
+  display: flex;
+  justify-content:$jus ;
+  align-items: $ali;
+}
+
+@mixin bgimg-style ($url){
+  background-image: $url;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// 
+
+// ------------------------------------------------------------------
+
+#root{
+  @include root-style ;
+  background-color: #BCDAC5;
+}
+
+// -------------- header-img
+
+header{
+  @include size($per-100, 55vh);
+  @include flex-setting(flex-end, flex-end);
+  @include bgimg-style(url(./img/main_img.png));
+
+
+  &>h2{
+    @include text-style(center, center);
+    margin-right: 10px;
+    margin-bottom: 15px;
+    color: #AACCBE;
+  }
+}
+
+// --------------- contents-part
+main{
+  @include size($per-100, 155vh);
+  @include flex-setting(space-between, center);
+  flex-direction: column;
+  color: #AACCBE;
+
+
+  &>section:nth-child(1){
+    @include size($per-100, 30vh);
+    @include bgimg-style(url(./img/about_forestella_img.png));
+    background-position: center;
+    @include flex-setting(center, center);
+    flex-direction: column;
+    color: #4F787D;
+
+
+    
+    &>div{
+      @include size(80%, 60% );
+      @include flex-setting(flex-start, center);
+      flex-direction: column;
+
+
+
+
+      &>h3{
+        @include size($per-100, 35% );
+      }
+
+      &>div{
+        @include size(20%, 20% );
+        border: $solid-col;
+        border-radius: 30px;
+        @include flex-setting(center, center);
+        position: relative;
+        top: 1vh;
+        right: 12vw;
+        cursor: pointer;
+
+      }
+    }
+
+  }
+
+  &>section:nth-child(2){
+    @include size($per-100, 60vh);
+    @include flex-setting(space-around, center);
+    flex-direction: column;
+
+    &>div{
+      width: 90%;
+      flex-grow: 1;
+      color: #4F787D;
+      @include flex-setting(space-between, center);
+    }
+
+    &>div:first-child{
+
+      &>div:nth-child(1){
+        @include size(50%,60% );
+        @include bgimg-style(url(./img/must_see_video_img.png));
+        
+      }
+
+      
+      &>div:nth-child(2){
+        @include size(30%, 60%);
+
+        &>i{
+        cursor: pointer;
+        }
+      }
+
+    }
+
+    &>div:last-child{
+
+      &>div{
+        @include size(45%,$per-100 );
+        @include flex-setting(space-around, center);
+        flex-direction: column;
+
+        &>div:nth-child(1){
+          @include size(90%,60%);
+
+          @include flex-setting(center, center);
+
+          &>i{
+            @include font-style(1.5rem, 500);
+            cursor: pointer;
+            color: #AACCBE;
+          }
+        }
+
+        &>div:nth-child(2){
+          @include size(70%, 20%);
+          @include flex-setting(center, center);
+          text-align: center;
+        }
+      }
+
+      &>div:nth-child(1){
+        &>div:nth-child(1){
+          @include bgimg-style(url(./img/bohemian_rapsody_img.png));
+        }
+      }
+
+      &>div:nth-child(2){
+        &>div:nth-child(1){
+          @include bgimg-style(url(./img/shape_of_you_img.png));
+        }
+      }
+
+      &>div:nth-child(3){
+        display: none;
+      }
+    }
+  }
+
+  &>section:nth-child(3){
+    @include size($per-100, 65vh);
+    @include flex-setting(center, center);
+    flex-direction: column;
+    color: #4F787D;
+
+
+    &>div{
+      width: 90%;
+      flex-grow: 1;
+      @include flex-setting(space-between, center);
+    }
+
+    &>div:first-child{
+
+      &>div:nth-child(1){
+        @include size(35%,85%);
+
+
+        &>i{
+          @include size(15%,20%);
+          @include flex-setting(flex-start, center);
+          cursor: pointer;
+        }
+      }
+
+      &>div:nth-child(2){
+        @include size(60%, 60%);
+        @include bgimg-style(url(./img/forestella_music_img.png));
+      }
+    }
+
+
+    &>div:last-child{
+
+      &>div:nth-child(1){
+        @include size(60%, $per-100);
+        @include flex-setting(center, flex-start);
+        flex-direction: column;
+
+        &>div:last-child{
+          @include size($per-100, 50%);
+          @include flex-setting(flex-start, flex-end);
+
+          &>ul{
+            @include size(45%, 80%);
+            list-style-type: none;
+            @include flex-setting(space-between, flex-start);
+            flex-direction: column;
+
+            &>li{
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      &>div:nth-child(2){
+        margin-top: 12px;
+        @include size(40%, 50%);
+        @include bgimg-style(url(./img/menu_img.png));
+        
+      }
+    }
+    
+  }
+}
+
+
+// --------------- footer-text
+footer{
+  @include size($per-100, 10vh);
+  @include flex-setting(center, center);
+  
+  &>p{
+    @include size(90%, 70%);
+    text-align: center;
+    color: #4F787D;
+  }
+}
+
+
+// ------------------------------------------------------------------
