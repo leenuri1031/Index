@@ -26,9 +26,12 @@ function remakeContact() {
 
   const leftContents = container[0].children[0].children;
   // console.log(leftContents);
-  functionObj.container(leftContents[0], "100%", "40%");
-  functionObj.container(leftContents[1], "100%", "45%");
-  functionObj.container(leftContents[2], "100%", "10%");
+  functionObj.container(leftContents[0], "100%", "45%");
+  functionObj.container(leftContents[1], "100%", "35%");
+  functionObj.container(leftContents[2], "100%", "12%");
+  // leftContents[0].style.border = "solid 1px black";
+  // leftContents[1].style.border = "solid 1px black";
+  // leftContents[2].style.border = "solid 1px black";
 
   const subTitles = document.getElementsByTagName("h4");
   for (let i = 0; i < subTitles.length; i++) {
@@ -39,7 +42,7 @@ function remakeContact() {
     }
   }
 
-  functionObj.size(leftContents[0].children[2], "85%", "40%");
+  functionObj.size(leftContents[0].children[2], "85%", "60%");
   functionObj.txtStyle(leftContents[0].children[2], colorArr[4], "0.9rem", 500);
   // console.log(leftContents[1].children.length);
   for (let i = 1; i < leftContents[1].children.length; i++) {
@@ -57,8 +60,8 @@ function remakeContact() {
   const imgArr = document.getElementsByTagName("img");
   for (let i = 0; i < imgArr.length; i++) {
     if (imgArr[i].dataset.img === "1") {
-      functionObj.size(imgArr[i], "30%", "60%");
-      functionObj.position(imgArr[i], "absolute", "11%", "20%");
+      functionObj.size(imgArr[i], "30%", "70%");
+      functionObj.position(imgArr[i], "absolute", "12%", "35%");
       imgArr[i].style.opacity = 0.9;
     }
   }
@@ -67,7 +70,7 @@ function remakeContact() {
   functionObj.position(
     leftContents[1].children[3].children[1],
     "absolute",
-    "15%",
+    "16%",
     "80%"
   );
   functionObj.bgiStyle(

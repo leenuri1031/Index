@@ -1,4 +1,4 @@
-import { root, pcProjectText1 } from "../basic/const.js";
+import { root, project1Text } from "../basic/const.js";
 import { functionObj } from "../basic/function_obj.js";
 import { colorArr } from "../basic/array.js";
 import { pageMove } from "./pc_function.js";
@@ -10,7 +10,7 @@ function remakeProject1() {
   const container = sections[4].children[0].children;
 
   container[0].innerHTML = pcInnerHTMLProject2(
-    pcProjectText1,
+    project1Text,
     1,
     "/project _1/index.html"
   );

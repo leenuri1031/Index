@@ -154,7 +154,6 @@ export function tabletVerIAm() {
     leftBtn.addEventListener("click", () => {
       root.removeChild(root.children[0]);
       tabletVerContent();
-      // console.log('TEST');
     });
 
     rightBtn.addEventListener("click", () => {
