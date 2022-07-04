@@ -1,0 +1,253 @@
+$width-root:100vw;
+$height-root:120vh;
+$color-black:black;
+$color-white:white;
+$solid-black:1px solid black;
+$solid-gray:1px solid #888;
+$dotted-gray:2px dotted #888;
+$solid-red:1px solid #613c3c;
+$per-100:100%;
+$color-1:rgb(222, 223, 224);
+$color-2:rgb(168, 168, 168);
+$color-3:rgb(114, 114, 114);
+$color-4:rgb(73, 73, 73);
+$color-5:rgb(77, 91, 105);
+$color-6:rgb(32, 42, 51);
+
+
+// ------------------------------------------------------------------
+
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+
+// ------------------------------------------------------------------
+
+.flex{display: flex;}
+
+.position-absolute{position: absolute;}
+
+.position-relative{position: relative;}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+
+@mixin flex-setting($jus, $ali) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+
+@mixin root-style {
+  width: $width-root;
+  height: $height-root;
+  display: flex;
+  flex-direction: column;
+}  
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin box-style($w, $h, $col) {
+  width: $w;
+  height: $h;
+  background-color: $col;
+}
+
+@mixin position-setting ($z-in,){
+  position: relative;
+  z-index: $z-in;
+}
+
+
+@mixin font-style($font-s, $font-w){
+  font-size: $font-s;
+  font-weight: $font-w;
+  color: $color-3;
+}
+
+@mixin text-style($jus, $ali) {
+  color: $color-3;
+  display: flex;
+  justify-content:$jus ;
+  align-items: $ali;
+}
+
+@mixin bgimg-style ($url){
+  background-image: $url;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+// ------------------------------------------------------------------
+
+#root{
+  @include root-style;
+  background-color: #BCDAC5;
+  color: #4F787D;
+}
+
+header{
+  @include size($per-100, 10vh);
+  @include flex-setting(center, center);
+
+  &>div{
+    @include size(95%, $per-100);
+    @include flex-setting(flex-end, flex-end);
+
+    &>a{
+      &>i{
+        margin: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+main{
+  @include size($per-100, 110vh);
+  @include flex-setting(center, center);
+  flex-direction: column;
+
+
+
+  &>section{
+    @include size(95%, 50%);
+    @include flex-setting(space-around, center);
+    flex-direction: column;
+  }
+
+  &>section:first-child{
+
+    &>h1{
+      @include size(90%, 20%);
+      @include flex-setting(flex-start, flex-end);
+      padding-bottom: 2vh;
+      border-bottom: $dotted-gray;
+    }
+
+    &>div:nth-child(2){
+      @include size(90%,40% );
+      @include flex-setting(space-between, flex-end);
+
+      &>div{
+        @include size(45%,90% );
+        @include bgimg-style(url(./img/about_forestella_main_img.png));
+      }
+    }
+
+    &>div:nth-child(3){
+      @include size(90%, 40% );
+      @include flex-setting(center, flex-start);
+      flex-direction: column;
+
+      &>p{
+        font-size: 14px;
+        margin-top: 1vh;
+      }
+
+      &>padding:nth-child(1){
+        @include size($per-100, 10% );
+      }
+
+      &>padding:nth-child(2){
+        @include size($per-100, 10% );
+      }
+
+      &>padding:nth-child(3){
+        @include size($per-100, 20% );
+      }
+
+      &>padding:nth-child(4){
+        @include size($per-100, 20% );
+      }
+    }
+  }
+
+  &>section:last-child{
+    
+    &>h3{
+    @include size(90%, 8% );
+    }
+
+    &>div{
+    @include size(90%, 85% );
+    @include flex-setting(space-around, center);
+    flex-direction: column;
+
+      &>div:first-child{
+        &>div:first-child{
+          &>div:first-child{
+            @include bgimg-style(url(./img/배두훈.png))
+          }
+        }
+
+        &>div:last-child{
+            &>div:first-child{
+              @include bgimg-style(url(./img/강형호.png))
+            }
+        }
+      }
+
+      &>div:last-child{
+        &>div:first-child{
+          &>div:first-child{
+            @include bgimg-style(url(./img/조민규.png))
+          }
+        }
+
+        &>div:last-child{
+            &>div:first-child{
+              @include bgimg-style(url(./img/고우림.png))
+            }
+        }
+      }
+
+      &>div{
+        @include size(90%, 45% );
+        @include flex-setting(space-around, center);
+
+        &>div{
+          @include size(45%, $per-100 ); 
+          @include flex-setting(space-around, center);
+          flex-direction: column;
+
+          &>div:nth-child(1){
+            @include size(95%, 80%);
+          }
+
+          &>div:nth-child(2){
+            @include size(45%, 10%);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

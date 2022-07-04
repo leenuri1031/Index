@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+@media (min-width: 500px) {
+  header > h1 {
+    margin-left: 5vw;
+  }
+
+  main > section:first-child > div:first-child {
+    width: 20%;
+    height: 60%;
+  }
+}/*# sourceMappingURL=tablet.ver.css.map */

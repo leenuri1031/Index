@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+@media (min-width: 1020px) {
+  header > div {
+    display: none;
+  }
+  header > h1 {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  main > section:first-child > div:first-child {
+    width: 15%;
+    height: 90%;
+  }
+  main > section:first-child > div:last-child {
+    width: 70%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  main > section:first-child > div:last-child > div:nth-child(1) {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  main > section:first-child > div:last-child > div:nth-child(2) {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}/*# sourceMappingURL=desktop_ver.css.map */

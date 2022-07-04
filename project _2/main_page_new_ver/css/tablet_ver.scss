@@ -1,0 +1,204 @@
+$width-root:100vw;
+$height-root:220vh;
+$color-black:black;
+$color-white:white;
+$solid-black:1px solid black;
+$solid-gray:1px solid #888;
+$solid-red:1px solid #613c3c;
+$per-100:100%;
+$color-1:rgb(222, 223, 224);
+$color-2:rgb(168, 168, 168);
+$color-3:rgb(114, 114, 114);
+$color-4:rgb(73, 73, 73);
+$color-5:rgb(77, 91, 105);
+$color-6:rgb(32, 42, 51);
+
+
+// ------------------------------------------------------------------
+
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+
+// ------------------------------------------------------------------
+
+.flex{display: flex;}
+
+.position-absolute{position: absolute;}
+
+.position-relative{position: relative;}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+
+@mixin flex-setting($jus, $ali) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+
+@mixin root-style {
+  width: $width-root;
+  height: $height-root;
+  display: flex;
+  flex-direction: column;
+}  
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin box-style($w, $h, $col) {
+  width: $w;
+  height: $h;
+  background-color: $col;
+}
+
+@mixin position-setting ($z-in,){
+  position: relative;
+  z-index: $z-in;
+}
+
+
+@mixin font-style($font-s, $font-w){
+  font-size: $font-s;
+  font-weight: $font-w;
+  color: $color-3;
+}
+
+@mixin text-style($jus, $ali) {
+  color: $color-3;
+  display: flex;
+  justify-content:$jus ;
+  align-items: $ali;
+}
+
+@mixin bgimg-style ($url){
+  background-image: $url;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+
+
+// ------------------------------------------------------------------
+@media(min-width:650px){
+
+// --------------- contents-part
+  header{
+    background-position: 2% 18% ;
+  }
+
+  main{
+
+    &>section:nth-child(1){
+      @include box-style($per-100, 40vh, $color-1);
+      @include flex-setting(flex-end, flex-end);
+      background-position:  right 1% bottom 15%;
+
+      
+      &>div{
+        @include size(90%, 70% );
+        @include flex-setting(center, flex-end);
+  
+        &>h3{
+          @include size(20%, 35% );
+        }
+  
+        &>div{
+          @include size(15%, 15% );
+          position: relative;
+          right: 2vw;
+        }
+      }
+    }
+  
+    &>section:nth-child(2){
+
+      &>div:first-child{
+  
+        &>div:nth-child(1){
+          @include size(40%,70% );
+        }
+  
+        
+        &>div:nth-child(2){
+          @include size(45%, 60%);
+        }
+      }
+  
+      &>div:last-child{
+  
+        &>div{
+          @include size(30%,$per-100 );
+        }
+        
+  
+        &>div:nth-child(3){
+          display: flex;
+
+          &>div:nth-child(1){
+            @include bgimg-style(url(./img/lazenca_save_us_img.png));
+
+          }
+
+        }
+      }
+    }
+  
+    &>section:nth-child(3){
+      @include size(80%, 55vh);
+  
+  
+      &>div:first-child{
+        width: $per-100;
+  
+        &>div:nth-child(1){
+          @include size(45%,65%);
+        }
+  
+        &>div:nth-child(2){
+          @include box-style(40%, 80%, $color-2);
+        }
+      }
+  
+  
+      &>div:last-child{
+        width: $per-100;
+
+  
+        &>div:nth-child(1){
+          @include size(70%, $per-100);
+
+          &>div:first-child{
+            margin-left: 5px;
+          }
+  
+          &>div:last-child{
+            @include size($per-100, 50%);
+  
+            &>ul{
+              @include size(45%, 90%);
+  
+              &>li{
+                @include size(50%, 25%);
+                margin: 5px;
+              }
+            }
+          }
+        }
+  
+        &>div:nth-child(2){
+          margin-top: 12px;
+          @include box-style(35%,70% , $color-2);
+        }
+      }
+    }
+  }
+  
+}

@@ -1,40 +1,32 @@
-
-export function pcInnerHTMLTitle(src){
-  return(
-`    <div>
+export function pcInnerHTMLTitle(src) {
+  return `    <div>
       <img src = "${src}">
       <div>
         <div>Qué será será</div>
         <div>El mundo’s story</div>
       </div>
-    </div>`
-  );
+    </div>`;
 }
 
-export function pcInnerHTMLSub(src){
-  return(
-`    <div>
+export function pcInnerHTMLSub(src) {
+  return `    <div>
       <img src = "${src}">
       <div>
         <div>Written & Illust</div>
         <div>by El mundo</div>
       </div>
-    </div>`
-  );
+    </div>`;
 }
 
-export function pcInnerHTMLIllust(src, txt){
-  return(
-    `<div>
+export function pcInnerHTMLIllust(src, txt) {
+  return `<div>
     <img src = "${src}">
     <div>${txt}</div>
-    </div>`
-  );
+    </div>`;
 }
 
-export function pcInnerHTMLIamLeft(iam, like){
-  return(
-    `<div>
+export function pcInnerHTMLIamLeft(iam, like) {
+  return `<div>
     <h2>1. I'm...</h2>
     <div>
       <div>
@@ -49,13 +41,11 @@ export function pcInnerHTMLIamLeft(iam, like){
         <div>${like}</div>
       </div>
       <div></div>
-    </div>`
-  );
+    </div>`;
 }
 
-export function pcInnerHTMLIamRignt(did){
-  return(
-    `<div>
+export function pcInnerHTMLIamRignt(did) {
+  return `<div>
     <div>
       <div>
         <h4>I did</h4>
@@ -67,13 +57,11 @@ export function pcInnerHTMLIamRignt(did){
       <div></div>
       <div></div>
     </div>
-  </div>`
-  );
+  </div>`;
 }
 
-export function pcInnerHTMLNow(now1, now2){
-  return(
-    `
+export function pcInnerHTMLNow(now1, now2) {
+  return `
   <div>
     <h2>2. Now I...</h2>
     <div>
@@ -88,13 +76,11 @@ export function pcInnerHTMLNow(now1, now2){
       <div></div>
       <div></div>
     </div>
-  </div>`
-  );
+  </div>`;
 }
 
-export function pcInnerHTMLProject1(txt, num){
-  return(
-    `
+export function pcInnerHTMLProject1(txt, num) {
+  return `
   <div>
     <h2>3. This is my...</h2>
     <div>
@@ -107,13 +93,11 @@ export function pcInnerHTMLProject1(txt, num){
     <div>
       <a href = "module/project_link/project${num}_page.html" target="_blank"></a>
     </div>
-  </div>`
-  );
+  </div>`;
 }
 
-export function pcInnerHTMLProject2(txt, num, pageName){
-  return(
-    `
+export function pcInnerHTMLProject2(txt, num, pageName) {
+  return `
   <div>
     <div>
       <h4>I made it like this</h4>
@@ -121,23 +105,19 @@ export function pcInnerHTMLProject2(txt, num, pageName){
     </div>
     <div>
       <h4>See a project</h4>
-      <div><a href = "/project_${num}/${pageName}.html" target="_blank">sample page</a></div>
+      <div><a href = "${pageName}" target="_blank">sample page</a></div>
       <div><a href = "https://github.com/leenuri1031/project-${num}.git" target="_blank">github</a></div>
     </div>
   </div>
-  `
-  );
+  `;
 }
 
-
-export function pcInnerHTMLEnd(src){
-  return (
-`   <div>
+export function pcInnerHTMLEnd(src) {
+  return `   <div>
       <div>
         <img src = "${src}">
         <h1>The End?</h1>
       </div>
     </div>
-    `
-  )
+    `;
 }

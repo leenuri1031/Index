@@ -1,0 +1,187 @@
+$width-root:100vw;
+$height-root:100vh;
+$color-black:black;
+$color-white:white;
+$solid-black:1px solid black;
+$solid-gray:1px solid #888;
+$dotted-gray:2px dotted #888;
+$solid-red:1px solid #613c3c;
+$per-100:100%;
+$color-1:rgb(222, 223, 224);
+$color-2:rgb(168, 168, 168);
+$color-3:rgb(114, 114, 114);
+$color-4:rgb(73, 73, 73);
+$color-5:rgb(77, 91, 105);
+$color-6:rgb(32, 42, 51);
+
+
+// ------------------------------------------------------------------
+
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+
+// ------------------------------------------------------------------
+
+.flex{display: flex;}
+
+.position-absolute{position: absolute;}
+
+.position-relative{position: relative;}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+
+@mixin flex-setting($jus, $ali) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+
+@mixin root-style {
+  width: $width-root;
+  height: $height-root;
+  display: flex;
+  flex-direction: column;
+}  
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin box-style($w, $h, $col) {
+  width: $w;
+  height: $h;
+  background-color: $col;
+}
+
+@mixin position-setting ($z-in,){
+  position: relative;
+  z-index: $z-in;
+}
+
+
+@mixin font-style($font-s, $font-w){
+  font-size: $font-s;
+  font-weight: $font-w;
+  color: $color-3;
+}
+
+@mixin text-style($jus, $ali) {
+  color: $color-3;
+  display: flex;
+  justify-content:$jus ;
+  align-items: $ali;
+}
+
+@mixin bgimg-style ($url){
+  background-image: $url;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin bgimg-style ($url){
+  background-image: $url;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// ------------------------------------------------------------------
+
+#root{
+  @include root-style;
+  color: #4F787D;
+  background-color: #BCDAC5;
+}
+
+header{
+  @include size($per-100, 20vh);
+
+  &>div{
+    @include size(95%, 40%);
+    @include flex-setting(flex-end, flex-end);
+
+    &>a{
+      &>i{
+        margin: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &>h1{
+    @include size(90%, 60%);
+    margin-left: 10px;
+  }
+}
+
+main{
+  @include size($per-100, 80vh);
+  @include flex-setting(center, center);
+  flex-direction: column;
+
+  &>section:first-child{
+    @include size(90%, 25%);
+    border-top: $dotted-gray;
+    border-bottom: $dotted-gray;
+    @include flex-setting(space-around, center);
+
+    &>div:first-child{
+      @include size(30%, 60%);
+      @include bgimg-style(url(./img/3rd_album.png));
+    }
+
+    &>div:last-child{
+      @include size(40%, 50%);
+      // border: $solid-black;
+      
+      &>div:nth-child(1){
+        @include size($per-100, $per-100);
+        @include flex-setting(flex-start, center);
+      }
+
+      &>div:nth-child(2){
+        display: none;
+      }
+    }
+  }
+
+  &>section:last-child{
+    @include size(90%, 70%);
+    @include flex-setting(space-around, center);
+    flex-direction: column;
+
+    &>div{
+      @include size(90%, 5%);
+      @include flex-setting(space-between, center);
+      
+      &>div:last-child{
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
