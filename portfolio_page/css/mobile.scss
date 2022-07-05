@@ -23,7 +23,7 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
 
 .round-border {
   width : 30%;
-  height : 40%;
+  height : 20%;
   @include mixin.flex-setting(center, center);
   border : solid 1px var.$col-6;
   border-radius: 30px;
@@ -33,7 +33,7 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
 
 .tablet-round-border {
   width: 15%;
-  height: 30%;
+  height: 25%;
   @include mixin.flex-setting(center, center);
   border : solid 1px var.$col-6;
   border-radius: 30px;

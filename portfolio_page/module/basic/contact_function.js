@@ -1,6 +1,5 @@
-function innerHTMLContact(text1, url1, url2){
-  return(
-`    <div>
+function innerHTMLContact(text1, url1) {
+  return `    <div>
       <section>
         <h2 class = "sub-title-txt">5. Contact me</h2>
         <h4 data-sub = "2">So I...</h4>
@@ -13,11 +12,6 @@ function innerHTMLContact(text1, url1, url2){
       <div>
         <div class = "sub-txt">E-mail : </div>
         <img src = "${url1}"  data-img = "1">
-      </div>
-
-      <div>
-        <div class = "sub-txt">mobile : </div>
-        <img src = "${url2}" data-img = "1">
       </div>
 
       <div>
@@ -42,9 +36,7 @@ function innerHTMLContact(text1, url1, url2){
       <i class="fa-solid fa-caret-right"></i>
       </div>
     </div>
-    `
-  )
+    `;
 }
 
 export default innerHTMLContact;
-//portfolio_page\module\basic\Resume.pdf

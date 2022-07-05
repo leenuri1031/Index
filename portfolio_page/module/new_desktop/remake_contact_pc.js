@@ -12,8 +12,7 @@ function remakeContact() {
 
   container[0].innerHTML = innerHTMLContact(
     contactText,
-    "./portfolio_page/module/image/mail.png",
-    "./portfolio_page/module/image/mobile.png"
+    "./portfolio_page/module/image/mail.png"
   );
   container[1].innerHTML = pcInnerHTMLEnd(
     "./portfolio_page/module/image/dream.png"
@@ -62,21 +61,21 @@ function remakeContact() {
   const imgArr = document.getElementsByTagName("img");
   for (let i = 0; i < imgArr.length; i++) {
     if (imgArr[i].dataset.img === "1") {
-      functionObj.size(imgArr[i], "30%", "70%");
-      functionObj.position(imgArr[i], "absolute", "12%", "35%");
+      functionObj.size(imgArr[i], "30%", "72%");
+      functionObj.position(imgArr[i], "absolute", "12%", "20%");
       imgArr[i].style.opacity = 0.9;
     }
   }
   // console.log(leftContents[1].children[3].children[1]);
-  functionObj.size(leftContents[1].children[3].children[1], "95px", "95px");
+  functionObj.size(leftContents[1].children[2].children[1], "95px", "95px");
   functionObj.position(
-    leftContents[1].children[3].children[1],
+    leftContents[1].children[2].children[1],
     "absolute",
-    "16%",
-    "80%"
+    "5%",
+    "100%"
   );
   functionObj.bgiStyle(
-    leftContents[1].children[3].children[1],
+    leftContents[1].children[2].children[1],
     "./portfolio_page/module/image/contact_img.png",
     "center",
     "contain",

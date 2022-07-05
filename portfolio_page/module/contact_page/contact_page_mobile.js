@@ -32,16 +32,15 @@ export function contactPageMaker() {
     functionObj.container(container, "95%", "95%");
     container.innerHTML = innerHTMLContact(
       contactText,
-      "./portfolio_page/module/image/mail.png",
-      "./portfolio_page/module/image/mobile.png"
+      "./portfolio_page/module/image/mail.png"
     );
 
     functionObj.container(container.children[0], "100%", "100%");
 
     const sections = container.children[0].children;
-    functionObj.container(sections[0], "100%", "40%");
-    functionObj.container(sections[1], "100%", "45%");
-    functionObj.container(sections[2], "100%", "10%");
+    functionObj.container(sections[0], "100%", "45%");
+    functionObj.container(sections[1], "100%", "30%");
+    functionObj.container(sections[2], "100%", "20%");
 
     const subTitles = document.getElementsByTagName("h4");
     for (let i = 0; i < subTitles.length; i++) {
@@ -63,27 +62,25 @@ export function contactPageMaker() {
     }
 
     const imgArr = document.getElementsByTagName("img");
+    functionObj.size(imgArr[0], "55%", "58%");
+    functionObj.position(imgArr[0], "relative", "18%", "-50%");
+    imgArr[0].style.opacity = 0.9;
 
-    for (let i = 0; i < imgArr.length; i++) {
-      functionObj.size(imgArr[i], "55%", "58%");
-      functionObj.position(imgArr[i], "relative", "18%", "-50%");
-      imgArr[i].style.opacity = 0.9;
-    }
+    functionObj.size(sections[1].children[2], "85%", "30%");
+    functionObj.font(sections[1].children[2], "0.9rem", 580);
+    sections[1].children[2].style.color = colorArr[5];
+    sections[1].children[2].style.marginLeft = "2vh";
 
-    functionObj.size(sections[1].children[3], "85%", "30%");
-    functionObj.font(sections[1].children[3], "0.9rem", 580);
-    sections[1].children[3].style.color = colorArr[5];
-    sections[1].children[3].style.marginLeft = "2vh";
-
-    functionObj.size(sections[1].children[3].children[1], "95px", "95px");
+    functionObj.size(sections[1].children[2].children[1], "95px", "95px");
     functionObj.position(
-      sections[1].children[3].children[1],
+      sections[1].children[2].children[1],
       "relative",
-      "0%",
-      "5%"
+      "5%",
+      "15%"
     );
+
     functionObj.bgiStyle(
-      sections[1].children[3].children[1],
+      sections[1].children[2].children[1],
       "./portfolio_page/module/image/contact_img.png",
       "center",
       "contain",
@@ -92,7 +89,7 @@ export function contactPageMaker() {
 
     // console.log(sections[2].children[1]);
     sections[2].children[1].classList.add("round-border");
-    functionObj.position(sections[2].children[1], "relative", "-25%", "5%");
+    functionObj.position(sections[2].children[1], "relative", "-25%");
     sections[2].children[1].style.cursor = "pointer";
 
     const pageBox = document.getElementById("page-box7");

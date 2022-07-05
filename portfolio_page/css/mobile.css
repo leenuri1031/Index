@@ -74,7 +74,7 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
 
 .round-border {
   width: 30%;
-  height: 40%;
+  height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,7 +87,7 @@ namespace를 정하고 가지고 왔음에도 계속 에러가 나옴 -> mixin�
 
 .tablet-round-border {
   width: 15%;
-  height: 30%;
+  height: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
