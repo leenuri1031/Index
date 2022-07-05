@@ -12,10 +12,12 @@ function remakeContact() {
 
   container[0].innerHTML = innerHTMLContact(
     contactText,
-    "./module/image/mail.png",
-    "./module/image/mobile.png"
+    "./portfolio_page/module/image/mail.png",
+    "./portfolio_page/module/image/mobile.png"
   );
-  container[1].innerHTML = pcInnerHTMLEnd("./module/image/dream.png");
+  container[1].innerHTML = pcInnerHTMLEnd(
+    "./portfolio_page/module/image/dream.png"
+  );
   remakeEnd();
 
   // console.log(container);
@@ -75,7 +77,7 @@ function remakeContact() {
   );
   functionObj.bgiStyle(
     leftContents[1].children[3].children[1],
-    "./module/image/contact_img.png",
+    "./portfolio_page/module/image/contact_img.png",
     "center",
     "contain",
     0.9
@@ -105,7 +107,7 @@ function remakeContact() {
   functionObj.position(leftContents[2].children[2], "absolute", "60%", "-150%");
   functionObj.bgiStyle(
     leftContents[2].children[2],
-    "./module/image/me.png",
+    "./portfolio_page/module/image/me.png",
     "center",
     "cover",
     0.8

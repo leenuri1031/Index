@@ -22,7 +22,7 @@ export function tabletVerNowPage() {
   ) {
     functionObj.bgiStyle(
       root,
-      "./module/image/main_background.png",
+      "./portfolio_page/module/image/main_background.png",
       "center",
       "cover",
       1
@@ -70,7 +70,7 @@ export function tabletVerNowPage() {
     move(sections[1].children[0], "15%", "16%");
     functionObj.bgiStyle(
       sections[1].children[0],
-      "./module/image/layout.png",
+      "./portfolio_page/module/image/layout.png",
       "center",
       "cover",
       0.8
@@ -87,7 +87,7 @@ export function tabletVerNowPage() {
     move(sections[1].children[1], "55%", "54%");
     functionObj.bgiStyle(
       sections[1].children[1],
-      "./module/image/coding.png",
+      "./portfolio_page/module/image/coding.png",
       "center",
       "cover",
       0.8

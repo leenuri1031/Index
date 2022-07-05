@@ -41,7 +41,7 @@ function remakePcIam() {
   functionObj.position(iAmImg, "absolute", "40%", "10%");
   functionObj.bgiStyle(
     iAmImg,
-    "./module/image/Iam_illust1.png",
+    "./portfolio_page/module/image/Iam_illust1.png",
     "center",
     "cover",
     0.8
@@ -53,7 +53,7 @@ function remakePcIam() {
   functionObj.position(iLikeImg, "absolute", "62%", "5%");
   functionObj.bgiStyle(
     iLikeImg,
-    "./module/image/Iam_illust2.png",
+    "./portfolio_page/module/image/Iam_illust2.png",
     "center",
     "cover",
     0.8
@@ -80,7 +80,7 @@ function remakePcIam() {
   functionObj.position(iDid[1], "absolute", "65%", "10%");
   functionObj.bgiStyle(
     iDid[1],
-    "./module/image/Iam_illust3.png",
+    "./portfolio_page/module/image/Iam_illust3.png",
     "center",
     "cover",
     0.6
@@ -93,7 +93,7 @@ function remakePcIam() {
   functionObj.position(images[0], "absolute", "10%", "0%");
   functionObj.bgiStyle(
     images[0],
-    "./module/image/painting.png",
+    "./portfolio_page/module/image/painting.png",
     "center",
     "cover",
     0.8
@@ -104,7 +104,7 @@ function remakePcIam() {
   functionObj.position(images[1], "absolute", "60%", "30%");
   functionObj.bgiStyle(
     images[1],
-    "./module/image/yukata.png",
+    "./portfolio_page/module/image/yukata.png",
     "center",
     "cover",
     0.8

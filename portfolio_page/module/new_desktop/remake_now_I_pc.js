@@ -46,7 +46,7 @@ function remakePcNow() {
   movingImg(nowImg, "180px", colorArr[0], "70%", "-2%", -1);
   functionObj.bgiStyle(
     nowImg,
-    "./module/image/coding.png",
+    "./portfolio_page/module/image/coding.png",
     "center",
     "cover",
     0.7
@@ -56,7 +56,7 @@ function remakePcNow() {
   movingImg(leftContents[2].children[0], "200px", colorArr[0], "5%");
   functionObj.bgiStyle(
     leftContents[2].children[0],
-    "./module/image/layout.png",
+    "./portfolio_page/module/image/layout.png",
     "center",
     "cover",
     0.9
@@ -66,7 +66,7 @@ function remakePcNow() {
   movingImg(leftContents[2].children[1], "150px", colorArr[0], "55%", "-15%");
   functionObj.bgiStyle(
     leftContents[2].children[1],
-    "./module/image/code.png",
+    "./portfolio_page/module/image/code.png",
     "center",
     "cover",
     0.9
@@ -102,14 +102,14 @@ function remakePcNow() {
 
   functionObj.bgiStyle(
     rightTopImg[0],
-    "./module/image/project1_img1.png",
+    "./portfolio_page/module/image/project1_img1.png",
     "center",
     "cover",
     0.9
   );
   functionObj.bgiStyle(
     rightTopImg[1],
-    "./module/image/project1_img2.png",
+    "./portfolio_page/module/image/project1_img2.png",
     "center",
     "cover",
     0.9
@@ -119,7 +119,7 @@ function remakePcNow() {
   functionObj.boxStyle(rightContents[2].children[0], "40%", "90%", colorArr[0]);
   functionObj.bgiStyle(
     rightContents[2].children[0],
-    "./module/image/project1_process.png",
+    "./portfolio_page/module/image/project1_process.png",
     "",
     "cover",
     0.9

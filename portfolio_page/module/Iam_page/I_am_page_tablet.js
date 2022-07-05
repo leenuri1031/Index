@@ -23,7 +23,7 @@ export function tabletVerIAm() {
   ) {
     functionObj.bgiStyle(
       root,
-      "./module/image/main_background.png",
+      "./portfolio_page/module/image/main_background.png",
       "center",
       "cover",
       1
@@ -71,7 +71,7 @@ export function tabletVerIAm() {
     functionObj.position(sections[0].children[1], "absolute", "60%", "12%");
     functionObj.bgiStyle(
       sections[0].children[1],
-      "./module/image/Iam_illust1.png",
+      "./portfolio_page/module/image/Iam_illust1.png",
       "center",
       "cover",
       0.8
@@ -88,7 +88,7 @@ export function tabletVerIAm() {
     functionObj.position(sections[1].children[1], "absolute", "52%", "36%");
     functionObj.bgiStyle(
       sections[1].children[1],
-      "./module/image/Iam_illust2.png",
+      "./portfolio_page/module/image/Iam_illust2.png",
       "center",
       "cover",
       0.8
@@ -105,7 +105,7 @@ export function tabletVerIAm() {
     functionObj.position(sections[2].children[1], "absolute", "70%", "70%");
     functionObj.bgiStyle(
       sections[2].children[1],
-      "./module/image/Iam_illust3.png",
+      "./portfolio_page/module/image/Iam_illust3.png",
       "center",
       "cover",
       0.8

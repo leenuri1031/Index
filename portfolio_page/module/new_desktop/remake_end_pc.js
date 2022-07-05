@@ -11,7 +11,7 @@ function remakeEnd() {
   functionObj.container(imgContainer, "60%", "80%");
   functionObj.bgiStyle(
     imgContainer,
-    "./module/image/cover_background.png",
+    "./portfolio_page/module/image/cover_background.png",
     "",
     "cover",
     0.9

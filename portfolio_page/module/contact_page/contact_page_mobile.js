@@ -21,7 +21,7 @@ export function contactPageMaker() {
   ) {
     functionObj.bgiStyle(
       root,
-      "./module/image/main_background.png",
+      "./portfolio_page/module/image/main_background.png",
       "center",
       "cover",
       1
@@ -32,8 +32,8 @@ export function contactPageMaker() {
     functionObj.container(container, "95%", "95%");
     container.innerHTML = innerHTMLContact(
       contactText,
-      "./module/image/mail.png",
-      "./module/image/mobile.png"
+      "./portfolio_page/module/image/mail.png",
+      "./portfolio_page/module/image/mobile.png"
     );
 
     functionObj.container(container.children[0], "100%", "100%");
@@ -84,7 +84,7 @@ export function contactPageMaker() {
     );
     functionObj.bgiStyle(
       sections[1].children[3].children[1],
-      "./module/image/contact_img.png",
+      "./portfolio_page/module/image/contact_img.png",
       "center",
       "contain",
       0.9

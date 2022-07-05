@@ -65,14 +65,14 @@ function remakeProject1() {
   }
   functionObj.bgiStyle(
     rightTopImg[0],
-    "./module/image/project2_img1.png",
+    "./portfolio_page/module/image/project2_img1.png",
     "center",
     "cover",
     0.9
   );
   functionObj.bgiStyle(
     rightTopImg[1],
-    "./module/image/project2_img2.png",
+    "./portfolio_page/module/image/project2_img2.png",
     "center",
     "cover",
     0.9
@@ -80,7 +80,7 @@ function remakeProject1() {
   functionObj.boxStyle(rightContents[2].children[0], "40%", "90%", colorArr[0]);
   functionObj.bgiStyle(
     rightContents[2].children[0],
-    "./module/image/project2_process.png",
+    "./portfolio_page/module/image/project2_process.png",
     "",
     "cover",
     0.9

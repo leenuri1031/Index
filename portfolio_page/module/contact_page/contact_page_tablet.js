@@ -20,7 +20,7 @@ export function tabletVerContactPage() {
   ) {
     functionObj.bgiStyle(
       root,
-      "./module/image/main_background.png",
+      "./portfolio_page/module/image/main_background.png",
       "center",
       "cover",
       1
@@ -33,8 +33,8 @@ export function tabletVerContactPage() {
 
     container.innerHTML = innerHTMLContact(
       contactText,
-      "./module/image/mail.png",
-      "./module/image/mobile.png"
+      "./portfolio_page/module/image/mail.png",
+      "./portfolio_page/module/image/mobile.png"
     );
 
     functionObj.container(container.children[0], "95%", "100%");
@@ -85,7 +85,7 @@ export function tabletVerContactPage() {
     );
     functionObj.bgiStyle(
       sections[1].children[3].children[1],
-      "./module/image/contact_img.png",
+      "./portfolio_page/module/image/contact_img.png",
       "center",
       "contain",
       0.9
@@ -107,7 +107,7 @@ export function tabletVerContactPage() {
     functionObj.position(sections[2].children[2], "absolute", "65%", "55%");
     functionObj.bgiStyle(
       sections[2].children[2],
-      "./module/image/me.png",
+      "./portfolio_page/module/image/me.png",
       "center",
       "cover",
       0.8

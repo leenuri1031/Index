@@ -23,7 +23,7 @@ export function nowIPageMaker() {
   ) {
     functionObj.bgiStyle(
       root,
-      "./module/image/main_background.png",
+      "./portfolio_page/module/image/main_background.png",
       "center",
       "cover",
       1
@@ -75,7 +75,7 @@ export function nowIPageMaker() {
     move(sections[1].children[0], "10%", "11%");
     functionObj.bgiStyle(
       sections[1].children[0],
-      "./module/image/layout.png",
+      "./portfolio_page/module/image/layout.png",
       "center",
       "cover",
       0.8
@@ -85,7 +85,7 @@ export function nowIPageMaker() {
     move(sections[1].children[1], "60%", "59%");
     functionObj.bgiStyle(
       sections[1].children[1],
-      "./module/image/coding.png",
+      "./portfolio_page/module/image/coding.png",
       "center",
       "cover",
       0.8

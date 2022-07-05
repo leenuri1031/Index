@@ -23,7 +23,7 @@ export function somedayPageMaker() {
   ) {
     functionObj.bgiStyle(
       root,
-      "./module/image/main_background.png",
+      "./portfolio_page/module/image/main_background.png",
       "center",
       "cover",
       1
@@ -64,7 +64,7 @@ export function somedayPageMaker() {
     functionObj.position(circleImg[0], "absolute", "45%", "85%");
     functionObj.bgiStyle(
       circleImg[0],
-      "./module/image/study.png",
+      "./portfolio_page/module/image/study.png",
       "center",
       "cover",
       0.8
@@ -74,7 +74,7 @@ export function somedayPageMaker() {
     functionObj.position(circleImg[1], "absolute", "60%", "62%");
     functionObj.bgiStyle(
       circleImg[1],
-      "./module/image/digital_nomad.png",
+      "./portfolio_page/module/image/digital_nomad.png",
       "center",
       "cover",
       0.8

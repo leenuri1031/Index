@@ -91,7 +91,7 @@ export function pcInnerHTMLProject1(txt, num) {
       </div>
     </div>
     <div>
-      <a href = "module/project_link/project${num}_page.html" target="_blank"></a>
+      <a href = "./portfolio_page/module/project_link/project${num}_page.html" target="_blank"></a>
     </div>
   </div>`;
 }

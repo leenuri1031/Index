@@ -18,7 +18,7 @@ export function tabletVerEndPage() {
   ) {
     functionObj.bgiStyle(
       root,
-      "./module/image/cover_background_mobile.png",
+      "./portfolio_page/module/image/cover_background_mobile.png",
       "center",
       "cover",
       1
@@ -30,13 +30,15 @@ export function tabletVerEndPage() {
     functionObj.container(container, "95%", "95%");
     container.style.border = `1px dotted ${colorArr[5]}`;
 
-    container.innerHTML = innerHTMLEnd("./module/image/dream.png");
+    container.innerHTML = innerHTMLEnd(
+      "./portfolio_page/module/image/dream.png"
+    );
     const imgContainer = container.children[0];
 
     functionObj.container(imgContainer, "80%", "80%");
     functionObj.bgiStyle(
       imgContainer,
-      "./module/image/cover_background.png",
+      "./portfolio_page/module/image/cover_background.png",
       "center",
       "cover",
       0.9

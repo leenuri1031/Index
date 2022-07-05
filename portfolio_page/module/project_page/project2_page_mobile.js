@@ -21,7 +21,7 @@ export function project2PageMaker() {
   ) {
     functionObj.bgiStyle(
       root,
-      "./module/image/main_background.png",
+      "./portfolio_page/module/image/main_background.png",
       "center",
       "cover",
       1
@@ -65,14 +65,14 @@ export function project2PageMaker() {
 
     functionObj.bgiStyle(
       imgBox[0],
-      "./module/image/project2_img1.png",
+      "./portfolio_page/module/image/project2_img1.png",
       "center",
       "cover",
       0.9
     );
     functionObj.bgiStyle(
       imgBox[1],
-      "./module/image/project2_img2.png",
+      "./portfolio_page/module/image/project2_img2.png",
       "center",
       "cover",
       0.9

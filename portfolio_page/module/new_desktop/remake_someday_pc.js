@@ -87,7 +87,7 @@ function remakeSomeday() {
   functionObj.position(circleImg[0], "absolute", "40%", "75%");
   functionObj.bgiStyle(
     circleImg[0],
-    "./module/image/study.png",
+    "./portfolio_page/module/image/study.png",
     "center",
     "cover",
     0.8
@@ -97,7 +97,7 @@ function remakeSomeday() {
   functionObj.position(circleImg[1], "absolute", "55%", "52%");
   functionObj.bgiStyle(
     circleImg[1],
-    "./module/image/digital_nomad.png",
+    "./portfolio_page/module/image/digital_nomad.png",
     "center",
     "cover",
     0.8

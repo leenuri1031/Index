@@ -20,7 +20,7 @@ export function tabletVerProject1Page() {
   ) {
     functionObj.bgiStyle(
       root,
-      "./module/image/main_background.png",
+      "./portfolio_page/module/image/main_background.png",
       "center",
       "cover",
       1
@@ -57,14 +57,14 @@ export function tabletVerProject1Page() {
 
     functionObj.bgiStyle(
       imgBox[0],
-      "./module/image/project1_img1.png",
+      "./portfolio_page/module/image/project1_img1.png",
       "center",
       "cover",
       0.9
     );
     functionObj.bgiStyle(
       imgBox[1],
-      "./module/image/project1_img2.png",
+      "./portfolio_page/module/image/project1_img2.png",
       "center",
       "cover",
       0.9
