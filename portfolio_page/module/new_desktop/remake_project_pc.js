@@ -12,7 +12,7 @@ function remakeProject1() {
   container[0].innerHTML = pcInnerHTMLProject2(
     project1Text,
     1,
-    "/project _1/index.html"
+    "http://elmundo.dothome.co.kr"
   );
   container[1].innerHTML = pcInnerHTMLProject1("second", 2);
 
