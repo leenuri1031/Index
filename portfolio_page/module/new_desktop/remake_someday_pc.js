@@ -44,8 +44,8 @@ function remakeSomeday() {
   for (let i = 1; i < leftContents[1].children.length; i++) {
     functionObj.borderRound(
       leftContents[1].children[i],
-      "20%",
-      "10%",
+      "15%",
+      "8%",
       "30px",
       colorArr[5]
     );
